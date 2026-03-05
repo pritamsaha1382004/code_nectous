@@ -1,0 +1,582 @@
+/* ==========================================
+   Resume ATS Checker – Premium Design
+========================================== */
+
+.resume-analyzer-section {
+    margin-top: 3.5rem;
+    padding: 2.5rem 0;
+    position: relative;
+}
+
+.resume-analyzer-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.12), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 50%, rgba(139, 92, 246, 0.06), transparent),
+        radial-gradient(ellipse 60% 40% at 0% 50%, rgba(16, 185, 129, 0.06), transparent);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.resume-analyzer-section .resume-layout {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- Section Header ---------- */
+
+.resume-section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.resume-section-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+    background: rgba(59, 130, 246, 0.15);
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    margin-bottom: 0.75rem;
+    border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.resume-section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.02em;
+}
+
+.resume-section-desc {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ---------- Layout ---------- */
+
+.resume-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ---------- Upload Panel ---------- */
+
+.resume-upload-panel {
+    background: linear-gradient(165deg, var(--bg-medium) 0%, var(--bg-dark) 100%);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.05),
+        0 20px 40px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 520px;
+    min-height: 520px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.resume-upload-panel:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.05),
+        0 24px 48px rgba(0, 0, 0, 0.22),
+        0 0 0 1px rgba(59, 130, 246, 0.08);
+}
+
+.resume-upload-header {
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+
+.resume-upload-icon-wrap {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1rem;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.15));
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resume-upload-icon {
+    font-size: 1.75rem;
+}
+
+.resume-upload-panel h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 0.25rem 0;
+}
+
+.resume-upload-panel p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* ---------- Drag & Drop Area ---------- */
+
+.drag-drop-area {
+    border: 2px dashed var(--border);
+    border-radius: 20px;
+    padding: 2.25rem 1.25rem;
+    background: var(--bg-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-grow: 1;
+    justify-content: center;
+    min-height: 200px;
+}
+
+.drag-drop-area:hover {
+    border-color: var(--accent-blue);
+    background: rgba(59, 130, 246, 0.06);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.08);
+}
+
+.drag-drop-area.dragover {
+    border-color: var(--accent-green);
+    border-style: solid;
+    background: rgba(16, 185, 129, 0.08);
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.12);
+}
+
+.drag-drop-icon {
+    font-size: 2.5rem;
+    opacity: 0.9;
+    margin-bottom: 0.25rem;
+}
+
+.drag-drop-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.drag-drop-sub {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.drag-drop-divider {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin: 0.5rem 0;
+    text-transform: lowercase;
+}
+
+.choose-file-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1.5rem;
+    border-radius: 12px;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+}
+
+.choose-file-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.45);
+}
+
+/* ---------- Analyze Button ---------- */
+
+.analyze-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    align-self: center;
+    padding: 0.75rem 1.75rem;
+    border-radius: 14px;
+    border: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    background: linear-gradient(135deg, var(--accent-green), #0d9488);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4);
+}
+
+.analyze-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(16, 185, 129, 0.5);
+}
+
+.analyze-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.analyze-btn-icon {
+    font-size: 1.1rem;
+}
+
+/* ---------- Result Panel ---------- */
+
+.resume-result-panel {
+    background: linear-gradient(165deg, var(--bg-medium) 0%, var(--bg-dark) 100%);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 2rem;
+    height: 520px;
+    min-height: 520px;
+    max-height: 520px;
+    overflow-y: auto;
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.05),
+        0 20px 40px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    position: relative;
+}
+
+.resume-result-panel::-webkit-scrollbar {
+    width: 8px;
+}
+
+.resume-result-panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.resume-result-panel::-webkit-scrollbar-thumb {
+    background: var(--accent-blue);
+    border-radius: 8px;
+}
+
+.resume-result-panel::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-purple);
+}
+
+/* ---------- Placeholder (empty state) ---------- */
+
+.result-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+    padding: 2rem;
+}
+
+.result-placeholder-icon {
+    font-size: 3.5rem;
+    opacity: 0.5;
+    margin-bottom: 1rem;
+}
+
+.result-placeholder h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 0.5rem 0;
+}
+
+.result-placeholder p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin: 0;
+    max-width: 320px;
+    line-height: 1.5;
+}
+
+/* ---------- ATS Score & Gauge ---------- */
+
+.ats-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.06));
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 20px;
+}
+
+.score-box {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.score-box #animatedScore {
+    background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gauge-container {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.gauge-outer {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from -90deg,
+        #7f1d1d 0deg 72deg,
+        #ef4444 72deg 117deg,
+        #f59e0b 117deg 153deg,
+        #16a34a 153deg 180deg,
+        transparent 180deg 360deg
+    );
+}
+
+.gauge-inner {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: var(--bg-medium);
+    border-radius: 50%;
+    top: 25px;
+    left: 25px;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gauge-needle {
+    position: absolute;
+    width: 4px;
+    height: 60%;
+    background: linear-gradient(to top, var(--accent-blue), var(--accent-purple));
+    bottom: 0;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translateX(-50%) rotate(-90deg);
+    transition: transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border-radius: 2px;
+}
+
+.gauge-center {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: var(--text-primary);
+    border-radius: 50%;
+    bottom: -7px;
+    left: calc(50% - 7px);
+    box-shadow: 0 0 0 3px var(--bg-medium);
+}
+
+/* ---------- Analysis Sections (breakdown & suggestions) ---------- */
+
+.analysis-section {
+    margin-bottom: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--bg-dark);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent-blue);
+    transition: border-color 0.25s ease, transform 0.2s ease;
+}
+
+.analysis-section:hover {
+    border-left-color: var(--accent-purple);
+    transform: translateX(4px);
+}
+
+.analysis-section:last-child {
+    margin-bottom: 0;
+}
+
+.analysis-section h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 0.75rem 0;
+    color: var(--accent-blue);
+    letter-spacing: 0.02em;
+}
+
+.analysis-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.analysis-section ul li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.45;
+}
+
+.analysis-section ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-blue);
+    font-weight: bold;
+}
+
+/* Severity colors for list items */
+.analysis-section .critical { color: #ef4444; }
+.analysis-section .warning { color: #f59e0b; }
+.analysis-section .good { color: #10b981; }
+
+/* AI-style streaming: items fade and slide in */
+.result-stream-in {
+    opacity: 0;
+    animation: resultStreamIn 0.4s ease forwards;
+}
+
+@keyframes resultStreamIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Light theme tweaks ---------- */
+
+.theme-light .resume-upload-panel,
+.theme-light .resume-result-panel {
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.04),
+        0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.theme-light .resume-upload-icon-wrap {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(139, 92, 246, 0.1));
+}
+
+.theme-light .ats-wrapper {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.06), rgba(139, 92, 246, 0.04));
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1000px) {
+    .resume-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .resume-upload-panel,
+    .resume-result-panel {
+        height: auto;
+        min-height: auto;
+        max-height: none;
+    }
+
+    .resume-section-title {
+        font-size: 1.65rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .resume-analyzer-section {
+        margin-top: 2rem;
+        padding: 1.5rem 0;
+    }
+
+    .resume-section-header {
+        margin-bottom: 1.75rem;
+    }
+
+    .resume-section-badge {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.75rem;
+    }
+
+    .resume-section-title {
+        font-size: 1.5rem;
+    }
+
+    .resume-upload-panel,
+    .resume-result-panel {
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+
+    .ats-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .score-box {
+        font-size: 1.2rem;
+    }
+
+    .gauge-container {
+        width: 140px;
+        height: 70px;
+    }
+
+    .gauge-outer {
+        width: 140px;
+        height: 140px;
+    }
+
+    .gauge-inner {
+        width: 105px;
+        height: 105px;
+        top: 17.5px;
+        left: 17.5px;
+    }
+
+    .gauge-needle {
+        height: 55%;
+        width: 3px;
+    }
+
+    .result-placeholder {
+        min-height: 280px;
+    }
+
+    .result-placeholder-icon {
+        font-size: 2.5rem;
+    }
+}

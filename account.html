@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Nectous - Account</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="firebase-init.js"></script>
+</head>
+<body class="account-body">
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Code Nectous logo">
+                <div class="logo-text">
+                    <span class="logo-title"><span class="logo-elite">Code</span><span class="logo-coders">Nectous</span></span>
+                    <span class="logo-tagline">Account</span>
+                </div>
+            </div>
+            <button class="drawer-toggle" id="drawerToggle" aria-label="Open menu" type="button">
+                ☰
+            </button>
+            <div class="header-right">
+                <div class="user-stats">
+                    <div class="stat-badge">
+                        <span class="icon">&#128218;</span>
+                        <span class="value" id="completedLessons">0</span>
+                        <span>/</span>
+                        <span id="totalLessons">0</span>
+                    </div>
+                    <div class="stat-badge">
+                        <span class="icon">&#9889;</span>
+                        <span class="value" id="totalXP">0</span>
+                        <span>XP</span>
+                    </div>
+                    <div class="stat-badge" title="Max streak ever">
+                        <span class="icon">&#127942;</span>
+                        <span class="value" id="maxStreak">0</span>
+                        <span>Max</span>
+                    </div>
+                    <div class="stat-badge" title="Current streak">
+                        <span class="icon">&#128293;</span>
+                        <span class="value" id="streak">0</span>
+                        <span>Day</span>
+                    </div>
+                </div>
+                <div class="header-links">
+                    <a class="progress-link" href="index.html">Home</a>
+                    <a class="auth-link" id="accountLink" href="account.html">Account</a>
+                    <span class="user-chip guest" id="currentUserChip" aria-label="Login status"></span>
+                    <button class="auth-logout" id="logoutBtn" type="button" hidden>Logout</button>
+                </div>
+                <div class="overall-progress" hidden>
+                    <div class="progress-label">
+                        <span>Overall Progress</span>
+                        <span class="progress-percent" id="overallPercent">0%</span>
+                    </div>
+                    <div class="overall-bar" id="overallProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <div class="overall-fill" id="overallProgressFill" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+        <div class="drawer-header">
+            <span>Menu</span>
+            <button class="drawer-close" id="drawerClose" type="button" aria-label="Close menu">✕</button>
+        </div>
+        <div class="drawer-profile">
+            <span class="user-chip guest" id="drawerUserChip" aria-label="Login status"></span>
+            <div>
+                <div class="drawer-name" id="drawerUserName">Guest</div>
+                <div class="drawer-sub" id="drawerUserEmail">Login to continue</div>
+            </div>
+        </div>
+        <div class="drawer-stats">
+            <div><strong id="drawerXP">0</strong><span>XP</span></div>
+            <div><strong id="drawerMaxStreak">0</strong><span>Max</span></div>
+            <div><strong id="drawerStreak">0</strong><span>Current</span></div>
+            <div><strong id="drawerLessons">0</strong><span>Lessons</span></div>
+        </div>
+        <nav class="drawer-links">
+            <a href="index.html">Home</a>
+            <a href="progress.html">View Progress</a>
+        </nav>
+        <div class="drawer-theme">
+            <span>Theme</span>
+            <button class="theme-toggle" id="themeToggleDrawer" type="button" aria-label="Toggle theme" title="Toggle theme">
+                <span class="theme-icon theme-icon--sun" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M19.4 4.6l-2.1 2.1M6.7 17.3l-2.1 2.1"></path>
+                    </svg>
+                </span>
+                <span class="theme-icon theme-icon--moon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                        <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5Z"></path>
+                    </svg>
+                </span>
+                <span class="theme-switch" aria-hidden="true">
+                    <span class="theme-knob"></span>
+                </span>
+            </button>
+        </div>
+        <div class="drawer-actions">
+            <button class="auth-logout" id="drawerLogout" type="button">Logout</button>
+        </div>
+    </aside>
+
+    <main class="account-container">
+        <section class="account-card">
+            <div class="account-header">
+                <div>
+                    <h1>Account Details</h1>
+                    <p>Update your profile information. Changes are saved to your account.</p>
+                </div>
+                <div class="account-xp">
+                    <span>XP Earned</span>
+                    <strong id="xpEarned">0</strong>
+                </div>
+            </div>
+
+            <form id="accountForm" class="account-form">
+                <div class="account-avatar">
+                    <div class="avatar-preview" id="avatarPreview">👤</div>
+                    <div class="avatar-actions">
+                        <label class="auth-submit" for="profileAvatar">Upload Photo</label>
+                        <input type="file" id="profileAvatar" accept="image/*" hidden>
+                        <button class="btn-link" type="button" id="removeAvatar">Remove</button>
+                    </div>
+                </div>
+                <div>
+                    <label for="profileName">Name</label>
+                    <input type="text" id="profileName" required>
+                </div>
+                <div>
+                    <label for="profileEmail">Email</label>
+                    <input type="email" id="profileEmail" disabled>
+                </div>
+                <div>
+                    <label for="profileBio">Bio</label>
+                    <textarea id="profileBio" rows="3" placeholder="Write a short bio"></textarea>
+                </div>
+                <div>
+                    <label for="profileCollege">College</label>
+                    <input type="text" id="profileCollege" placeholder="College name">
+                </div>
+                <div>
+                    <label for="profileDepartment">Department</label>
+                    <input type="text" id="profileDepartment" placeholder="Department">
+                </div>
+                <div>
+                    <label for="profilePassOut">Pass Out Year</label>
+                    <input type="text" id="profilePassOut" placeholder="e.g. 2026">
+                </div>
+                <div>
+                    <label for="profileDesignation">Designation</label>
+                    <input type="text" id="profileDesignation" placeholder="e.g. Student / Intern">
+                </div>
+                <div class="account-actions">
+                    <button class="auth-submit" type="submit">Save Profile</button>
+                    <span class="account-status" id="accountStatus" hidden>Saved</span>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <img src="assets/logo.png" alt="Code Nectous logo">
+                <div>
+                    <h3>Code Nectous Platform</h3>
+                    <p>Build skills daily with guided lessons, hands-on practice, and progress tracking that keeps you motivated.</p>
+                </div>
+            </div>
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <a href="index.html#courses">Courses</a>
+                    <a href="#" data-action="projects">Projects</a>
+                    <a href="#">Challenges</a>
+                    <a href="progress.html">Progress</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a href="mailto:codenectous@gmail.com?subject=Code%20Nectous%20Help">Help Center</a>
+                    <a href="faq.html">FAQs</a>
+                    <a href="https://wa.me/919679086043" target="_blank" rel="noopener noreferrer">Contact Us</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-founder">
+            <img src="assets/profile.jpeg" alt="Pritam Saha" class="footer-founder-photo">
+            <span class="footer-founder-text">CEO and Founder Pritam Saha</span>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Code Nectous. All rights reserved.</span>
+            <div class="footer-social">
+                <a href="https://instagram.com/pritamsaha" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.07 4.07 0 0 1 1.512.984c.45.45.77.93.984 1.512.163.46.349 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.07 4.07 0 0 1-.984 1.512 4.07 4.07 0 0 1-1.512.984c-.46.163-1.26.349-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.07 4.07 0 0 1-1.512-.984 4.07 4.07 0 0 1-.984-1.512c-.163-.46-.349-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.07 4.07 0 0 1 .984-1.512A4.07 4.07 0 0 1 5.132 2.233c.46-.163 1.26-.349 2.43-.403C8.828 2.175 9.208 2.163 12 2.163M12 0C8.741 0 8.333.014 7.053.072 5.775.13 4.905.333 4.14.63a6.21 6.21 0 0 0-2.245 1.462A6.21 6.21 0 0 0 .433 4.337C.136 5.102-.067 5.972.009 7.25.081 8.53.014 8.938 0 12s.014 3.47.072 4.748c.058 1.278.261 2.148.558 2.913a6.21 6.21 0 0 0 1.462 2.245 6.21 6.21 0 0 0 2.245 1.462c.765.297 1.636.5 2.913.558C8.53 23.986 8.938 24 12 24s3.47-.014 4.748-.072c1.278-.058 2.148-.261 2.913-.558a6.21 6.21 0 0 0 2.245-1.462 6.21 6.21 0 0 0 1.462-2.245c.297-.765.5-1.636.558-2.913.058-1.278.072-1.686.072-4.948s-.014-3.47-.072-4.748c-.058-1.278-.261-2.148-.558-2.913a6.21 6.21 0 0 0-1.462-2.245A6.21 6.21 0 0 0 19.663.235C18.898-.062 18.027-.265 16.75.073 15.47.014 15.062 0 12 0Zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88Z"/></svg></a>
+                <a href="https://facebook.com/pritamsaha" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.018 1.792-4.687 4.533-4.687 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.49 0-1.956.93-1.956 1.886v2.258h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073Z"/></svg></a>
+                <a href="https://linkedin.com/in/pritamsaha" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124ZM6.84 20.452H3.834V9H6.84v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z"/></svg></a>
+            </div>
+            <span><a href="mailto:codenectous@gmail.com">codenectous@gmail.com</a> &middot; <a href="https://wa.me/919679086043" target="_blank" rel="noopener noreferrer">WhatsApp: 9679086043</a></span>
+        </div>
+    </footer>
+
+    <script defer src="site.js"></script>
+    <script defer src="account.js"></script>
+    <script type="text/plain" data-legacy="disabled">
+        const AUTH_CURRENT_KEY = 'codeacademy_current_user';
+        const AUTH_STATE_KEY = 'codeacademy_auth_state';
+        const PROFILE_PREFIX = 'codeacademy_profile_';
+        const USER_PREFIX = 'codeacademy_user_';
+        const COURSE_KEY = 'codeacademy_course_progress';
+        const XP_KEY = 'codeacademy_xp';
+        const COMPLETED_KEY = 'codeacademy_completed';
+        const STREAK_KEY = 'codeacademy_streak';
+
+        function getCurrentUser() {
+            const saved = localStorage.getItem(AUTH_CURRENT_KEY);
+            if (saved) {
+                try {
+                    const parsed = JSON.parse(saved);
+                    localStorage.setItem(AUTH_STATE_KEY, 'logged_in');
+                    return parsed;
+                } catch (e) {
+                    return null;
+                }
+            }
+            return null;
+        }
+
+        function getUserKey(email, baseKey) {
+            return `${USER_PREFIX}${email}_${baseKey}`;
+        }
+
+        function getProfileKey(email) {
+            return `${PROFILE_PREFIX}${email}`;
+        }
+
+        function getProfileAvatar(email) {
+            if (!email) return '';
+            const key = getProfileKey(email);
+            const saved = localStorage.getItem(key);
+            if (!saved) return '';
+            try {
+                const parsed = JSON.parse(saved);
+                return parsed && parsed.avatar ? parsed.avatar : '';
+            } catch (e) {
+                return '';
+            }
+        }
+
+        function updateHeader(user) {
+            const chip = document.getElementById('currentUserChip');
+            const logoutBtn = document.getElementById('logoutBtn');
+            const accountLink = document.getElementById('accountLink');
+            const drawerChip = document.getElementById('drawerUserChip');
+            const drawerName = document.getElementById('drawerUserName');
+            const drawerEmail = document.getElementById('drawerUserEmail');
+
+            if (!chip || !logoutBtn || !accountLink) return;
+            if (user && user.email) {
+                const avatar = getProfileAvatar(user.email);
+                chip.textContent = '';
+                chip.classList.remove('guest');
+                chip.hidden = false;
+                if (avatar) {
+                    chip.style.backgroundImage = `url(${avatar})`;
+                    chip.style.backgroundSize = 'cover';
+                    chip.style.backgroundPosition = 'center';
+                } else {
+                    chip.style.backgroundImage = '';
+                    chip.textContent = '👤';
+                }
+                logoutBtn.hidden = false;
+                accountLink.textContent = 'Account';
+
+                if (drawerChip) {
+                    drawerChip.textContent = '';
+                    drawerChip.classList.remove('guest');
+                    if (avatar) {
+                        drawerChip.style.backgroundImage = `url(${avatar})`;
+                        drawerChip.style.backgroundSize = 'cover';
+                        drawerChip.style.backgroundPosition = 'center';
+                    } else {
+                        drawerChip.style.backgroundImage = '';
+                        drawerChip.textContent = '👤';
+                    }
+                }
+                if (drawerName) drawerName.textContent = user.name || 'User';
+                if (drawerEmail) drawerEmail.textContent = user.email || '';
+            } else {
+                chip.textContent = '🔒';
+                chip.classList.add('guest');
+                chip.hidden = false;
+                chip.style.backgroundImage = '';
+                logoutBtn.hidden = true;
+                accountLink.textContent = 'Login / Sign Up';
+                accountLink.href = 'auth.html';
+
+                if (drawerChip) {
+                    drawerChip.textContent = '🔒';
+                    drawerChip.classList.add('guest');
+                    drawerChip.style.backgroundImage = '';
+                }
+                if (drawerName) drawerName.textContent = 'Guest';
+                if (drawerEmail) drawerEmail.textContent = 'Login to continue';
+            }
+        }
+
+        function bindLogout() {
+            const logoutBtn = document.getElementById('logoutBtn');
+            const drawerLogout = document.getElementById('drawerLogout');
+            if (!logoutBtn) return;
+            logoutBtn.addEventListener('click', () => {
+                localStorage.removeItem(AUTH_CURRENT_KEY);
+                localStorage.setItem(AUTH_STATE_KEY, 'logged_out');
+                window.location.href = 'auth.html';
+            });
+            if (drawerLogout) {
+                drawerLogout.addEventListener('click', () => {
+                    localStorage.removeItem(AUTH_CURRENT_KEY);
+                    localStorage.setItem(AUTH_STATE_KEY, 'logged_out');
+                    window.location.href = 'auth.html';
+                });
+            }
+        }
+
+        function bindDrawer() {
+            const toggle = document.getElementById('drawerToggle');
+            const drawer = document.getElementById('mobileDrawer');
+            const overlay = document.getElementById('drawerOverlay');
+            const closeBtn = document.getElementById('drawerClose');
+
+            if (!toggle || !drawer || !overlay || !closeBtn) return;
+
+            const open = () => {
+                drawer.classList.add('open');
+                overlay.classList.add('show');
+                drawer.setAttribute('aria-hidden', 'false');
+            };
+            const close = () => {
+                drawer.classList.remove('open');
+                overlay.classList.remove('show');
+                drawer.setAttribute('aria-hidden', 'true');
+            };
+
+            toggle.addEventListener('click', open);
+            closeBtn.addEventListener('click', close);
+            overlay.addEventListener('click', close);
+        }
+
+        function loadProfile(user) {
+            if (!user || !user.email) return null;
+            const key = getProfileKey(user.email);
+            const saved = localStorage.getItem(key);
+            if (saved) {
+                try {
+                    return JSON.parse(saved);
+                } catch (e) {
+                    return null;
+                }
+            }
+            const profile = {
+                name: user.name || '',
+                email: user.email || '',
+                avatar: '',
+                bio: '',
+                college: '',
+                department: '',
+                passOutYear: '',
+                designation: ''
+            };
+            localStorage.setItem(key, JSON.stringify(profile));
+            return profile;
+        }
+
+        function loadProgress(user) {
+            if (!user || !user.email) return { xp: 0, completed: 0, total: 0, streak: 0, percent: 0 };
+            const xp = parseInt(localStorage.getItem(getUserKey(user.email, XP_KEY))) || 0;
+            const streak = parseInt(localStorage.getItem(getUserKey(user.email, STREAK_KEY))) || 0;
+            const completedRaw = localStorage.getItem(getUserKey(user.email, COMPLETED_KEY));
+            const completed = completedRaw ? JSON.parse(completedRaw).length : 0;
+            const courseRaw = localStorage.getItem(getUserKey(user.email, COURSE_KEY));
+            let total = 0;
+            if (courseRaw) {
+                try {
+                    const parsed = JSON.parse(courseRaw);
+                    total = Object.values(parsed).reduce((sum, item) => sum + (item.total || 0), 0);
+                } catch (e) {
+                    total = 0;
+                }
+            }
+            const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+            return { xp, completed, total, streak, percent };
+        }
+
+        function fillHeaderStats(progress) {
+            document.getElementById('completedLessons').textContent = progress.completed;
+            document.getElementById('totalLessons').textContent = progress.total;
+            document.getElementById('totalXP').textContent = progress.xp;
+            document.getElementById('streak').textContent = progress.streak;
+            document.getElementById('overallPercent').textContent = `${progress.percent}%`;
+            document.getElementById('overallProgressFill').style.width = `${progress.percent}%`;
+            document.getElementById('overallProgressBar').setAttribute('aria-valuenow', `${progress.percent}`);
+            document.getElementById('xpEarned').textContent = progress.xp;
+        }
+
+        const user = getCurrentUser();
+        updateHeader(user);
+        bindLogout();
+        if (!user || !user.email) {
+            window.location.href = 'auth.html';
+        }
+
+        const profile = loadProfile(user);
+        const progress = loadProgress(user);
+        fillHeaderStats(progress);
+        const drawerXP = document.getElementById('drawerXP');
+        const drawerStreak = document.getElementById('drawerStreak');
+        const drawerLessons = document.getElementById('drawerLessons');
+        if (drawerXP) drawerXP.textContent = progress.xp;
+        if (drawerStreak) drawerStreak.textContent = progress.streak;
+        if (drawerLessons) drawerLessons.textContent = progress.completed;
+        bindDrawer();
+
+        const form = document.getElementById('accountForm');
+        const status = document.getElementById('accountStatus');
+
+        document.getElementById('profileName').value = profile.name || '';
+        document.getElementById('profileEmail').value = profile.email || '';
+        const avatarPreview = document.getElementById('avatarPreview');
+        const avatarInput = document.getElementById('profileAvatar');
+        const removeAvatar = document.getElementById('removeAvatar');
+
+        document.getElementById('profileBio').value = profile.bio || '';
+        document.getElementById('profileCollege').value = profile.college || '';
+        document.getElementById('profileDepartment').value = profile.department || '';
+        document.getElementById('profilePassOut').value = profile.passOutYear || '';
+        document.getElementById('profileDesignation').value = profile.designation || '';
+
+        function renderAvatar(value) {
+            if (value) {
+                avatarPreview.style.backgroundImage = `url(${value})`;
+                avatarPreview.textContent = '';
+            } else {
+                avatarPreview.style.backgroundImage = '';
+                avatarPreview.textContent = '👤';
+            }
+        }
+
+        renderAvatar(profile.avatar || '');
+
+        avatarInput.addEventListener('change', () => {
+            const file = avatarInput.files && avatarInput.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = () => {
+                profile.avatar = reader.result;
+                renderAvatar(profile.avatar);
+            };
+            reader.readAsDataURL(file);
+        });
+
+        removeAvatar.addEventListener('click', () => {
+            profile.avatar = '';
+            avatarInput.value = '';
+            renderAvatar('');
+        });
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const updated = {
+                name: document.getElementById('profileName').value.trim(),
+                email: profile.email,
+                avatar: profile.avatar || '',
+                bio: document.getElementById('profileBio').value.trim(),
+                college: document.getElementById('profileCollege').value.trim(),
+                department: document.getElementById('profileDepartment').value.trim(),
+                passOutYear: document.getElementById('profilePassOut').value.trim(),
+                designation: document.getElementById('profileDesignation').value.trim()
+            };
+            localStorage.setItem(getProfileKey(profile.email), JSON.stringify(updated));
+            status.hidden = false;
+            status.textContent = 'Saved';
+            setTimeout(() => {
+                status.hidden = true;
+            }, 1200);
+        });
+    </script>
+</body>
+</html>
+
