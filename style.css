@@ -169,21 +169,21 @@ body {
         }
 
         .language-card:hover {
-            border-color: var(--accent-blue);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+            border-color: var(--lang-color, var(--accent-blue));
+            transform: translateY(-7px) scale(1.015);
+            box-shadow: 0 14px 40px var(--lang-glow, rgba(59,130,246,0.3));
         }
 
         .language-card:hover::before {
             transform: scaleX(1);
         }
 
-        .language-card.python { --lang-color: var(--accent-blue); }
-        .language-card.javascript { --lang-color: var(--accent-orange); }
-        .language-card.cpp { --lang-color: var(--accent-purple); }
-        .language-card.java { --lang-color: var(--accent-red); }
-        .language-card.c { --lang-color: #22c55e; }
-        .language-card.sql { --lang-color: var(--accent-green); }
+        .language-card.python     { --lang-color: var(--accent-blue);   --lang-glow: rgba(59,130,246,0.38); }
+        .language-card.javascript  { --lang-color: var(--accent-orange); --lang-glow: rgba(245,158,11,0.38); }
+        .language-card.cpp         { --lang-color: var(--accent-purple); --lang-glow: rgba(139,92,246,0.38); }
+        .language-card.java        { --lang-color: var(--accent-red);    --lang-glow: rgba(239,68,68,0.38);  }
+        .language-card.c           { --lang-color: #22c55e;              --lang-glow: rgba(34,197,94,0.38);  }
+        .language-card.sql         { --lang-color: var(--accent-green);  --lang-glow: rgba(16,185,129,0.38); }
 
         .language-card.coming-soon {
             opacity: 0.85;
@@ -205,9 +205,62 @@ body {
             display: inline-block;
         }
 
+        /* SVG course logo (fallback — hidden when video is active) */
+        .language-icon:not(.has-video) {
+            width: 68px;
+            height: 68px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        filter 0.3s ease;
+        }
+
+        .course-svg {
+            width: 68px;
+            height: 68px;
+            display: block;
+            filter: drop-shadow(0 3px 10px rgba(0,0,0,0.22));
+        }
+
+        .language-card:hover .language-icon:not(.has-video) {
+            transform: scale(1.18) translateY(-5px);
+            filter: drop-shadow(0 6px 16px var(--lang-glow, rgba(59,130,246,0.45)));
+        }
+
+        /* Card entrance animation */
+        @keyframes cardFadeUp {
+            from { opacity: 0; transform: translateY(36px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .language-grid .language-card {
+            animation: cardFadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+        .language-grid .language-card:nth-child(1) { animation-delay: 0.05s; }
+        .language-grid .language-card:nth-child(2) { animation-delay: 0.13s; }
+        .language-grid .language-card:nth-child(3) { animation-delay: 0.21s; }
+        .language-grid .language-card:nth-child(4) { animation-delay: 0.29s; }
+        .language-grid .language-card:nth-child(5) { animation-delay: 0.37s; }
+        .language-grid .language-card:nth-child(6) { animation-delay: 0.45s; }
+
         .language-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
+        }
+
+        /* When SVG logo is present (no video) font-size is irrelevant; reset it */
+        .language-icon:not(.has-video) {
+            font-size: 0;
+        }
+
+        /* Size any inline SVGs that don't carry the .course-svg class */
+        .language-icon:not(.has-video) svg:not(.course-svg) {
+            width: 68px;
+            height: 68px;
+            display: block;
+            filter: drop-shadow(0 3px 10px rgba(0,0,0,0.22));
         }
 
         .language-icon.has-video {
@@ -508,37 +561,77 @@ body {
         }
 
         .catalog-toolbar {
-            margin-bottom: 1.35rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
         }
 
         .catalog-search {
+            display: block;
+            width: 100%;
+            max-width: 560px;
+        }
+
+        .catalog-search-wrap {
+            position: relative;
             display: flex;
-            flex-direction: column;
-            gap: 0.55rem;
-            font-weight: 700;
+            align-items: center;
+        }
+
+        .catalog-search-icon {
+            position: absolute;
+            left: 1rem;
+            width: 18px;
+            height: 18px;
+            color: var(--text-secondary);
+            pointer-events: none;
+            flex-shrink: 0;
         }
 
         .catalog-search input {
             width: 100%;
-            padding: 1rem 1.1rem;
-            border-radius: 16px;
-            border: 1px solid rgba(148, 163, 184, 0.24);
-            background: rgba(15, 23, 42, 0.88);
+            padding: 0.75rem 3.2rem 0.75rem 2.75rem;
+            border-radius: 999px;
+            border: 1.5px solid rgba(148, 163, 184, 0.28);
+            background: var(--bg-medium);
             color: var(--text-primary);
             font: inherit;
+            font-size: 0.95rem;
             outline: none;
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+        }
+
+        .catalog-search input::placeholder {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
         }
 
         .catalog-search input:focus {
-            border-color: rgba(59, 130, 246, 0.8);
-            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15), 0 4px 18px rgba(0,0,0,0.18);
+        }
+
+        .catalog-courses-count {
+            position: absolute;
+            right: 1rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            pointer-events: none;
         }
 
         .catalog-grid {
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 1.1rem;
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+
+        /* Hidden progress placeholder keeps locked cards same height as available cards */
+        .scc-prog-hidden {
+            visibility: hidden;
         }
 
         .catalog-card {
@@ -641,6 +734,198 @@ body {
             color: var(--text-secondary);
         }
 
+        /* ── Spotlight course cards (all-courses page) ────── */
+
+        .scc-card {
+            background: var(--bg-medium);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top color bar — same style as home cards */
+        .scc-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--lang-color, var(--accent-blue)), var(--accent-purple));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            z-index: 5;
+        }
+
+        .scc-card:hover {
+            border-color: var(--lang-color, var(--accent-blue));
+            transform: translateY(-7px) scale(1.015);
+            box-shadow: 0 14px 40px var(--lang-glow, rgba(59,130,246,0.3));
+        }
+
+        .scc-card:hover::before { transform: scaleX(1); }
+
+        /* Per-language color tokens (mirrors home cards) */
+        .scc-card.python      { --lang-color: var(--accent-blue);   --lang-glow: rgba(59,130,246,0.38); }
+        .scc-card.javascript  { --lang-color: var(--accent-orange); --lang-glow: rgba(245,158,11,0.38); }
+        .scc-card.cpp         { --lang-color: var(--accent-purple); --lang-glow: rgba(139,92,246,0.38); }
+        .scc-card.java        { --lang-color: var(--accent-red);    --lang-glow: rgba(239,68,68,0.38);  }
+        .scc-card.c           { --lang-color: #22c55e;              --lang-glow: rgba(34,197,94,0.38);  }
+        .scc-card.sql         { --lang-color: var(--accent-green);  --lang-glow: rgba(16,185,129,0.38); }
+
+        /* ── Image / thumbnail area ── */
+        .scc-thumb {
+            width: 100%;
+            height: 190px;
+            flex-shrink: 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(145deg,
+                color-mix(in srgb, var(--lang-color, var(--accent-blue)) 32%, var(--bg-dark)) 0%,
+                color-mix(in srgb, var(--lang-color, var(--accent-blue)) 9%, var(--bg-dark)) 100%);
+        }
+
+        /* When user adds <img> inside scc-thumb it will fill the frame */
+        .scc-thumb img {
+            position: absolute;
+            inset: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+
+        /* Subtle glow orb behind the logo */
+        .scc-thumb::before {
+            content: '';
+            position: absolute;
+            width: 160px; height: 160px;
+            border-radius: 50%;
+            background: var(--lang-color, var(--accent-blue));
+            opacity: 0.13;
+            filter: blur(42px);
+            pointer-events: none;
+        }
+
+        /* SVG logo centered in thumb */
+        .scc-thumb-inner {
+            position: relative;
+            z-index: 2;
+            font-size: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: drop-shadow(0 4px 14px rgba(0,0,0,0.35));
+            transition: transform 0.38s cubic-bezier(0.34,1.56,0.64,1), filter 0.3s ease;
+        }
+
+        .scc-thumb-inner svg {
+            width: 76px;
+            height: 76px;
+            display: block;
+        }
+
+        .scc-card:hover .scc-thumb-inner {
+            transform: scale(1.13) translateY(-4px);
+            filter: drop-shadow(0 8px 24px var(--lang-glow, rgba(59,130,246,0.5)));
+        }
+
+        /* Popular badge — top right of thumb */
+        .scc-badge {
+            position: absolute;
+            top: 10px; right: 10px;
+            z-index: 3;
+            padding: 0.2rem 0.62rem;
+            border-radius: 999px;
+            font-size: 0.66rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+        }
+
+        .scc-badge-popular {
+            background: rgba(245, 158, 11, 0.2);
+            color: #fbbf24;
+            border: 1px solid rgba(245, 158, 11, 0.45);
+        }
+
+        /* ── Card body ── */
+        .scc-body {
+            padding: 1.25rem 1.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .scc-title {
+            font-size: 1.12rem;
+            font-weight: 800;
+            color: var(--lang-color, var(--text-primary));
+            margin-bottom: 0.4rem;
+        }
+
+        .scc-desc {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+            margin: 0 0 0.9rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .scc-lesson-count {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 0.38rem;
+            display: block;
+        }
+
+        .scc-prog-track {
+            height: 6px;
+            background: var(--bg-light);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .scc-prog-fill {
+            height: 100%;
+            border-radius: 3px;
+            background: linear-gradient(90deg, var(--lang-color, var(--accent-blue)), var(--accent-purple));
+            transition: width 0.5s ease;
+        }
+
+        .scc-foot {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        /* Locked / coming-soon cards */
+        .scc-locked {
+            opacity: 0.82;
+        }
+
+        .scc-locked .scc-thumb {
+            filter: saturate(0.35);
+        }
+
+        .enroll-btn-locked {
+            background: rgba(148, 163, 184, 0.12) !important;
+            color: var(--text-secondary) !important;
+            cursor: not-allowed !important;
+            box-shadow: none !important;
+            transform: none !important;
+        }
+
         .interview-grid {
             display: grid;
             grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -708,7 +993,7 @@ body {
 
 @media (max-width: 1400px) {
     .catalog-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .interview-grid {
@@ -758,6 +1043,10 @@ body {
     .catalog-grid,
     .interview-grid {
         grid-template-columns: 1fr;
+    }
+
+    .scc-desc {
+        -webkit-line-clamp: 3;
     }
 
     .catalog-card {
@@ -1877,6 +2166,12 @@ body {
 .nav-dropdown-toggle .nav-dropdown-arrow {
     font-size: 0.85rem;
     line-height: 1;
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+.nav-dropdown.open .nav-dropdown-toggle .nav-dropdown-arrow {
+    transform: rotate(180deg);
 }
 
 .nav-dropdown-toggle {
@@ -1890,6 +2185,12 @@ body {
 .nav-dropdown-arrow {
     font-size: 0.85rem;
     line-height: 1;
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+.nav-dropdown.open .nav-dropdown-arrow {
+    transform: rotate(180deg);
 }
 
 .nav-dropdown-menu {

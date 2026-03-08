@@ -694,17 +694,34 @@ document.addEventListener("DOMContentLoaded", () => {
     function runWelcomeTyping() {
         const el = document.querySelector(".home-welcome");
         if (!el) return;
-        const text = (el.dataset.fullText || el.textContent || "").trim();
-        if (!text) return;
-        el.dataset.fullText = text;
+        const phrases = ["Welcome to Code Nectous", "Feel free to learn"];
         el.textContent = "";
         el.classList.add("typing");
+        let phraseIndex = 0;
         let index = 0;
+        let deleting = false;
         const step = () => {
-            if (index <= text.length) {
+            const text = phrases[phraseIndex];
+            if (!deleting) {
                 el.textContent = text.slice(0, index);
-                index += 1;
-                window.setTimeout(step, 60);
+                index++;
+                if (index > text.length) {
+                    deleting = true;
+                    window.setTimeout(step, 1800);
+                    return;
+                }
+                window.setTimeout(step, 75);
+            } else {
+                el.textContent = text.slice(0, index);
+                index--;
+                if (index < 0) {
+                    deleting = false;
+                    index = 0;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    window.setTimeout(step, 500);
+                    return;
+                }
+                window.setTimeout(step, 40);
             }
         };
         step();

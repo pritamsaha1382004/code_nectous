@@ -137,22 +137,13 @@
     </aside>
 
     <main class="container catalog-page">
-        <section class="catalog-hero interview-hero">
-            <div>
-                <p class="catalog-eyebrow">Interview Questions</p>
-                <h1>Browse locked interview question tracks</h1>
-                <p class="catalog-subtitle">Every card is visible for planning, but the feature is intentionally locked for now.</p>
-            </div>
-            <div class="catalog-summary">
-                <strong id="interviewQuestionsCount">0 topics</strong>
-                <span>Search by course name or keyword</span>
-            </div>
-        </section>
 
         <section class="catalog-toolbar">
             <label class="catalog-search" for="interviewQuestionsSearch">
-                <span>Search Interview Questions</span>
-                <input id="interviewQuestionsSearch" type="search" placeholder="Search Java, Network Security, Data Science...">
+                <div class="catalog-search-wrap">
+                    <svg class="catalog-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="17" y1="17" x2="22" y2="22"/></svg>
+                    <input id="interviewQuestionsSearch" type="search" placeholder="Search Python, Java, SQL, C++..." autocomplete="off">
+                </div>
             </label>
         </section>
 

@@ -137,22 +137,13 @@
     </aside>
 
     <main class="container catalog-page">
-        <section class="catalog-hero">
-            <div>
-                <p class="catalog-eyebrow">Course Catalog</p>
-                <h1>All available and upcoming courses</h1>
-                <p class="catalog-subtitle">The page is structured for future login-only access. For now, browsing is open and locked courses show a toast instead of opening.</p>
-            </div>
-            <div class="catalog-summary">
-                <strong id="allCoursesCount">0 courses</strong>
-                <span>Search by subject, topic, or keyword</span>
-            </div>
-        </section>
 
         <section class="catalog-toolbar">
             <label class="catalog-search" for="allCoursesSearch">
-                <span>Search Courses</span>
-                <input id="allCoursesSearch" type="search" placeholder="Search Python, DSA, Operating System, Cryptography...">
+                <div class="catalog-search-wrap">
+                    <svg class="catalog-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="17" y1="17" x2="22" y2="22"/></svg>
+                    <input id="allCoursesSearch" type="search" placeholder="Search Python, Java, SQL, C++..." autocomplete="off">
+                </div>
             </label>
         </section>
 

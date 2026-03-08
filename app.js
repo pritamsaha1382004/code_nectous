@@ -1465,26 +1465,1957 @@ def bfs(root):
 },
 
     // ========= DFS =========
-    {
-        id: 'py-adv-dfs-practice',
-        type: 'practice',
-        title: 'DFS Concept',
-        description: 'Print DFS order',
-        content: `
-            <div class="practice-section">
-                <div class="challenge-goal">
-                    <h4>Goal</h4>
-                    <ul>
-                        <li>Print DFS traversal: 1 2 3</li>
-                    </ul>
-                </div>
-            </div>
-        `,
-        starterCode: `# Write your code here\n`,
-        solution: `stack = [1, 2, 3]\nwhile stack:\n    print(stack.pop())`,
-        test: (output) => output.replace(/\\s/g, '') === '321',
-        xp: 10
-    }
+{
+    id: "algorithm-topic-25",
+    type: "theory",
+    title: "Depth First Search (DFS)",
+    description: "Understanding the DFS traversal algorithm used in graphs and trees",
+    content: `
+
+<style>
+.theory-content {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    padding: 20px;
+}
+
+.theory-content h2 {
+    margin-top: 30px;
+}
+
+.code-example {
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+}
+
+.code-example code {
+    color: #00ffcc;
+}
+
+.image-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-section img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+</style>
+
+<div class="theory-content">
+
+<h2>📌 Introduction</h2>
+
+<p>
+Depth First Search (DFS) is a graph traversal algorithm.
+It explores as far as possible along each branch before backtracking.
+DFS is commonly used in graphs, trees, maze solving, and path finding.
+</p>
+
+<hr>
+
+<h2>🔹 1. How DFS Works</h2>
+
+<p>
+DFS starts from a node and visits its neighbor.
+It keeps going deeper until no unvisited nodes remain,
+then it backtracks to explore other paths.
+</p>
+
+<p>Example traversal order:</p>
+
+<div class="code-example">
+<pre><code>Graph:
+
+    A
+   / \\
+  B   C
+ / \\   \\
+D   E   F
+
+DFS Traversal:
+
+A → B → D → E → C → F</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 2. DFS Using Recursion (Python)</h2>
+
+<div class="code-example">
+<pre><code>graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': [],
+    'F': []
+}
+
+visited = set()
+
+def dfs(node):
+    if node not in visited:
+        print(node)
+        visited.add(node)
+
+        for neighbor in graph[node]:
+            dfs(neighbor)
+
+dfs('A')</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>A
+B
+D
+E
+C
+F</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 3. DFS Using Stack (Iterative)</h2>
+
+<div class="code-example">
+<pre><code>graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': [],
+    'F': []
+}
+
+stack = ['A']
+visited = set()
+
+while stack:
+    node = stack.pop()
+
+    if node not in visited:
+        print(node)
+        visited.add(node)
+
+        stack.extend(graph[node])</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>A
+C
+F
+B
+E
+D</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 4. Applications of DFS</h2>
+
+<ul>
+<li>Graph traversal</li>
+<li>Maze solving</li>
+<li>Topological sorting</li>
+<li>Cycle detection</li>
+<li>Connected components</li>
+<li>Backtracking algorithms</li>
+</ul>
+
+<hr>
+
+<h2>🔹 5. Time Complexity</h2>
+
+<div class="code-example">
+<pre><code>Time Complexity:  O(V + E)
+
+V = Number of vertices
+E = Number of edges</code></pre>
+</div>
+
+<hr>
+
+<h2>🚀 Conclusion</h2>
+
+<p>
+Depth First Search is one of the fundamental graph algorithms.
+It explores deeper nodes first before backtracking.
+DFS is widely used in competitive programming,
+graph theory, and problem solving.
+</p>
+
+</div>
+`,
+    xp: 20
+},
+{
+    id: "python-topic-26",
+    type: "theory",
+    title: "Classes in Python",
+    description: "Understanding how classes work in Python for object oriented programming",
+    content: `
+
+<style>
+.theory-content {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    padding: 20px;
+}
+
+.theory-content h2 {
+    margin-top: 30px;
+}
+
+.code-example {
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+}
+
+.code-example code {
+    color: #00ffcc;
+}
+
+.image-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-section img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+</style>
+
+<div class="theory-content">
+
+<h2>📌 Introduction</h2>
+
+<p>
+A class in Python is a blueprint used to create objects.
+It allows developers to group data and functions together.
+Classes are the foundation of Object-Oriented Programming (OOP).
+</p>
+
+
+<hr>
+
+<h2>🔹 1. Creating a Class</h2>
+
+<p>
+In Python, a class is created using the <strong>class</strong> keyword.
+</p>
+
+<div class="code-example">
+<pre><code>class Person:
+    name = "Pritam"</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 2. Creating an Object</h2>
+
+<p>
+An object is an instance of a class.
+</p>
+
+<div class="code-example">
+<pre><code>class Person:
+    name = "Pritam"
+
+p1 = Person()
+
+print(p1.name)</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>Pritam</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 3. Using __init__ Constructor</h2>
+
+<p>
+The <strong>__init__()</strong> method is a constructor that runs when
+an object is created.
+</p>
+
+<div class="code-example">
+<pre><code>class Person:
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+p1 = Person("Rahul", 21)
+
+print(p1.name)
+print(p1.age)</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>Rahul
+21</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 4. Class Methods</h2>
+
+<p>
+Classes can contain functions called methods.
+</p>
+
+<div class="code-example">
+<pre><code>class Student:
+
+    def __init__(self, name):
+        self.name = name
+
+    def greet(self):
+        print("Hello", self.name)
+
+s1 = Student("Pritam")
+
+s1.greet()</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>Hello Pritam</code></pre>
+</div>
+
+<hr>
+
+<h2>🚀 Conclusion</h2>
+
+<p>
+Classes are a core part of Python programming.
+They help organize code, represent real-world objects,
+and enable powerful object-oriented programming concepts.
+</p>
+
+</div>
+`,
+    xp: 20
+},
+{
+    id: "python-topic-27",
+    type: "theory",
+    title: "Encapsulation in Python",
+    description: "Understanding how encapsulation protects data in object oriented programming",
+    content: `
+
+<style>
+.theory-content {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    padding: 20px;
+}
+
+.theory-content h2 {
+    margin-top: 30px;
+}
+
+.code-example {
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+}
+
+.code-example code {
+    color: #00ffcc;
+}
+
+.image-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-section img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+</style>
+
+<div class="theory-content">
+
+<h2>📌 Introduction</h2>
+
+<p>
+Encapsulation is one of the four main pillars of Object-Oriented Programming.
+It means binding data and methods together inside a class
+and restricting direct access to some parts of the object.
+</p>
+
+<div class="image-section">
+<img src="assets/images/encapsulation.webp" alt="Encapsulation">
+<p><em>Encapsulation protects internal data of a class.</em></p>
+</div>
+
+<hr>
+
+<h2>🔹 1. What is Encapsulation?</h2>
+
+<p>
+Encapsulation hides the internal details of a class and allows
+access only through specific methods.
+</p>
+
+<ul>
+<li>Protects data from accidental modification</li>
+<li>Improves code security</li>
+<li>Improves maintainability</li>
+</ul>
+
+<hr>
+
+<h2>🔹 2. Example Without Encapsulation</h2>
+
+<div class="code-example">
+<pre><code>class BankAccount:
+
+    def __init__(self, balance):
+        self.balance = balance
+
+account = BankAccount(1000)
+
+print(account.balance)</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>1000</code></pre>
+</div>
+
+<p>
+Here the balance can be accessed directly.
+</p>
+
+<hr>
+
+<h2>🔹 3. Encapsulation Using Private Variables</h2>
+
+<p>
+In Python, private variables are created using double underscores.
+</p>
+
+<div class="code-example">
+<pre><code>class BankAccount:
+
+    def __init__(self, balance):
+        self.__balance = balance
+
+    def show_balance(self):
+        print(self.__balance)
+
+account = BankAccount(2000)
+
+account.show_balance()</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>2000</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 4. Getter and Setter Methods</h2>
+
+<p>
+Getter and setter methods allow controlled access to private variables.
+</p>
+
+<div class="code-example">
+<pre><code>class Student:
+
+    def __init__(self):
+        self.__marks = 0
+
+    def set_marks(self, marks):
+        self.__marks = marks
+
+    def get_marks(self):
+        return self.__marks
+
+s = Student()
+
+s.set_marks(95)
+
+print(s.get_marks())</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>95</code></pre>
+</div>
+
+<hr>
+
+<h2>🚀 Conclusion</h2>
+
+<p>
+Encapsulation ensures that sensitive data is protected
+and can only be accessed through controlled methods.
+It improves security, modularity, and maintainability
+in object-oriented programs.
+</p>
+
+</div>
+`,
+    xp: 20
+},
+{
+    id: "python-topic-28",
+    type: "theory",
+    title: "Inheritance in Python",
+    description: "Understanding how classes inherit properties and methods from other classes",
+    content: `
+
+<style>
+.theory-content {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    padding: 20px;
+}
+
+.theory-content h2 {
+    margin-top: 30px;
+}
+
+.code-example {
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+}
+
+.code-example code {
+    color: #00ffcc;
+}
+
+.image-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-section img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+</style>
+
+<div class="theory-content">
+
+<h2>📌 Introduction</h2>
+
+<p>
+Inheritance is one of the core concepts of Object-Oriented Programming.
+It allows one class to inherit properties and methods from another class.
+This helps reuse code and build hierarchical relationships between classes.
+</p>
+
+<div class="image-section">
+<img src="assets/images/inheritance_python.webp" alt="Python Inheritance">
+<p><em>Child classes inherit properties and methods from parent classes.</em></p>
+</div>
+
+<hr>
+
+<h2>🔹 1. What is Inheritance?</h2>
+
+<p>
+Inheritance allows a new class (child class) to use the features of an existing class (parent class).
+</p>
+
+<ul>
+<li>Parent Class → Base class</li>
+<li>Child Class → Derived class</li>
+</ul>
+
+<hr>
+
+<h2>🔹 2. Basic Inheritance Example</h2>
+
+<div class="code-example">
+<pre><code>class Animal:
+
+    def speak(self):
+        print("Animal makes a sound")
+
+
+class Dog(Animal):
+
+    def bark(self):
+        print("Dog barks")
+
+
+d = Dog()
+
+d.speak()
+d.bark()</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>Animal makes a sound
+Dog barks</code></pre>
+</div>
+
+<p>
+The Dog class inherits the speak() method from the Animal class.
+</p>
+
+<hr>
+
+<h2>🔹 3. Using super() Function</h2>
+
+<p>
+The <strong>super()</strong> function allows a child class to call methods from the parent class.
+</p>
+
+<div class="code-example">
+<pre><code>class Person:
+
+    def __init__(self, name):
+        self.name = name
+
+
+class Student(Person):
+
+    def __init__(self, name, grade):
+        super().__init__(name)
+        self.grade = grade
+
+
+s = Student("Pritam", "A")
+
+print(s.name)
+print(s.grade)</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>Pritam
+A</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 4. Types of Inheritance</h2>
+
+<ul>
+<li>Single Inheritance</li>
+<li>Multiple Inheritance</li>
+<li>Multilevel Inheritance</li>
+<li>Hierarchical Inheritance</li>
+<li>Hybrid Inheritance</li>
+</ul>
+
+<hr>
+
+<h2>🚀 Conclusion</h2>
+
+<p>
+Inheritance allows classes to reuse existing code and create
+a logical hierarchy between objects.
+It improves maintainability and reduces duplication in programs.
+</p>
+
+</div>
+`,
+    xp: 20
+},
+{
+    id: "python-topic-29",
+    type: "theory",
+    title: "Polymorphism in Python",
+    description: "Understanding how the same method name can behave differently in different classes",
+    content: `
+
+<style>
+.theory-content {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    padding: 20px;
+}
+
+.theory-content h2 {
+    margin-top: 30px;
+}
+
+.code-example {
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+}
+
+.code-example code {
+    color: #00ffcc;
+}
+
+.image-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-section img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+</style>
+
+<div class="theory-content">
+
+<h2>📌 Introduction</h2>
+
+<p>
+Polymorphism is one of the four pillars of Object-Oriented Programming.
+The word polymorphism means <strong>"many forms"</strong>.
+It allows the same method name to perform different actions
+depending on the object or class.
+</p>
+
+<div class="image-section">
+<img src="assets/images/polymorphism_python.gif" alt="Python Polymorphism">
+<p><em>One interface, multiple implementations.</em></p>
+</div>
+
+<hr>
+
+<h2>🔹 1. What is Polymorphism?</h2>
+
+<p>
+Polymorphism allows objects of different classes
+to respond to the same method call in different ways.
+</p>
+
+<ul>
+<li>Same method name</li>
+<li>Different behavior</li>
+<li>Improves flexibility</li>
+</ul>
+
+<hr>
+
+<h2>🔹 2. Polymorphism Example</h2>
+
+<div class="code-example">
+<pre><code>class Dog:
+
+    def sound(self):
+        print("Dog barks")
+
+
+class Cat:
+
+    def sound(self):
+        print("Cat meows")
+
+
+d = Dog()
+c = Cat()
+
+d.sound()
+c.sound()</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>Dog barks
+Cat meows</code></pre>
+</div>
+
+<p>
+Both classes use the same method name <strong>sound()</strong>,
+but the behavior is different.
+</p>
+
+<hr>
+
+<h2>🔹 3. Polymorphism with Functions</h2>
+
+<div class="code-example">
+<pre><code>class Bird:
+
+    def fly(self):
+        print("Bird flies")
+
+
+class Airplane:
+
+    def fly(self):
+        print("Airplane flies")
+
+
+def start_flying(obj):
+    obj.fly()
+
+
+b = Bird()
+a = Airplane()
+
+start_flying(b)
+start_flying(a)</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>Bird flies
+Airplane flies</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 4. Method Overriding</h2>
+
+<p>
+Polymorphism often appears through method overriding,
+where a child class provides its own implementation
+of a parent class method.
+</p>
+
+<div class="code-example">
+<pre><code>class Animal:
+
+    def speak(self):
+        print("Animal makes sound")
+
+
+class Dog(Animal):
+
+    def speak(self):
+        print("Dog barks")
+
+
+d = Dog()
+
+d.speak()</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>Dog barks</code></pre>
+</div>
+
+<hr>
+
+<h2>🚀 Conclusion</h2>
+
+<p>
+Polymorphism allows the same interface to be used for different data types.
+It improves flexibility, scalability, and code reuse in
+object-oriented programming.
+</p>
+
+</div>
+`,
+    xp: 20
+},
+{
+    id: "python-topic-30",
+    type: "theory",
+    title: "Abstraction in Python",
+    description: "Understanding how abstraction hides complex implementation details",
+    content: `
+
+<style>
+.theory-content {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    padding: 20px;
+}
+
+.theory-content h2 {
+    margin-top: 30px;
+}
+
+.code-example {
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+}
+
+.code-example code {
+    color: #00ffcc;
+}
+
+.image-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-section img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+</style>
+
+<div class="theory-content">
+
+<h2>📌 Introduction</h2>
+
+<p>
+Abstraction is one of the four pillars of Object-Oriented Programming.
+It focuses on hiding complex internal implementation details
+and showing only the necessary features of an object.
+</p>
+
+<div class="image-section">
+<img src="assets/images/abstraction.jpg" alt="Python Abstraction">
+<p><em>Abstraction hides complexity and shows only essential functionality.</em></p>
+</div>
+
+<hr>
+
+<h2>🔹 1. What is Abstraction?</h2>
+
+<p>
+Abstraction allows programmers to interact with objects
+without knowing how they are implemented internally.
+</p>
+
+<ul>
+<li>Hides internal implementation</li>
+<li>Shows only required functionality</li>
+<li>Improves code readability</li>
+<li>Reduces complexity</li>
+</ul>
+
+<hr>
+
+<h2>🔹 2. Real Life Example</h2>
+
+<p>
+When you drive a car, you use the steering wheel, accelerator,
+and brakes without knowing the internal engine mechanism.
+This is abstraction.
+</p>
+
+<hr>
+
+<h2>🔹 3. Abstraction Using Abstract Classes</h2>
+
+<p>
+Python provides abstraction using the <strong>abc module</strong>
+(Abstract Base Classes).
+</p>
+
+<div class="code-example">
+<pre><code>from abc import ABC, abstractmethod
+
+
+class Animal(ABC):
+
+    @abstractmethod
+    def sound(self):
+        pass
+
+
+class Dog(Animal):
+
+    def sound(self):
+        print("Dog barks")
+
+
+d = Dog()
+
+d.sound()</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>Dog barks</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 4. Why Abstraction is Important</h2>
+
+<ul>
+<li>Reduces program complexity</li>
+<li>Improves code maintainability</li>
+<li>Encourages modular design</li>
+<li>Provides a clear interface</li>
+</ul>
+
+<hr>
+
+<h2>🚀 Conclusion</h2>
+
+<p>
+Abstraction hides internal implementation details
+and exposes only the necessary functionality.
+It makes complex systems easier to use and maintain
+in object-oriented programming.
+</p>
+
+</div>
+`,
+    xp: 20
+},
+{
+    id: "python-topic-31",
+    type: "theory",
+    title: "List Comprehension in Python",
+    description: "Creating lists in a concise and efficient way",
+    content: `
+
+<style>
+.theory-content {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    padding: 20px;
+}
+
+.theory-content h2 {
+    margin-top: 30px;
+}
+
+.code-example {
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+}
+
+.code-example code {
+    color: #00ffcc;
+}
+</style>
+
+<div class="theory-content">
+
+<h2>📌 Introduction</h2>
+
+<p>
+List comprehension is a concise way to create lists in Python.
+It allows developers to generate lists using a single line of code
+instead of writing multiple lines with loops.
+</p>
+
+<hr>
+
+<h2>🔹 1. Basic List Creation</h2>
+
+<div class="code-example">
+<pre><code>numbers = [1, 2, 3, 4, 5]
+
+print(numbers)</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>[1, 2, 3, 4, 5]</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 2. Using List Comprehension</h2>
+
+<p>
+List comprehension allows creating lists using a single expression.
+</p>
+
+<div class="code-example">
+<pre><code>squares = [x*x for x in range(5)]
+
+print(squares)</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>[0, 1, 4, 9, 16]</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 3. List Comprehension with Condition</h2>
+
+<div class="code-example">
+<pre><code>even_numbers = [x for x in range(10) if x % 2 == 0]
+
+print(even_numbers)</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>[0, 2, 4, 6, 8]</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 4. Advantages of List Comprehension</h2>
+
+<ul>
+<li>Shorter and cleaner code</li>
+<li>Faster execution</li>
+<li>Improves readability</li>
+<li>Widely used in data processing</li>
+</ul>
+
+<hr>
+
+<h2>🚀 Conclusion</h2>
+
+<p>
+List comprehension is a powerful feature in Python
+that allows developers to create lists in a concise,
+readable, and efficient way.
+</p>
+
+</div>
+`,
+    xp: 20
+},
+{
+    id: "python-topic-32",
+    type: "theory",
+    title: "Decorators in Python",
+    description: "Understanding how decorators modify the behavior of functions",
+    content: `
+
+<style>
+.theory-content {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    padding: 20px;
+}
+
+.theory-content h2 {
+    margin-top: 30px;
+}
+
+.code-example {
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+}
+
+.code-example code {
+    color: #00ffcc;
+}
+</style>
+
+<div class="theory-content">
+
+<h2>📌 Introduction</h2>
+
+<p>
+A decorator in Python is a function that modifies the behavior
+of another function without changing its actual code.
+Decorators are widely used for logging, authentication,
+timing functions, and access control.
+</p>
+
+<hr>
+
+<h2>🔹 1. Functions as Objects</h2>
+
+<p>
+In Python, functions can be passed as arguments to other functions.
+</p>
+
+<div class="code-example">
+<pre><code>def greet():
+    print("Hello")
+
+def call_function(func):
+    func()
+
+call_function(greet)</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>Hello</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 2. Creating a Decorator</h2>
+
+<div class="code-example">
+<pre><code>def my_decorator(func):
+
+    def wrapper():
+        print("Before function runs")
+        func()
+        print("After function runs")
+
+    return wrapper
+
+
+def say_hello():
+    print("Hello World")
+
+decorated = my_decorator(say_hello)
+
+decorated()</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>Before function runs
+Hello World
+After function runs</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 3. Using @ Decorator Syntax</h2>
+
+<p>
+Python provides a cleaner way to apply decorators using the <strong>@</strong> symbol.
+</p>
+
+<div class="code-example">
+<pre><code>def my_decorator(func):
+
+    def wrapper():
+        print("Start")
+        func()
+        print("End")
+
+    return wrapper
+
+
+@my_decorator
+def greet():
+    print("Hello")
+
+greet()</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>Start
+Hello
+End</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 4. Why Decorators Are Useful</h2>
+
+<ul>
+<li>Add functionality to existing functions</li>
+<li>Avoid code repetition</li>
+<li>Improve code organization</li>
+<li>Used in frameworks like Flask and Django</li>
+</ul>
+
+<hr>
+
+<h2>🚀 Conclusion</h2>
+
+<p>
+Decorators provide a powerful way to extend or modify
+function behavior without altering the original function.
+They are widely used in advanced Python programming
+and web development frameworks.
+</p>
+
+</div>
+`,
+    xp: 10
+},
+{
+    id: "python-topic-33",
+    type: "theory",
+    title: "Generators in Python",
+    description: "Understanding how generators produce values lazily using yield",
+    content: `
+
+<style>
+.theory-content {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    padding: 20px;
+}
+
+.theory-content h2 {
+    margin-top: 30px;
+}
+
+.code-example {
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+}
+
+.code-example code {
+    color: #00ffcc;
+}
+</style>
+
+<div class="theory-content">
+
+<h2>📌 Introduction</h2>
+
+<p>
+Generators are a special type of function in Python that return
+an iterator. Instead of returning all values at once,
+generators produce values one at a time using the <strong>yield</strong> keyword.
+</p>
+
+<p>
+This makes generators memory efficient and useful for working with
+large data sets.
+</p>
+
+<hr>
+
+<h2>🔹 1. Normal Function Example</h2>
+
+<div class="code-example">
+<pre><code>def numbers():
+    return [1, 2, 3]
+
+print(numbers())</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>[1, 2, 3]</code></pre>
+</div>
+
+<p>
+This function returns all values at once.
+</p>
+
+<hr>
+
+<h2>🔹 2. Generator Function Using yield</h2>
+
+<div class="code-example">
+<pre><code>def numbers():
+
+    yield 1
+    yield 2
+    yield 3
+
+gen = numbers()
+
+print(next(gen))
+print(next(gen))
+print(next(gen))</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>1
+2
+3</code></pre>
+</div>
+
+<p>
+Each call to <strong>next()</strong> returns the next value.
+</p>
+
+<hr>
+
+<h2>🔹 3. Generator with Loop</h2>
+
+<div class="code-example">
+<pre><code>def count_up_to(n):
+
+    for i in range(n):
+        yield i
+
+for num in count_up_to(5):
+    print(num)</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>0
+1
+2
+3
+4</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 4. Advantages of Generators</h2>
+
+<ul>
+<li>Memory efficient</li>
+<li>Lazy evaluation</li>
+<li>Good for large datasets</li>
+<li>Improves performance</li>
+</ul>
+
+<hr>
+
+<h2>🚀 Conclusion</h2>
+
+<p>
+Generators allow Python programs to produce values one at a time
+instead of storing everything in memory.
+They are useful when working with large data streams
+or infinite sequences.
+</p>
+
+</div>
+`,
+    xp: 10
+},
+{
+    id: "python-topic-34",
+    type: "theory",
+    title: "File Handling in Python",
+    description: "Understanding how to create, read, write, and append files in Python",
+    content: `
+
+<style>
+.theory-content {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    padding: 20px;
+}
+
+.theory-content h2 {
+    margin-top: 30px;
+}
+
+.code-example {
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+}
+
+.code-example code {
+    color: #00ffcc;
+}
+</style>
+
+<div class="theory-content">
+
+<h2>📌 Introduction</h2>
+
+<p>
+File handling allows Python programs to store data permanently
+by reading from or writing to files. This is useful when working
+with logs, configuration files, or user data.
+</p>
+
+<hr>
+
+<h2>🔹 1. Opening a File</h2>
+
+<p>
+Python provides the <strong>open()</strong> function to open a file.
+</p>
+
+<div class="code-example">
+<pre><code>file = open("example.txt", "r")</code></pre>
+</div>
+
+<p>
+Common file modes:
+</p>
+
+<ul>
+<li><strong>r</strong> → Read file</li>
+<li><strong>w</strong> → Write file (overwrites)</li>
+<li><strong>a</strong> → Append file</li>
+<li><strong>x</strong> → Create file</li>
+</ul>
+
+<hr>
+
+<h2>🔹 2. Reading a File</h2>
+
+<div class="code-example">
+<pre><code>file = open("example.txt", "r")
+
+content = file.read()
+
+print(content)
+
+file.close()</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>Hello Python</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 3. Writing to a File</h2>
+
+<div class="code-example">
+<pre><code>file = open("example.txt", "w")
+
+file.write("Hello Python")
+
+file.close()</code></pre>
+</div>
+
+<p>
+This will create or overwrite the file.
+</p>
+
+<hr>
+
+<h2>🔹 4. Appending to a File</h2>
+
+<div class="code-example">
+<pre><code>file = open("example.txt", "a")
+
+file.write("\\nWelcome to file handling")
+
+file.close()</code></pre>
+</div>
+
+<h4>Output (file content):</h4>
+
+<div class="code-example">
+<pre><code>Hello Python
+Welcome to file handling</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 5. Using with Statement</h2>
+
+<p>
+The <strong>with</strong> statement automatically closes the file.
+</p>
+
+<div class="code-example">
+<pre><code>with open("example.txt", "r") as file:
+    print(file.read())</code></pre>
+</div>
+
+<hr>
+
+<h2>🚀 Conclusion</h2>
+
+<p>
+File handling allows Python programs to store and retrieve
+data from files. Using the with statement is recommended
+because it automatically manages file closing.
+</p>
+
+</div>
+`,
+    xp: 10
+},
+{
+    id: "python-topic-35",
+    type: "theory",
+    title: "Exception Handling in Python",
+    description: "Handling runtime errors using try, except, else, and finally",
+    content: `
+
+<style>
+.theory-content {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    padding: 20px;
+}
+
+.theory-content h2 {
+    margin-top: 30px;
+}
+
+.code-example {
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+}
+
+.code-example code {
+    color: #00ffcc;
+}
+</style>
+
+<div class="theory-content">
+
+<h2>📌 Introduction</h2>
+
+<p>
+Exception handling allows Python programs to deal with runtime errors
+without crashing the program. When an error occurs, Python raises an
+exception which can be handled using special blocks like
+<strong>try</strong> and <strong>except</strong>.
+</p>
+
+<hr>
+
+<h2>🔹 1. Basic try and except</h2>
+
+<div class="code-example">
+<pre><code>try:
+    x = 10 / 0
+except:
+    print("An error occurred")</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>An error occurred</code></pre>
+</div>
+
+<p>
+Here the program does not crash even though division by zero occurs.
+</p>
+
+<hr>
+
+<h2>🔹 2. Catching Specific Exceptions</h2>
+
+<div class="code-example">
+<pre><code>try:
+    number = int("abc")
+except ValueError:
+    print("Invalid conversion")</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>Invalid conversion</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 3. Using else Block</h2>
+
+<p>
+The <strong>else</strong> block executes if no exception occurs.
+</p>
+
+<div class="code-example">
+<pre><code>try:
+    num = 10 / 2
+except:
+    print("Error occurred")
+else:
+    print("Result:", num)</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>Result: 5.0</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 4. Using finally Block</h2>
+
+<p>
+The <strong>finally</strong> block always runs whether an exception occurs or not.
+</p>
+
+<div class="code-example">
+<pre><code>try:
+    print("Running program")
+except:
+    print("Error")
+finally:
+    print("Execution finished")</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>Running program
+Execution finished</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 5. Raising Custom Exceptions</h2>
+
+<div class="code-example">
+<pre><code>age = 16
+
+if age < 18:
+    raise Exception("You must be 18 or older")</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>Exception: You must be 18 or older</code></pre>
+</div>
+
+<hr>
+
+<h2>🚀 Conclusion</h2>
+
+<p>
+Exception handling helps make programs more reliable and user friendly.
+By handling errors properly, developers can prevent unexpected crashes
+and provide meaningful error messages.
+</p>
+
+</div>
+`,
+    xp: 10
+},
+{
+    id: "python-topic-36",
+    type: "theory",
+    title: "Modules and Packages in Python",
+    description: "Understanding how Python organizes code using modules and packages",
+    content: `
+
+<style>
+.theory-content {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    padding: 20px;
+}
+
+.theory-content h2 {
+    margin-top: 30px;
+}
+
+.code-example {
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+}
+
+.code-example code {
+    color: #00ffcc;
+}
+</style>
+
+<div class="theory-content">
+
+<h2>📌 Introduction</h2>
+
+<p>
+As Python programs grow larger, it becomes important to organize code properly.
+Python provides <strong>modules</strong> and <strong>packages</strong>
+to structure programs into reusable components.
+</p>
+
+<hr>
+
+<h2>🔹 1. What is a Module?</h2>
+
+<p>
+A module is simply a Python file containing functions, variables,
+or classes that can be reused in other programs.
+</p>
+
+<div class="code-example">
+<pre><code># file: math_operations.py
+
+def add(a, b):
+    return a + b</code></pre>
+</div>
+
+<p>
+This file can be imported and used in another program.
+</p>
+
+<hr>
+
+<h2>🔹 2. Importing a Module</h2>
+
+<div class="code-example">
+<pre><code>import math_operations
+
+result = math_operations.add(5, 3)
+
+print(result)</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>8</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 3. Import Specific Function</h2>
+
+<p>
+You can import only the required functions from a module.
+</p>
+
+<div class="code-example">
+<pre><code>from math_operations import add
+
+print(add(10, 5))</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>15</code></pre>
+</div>
+
+<hr>
+
+<h2>🔹 4. What is a Package?</h2>
+
+<p>
+A package is a collection of multiple modules organized in a folder.
+It helps manage large projects by grouping related modules together.
+</p>
+
+<div class="code-example">
+<pre><code>project/
+│
+├── main.py
+├── utils/
+│   ├── __init__.py
+│   ├── math_tools.py
+│   └── string_tools.py</code></pre>
+</div>
+
+<p>
+The <strong>__init__.py</strong> file tells Python that the folder
+should be treated as a package.
+</p>
+
+<hr>
+
+<h2>🔹 5. Built-in Modules</h2>
+
+<p>
+Python also provides many built-in modules such as:
+</p>
+
+<ul>
+<li>math</li>
+<li>random</li>
+<li>datetime</li>
+<li>os</li>
+<li>sys</li>
+</ul>
+
+<div class="code-example">
+<pre><code>import math
+
+print(math.sqrt(16))</code></pre>
+</div>
+
+<h4>Output:</h4>
+
+<div class="code-example">
+<pre><code>4.0</code></pre>
+</div>
+
+<hr>
+
+<h2>🚀 Conclusion</h2>
+
+<p>
+Modules and packages help organize Python code into reusable,
+manageable components. They make large projects easier to maintain
+and encourage code reuse across applications.
+</p>
+
+</div>
+`,
+    xp: 10
+}
+
 
 ],
 },
