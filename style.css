@@ -1045,8 +1045,26 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .scc-thumb {
+        height: 230px;
+    }
+
+    .scc-thumb-inner svg {
+        width: 96px;
+        height: 96px;
+    }
+
+    .scc-body {
+        padding: 1.4rem 1.5rem 1.6rem;
+    }
+
+    .scc-title {
+        font-size: 1.2rem;
+    }
+
     .scc-desc {
         -webkit-line-clamp: 3;
+        font-size: 0.88rem;
     }
 
     .catalog-card {
