@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Nectous - Master Programming</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20260304_activity1">
+    <link rel="stylesheet" href="style.css?v=20260307_final6">
     <link rel="stylesheet" href="resume-analyzer.css">
 
-    <script type="module" src="firebase-init.js?v=20260304_activity1"></script>
+    <script type="module" src="firebase-init.js?v=20260307_final5"></script>
 </head>
 <body>
     <!-- Achievement Toast -->
@@ -30,7 +30,7 @@
             <div class="mobile-controls">
                 <span class="user-chip guest mobile-avatar" id="mobileAvatar" aria-label="User profile"></span>
                 <button class="drawer-toggle" id="drawerToggle" aria-label="Open menu" type="button">
-                    ☰
+                    &#x2630;
                 </button>
             </div>
             <div class="header-right">
@@ -60,6 +60,7 @@
                 <div class="header-links">
                     <a class="back-home" href="index.html">Back to Home</a>
                     <a class="progress-link" id="progressLink" href="progress.html">View Progress</a>
+                    <a class="progress-link" href="interview-questions.html">Interview Questions</a>
                     <a class="auth-link" href="auth.html">Login / Sign Up</a>
                     <span class="user-chip guest" id="currentUserChip" aria-label="Login status"></span>
                     <button class="auth-logout" id="logoutBtn" type="button" hidden>Logout</button>
@@ -99,7 +100,7 @@
     <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
         <div class="drawer-header">
             <span>Menu</span>
-            <button class="drawer-close" id="drawerClose" type="button" aria-label="Close menu">✕</button>
+            <button class="drawer-close" id="drawerClose" type="button" aria-label="Close menu">&#x2715;</button>
         </div>
         <div class="drawer-profile">
             <span class="user-chip guest" id="drawerUserChip" aria-label="Login status"></span>
@@ -116,6 +117,7 @@
         </div>
         <nav class="drawer-links">
             <a href="progress.html">View Progress</a>
+            <a href="interview-questions.html">Interview Questions</a>
             <a href="account.html" id="drawerAccountLink">Account</a>
         </nav>
         <div class="drawer-theme">
@@ -146,10 +148,16 @@
     <div class="container">
         <!-- Language Selection View -->
         <div id="languageSelection">
-            <h2 style="font-size: 2rem; margin-bottom: 2rem; text-align: center;">Choose Your Learning Path</h2>
+            <div class="home-section-head">
+                <div>
+                    <p class="home-welcome">Welcome to Code Nectous</p>
+                    <p class="catalog-eyebrow">Most Popular Courses</p>
+                    <h2 class="home-section-title">Start with the courses learners open most</h2>
+                </div>
+            </div>
             <div class="language-grid" id="courses">
                 <div class="language-card python" onclick="goToCourse('python')">
-                    <div class="language-icon">🐍</div>
+                    <div class="language-icon">&#x1F40D;</div>
                     <div class="language-name">Python</div>
                     <div class="language-desc">Beginner-friendly, versatile language for web, data science, and automation</div>
                     <div class="progress-bar">
@@ -162,62 +170,6 @@
                     </div>
                 </div>
 
-                <div class="language-card javascript" onclick="goToCourse('javascript')">
-                    <div class="language-icon">⚡</div>
-                    <div class="language-name">JavaScript</div>
-                    <div class="language-desc">Essential for web development, powers interactive websites and web apps</div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="javascriptProgress" style="width: 0%"></div>
-                    </div>
-                    <div class="progress-text"><span id="javascriptCompleted">0</span> of <span id="javascriptTotal">0</span> lessons</div>
-                    <div class="language-actions">
-                        <button class="enroll-btn" data-lang="javascript">Enroll</button>
-                        <span class="enroll-status" id="javascriptEnrollStatus"></span>
-                    </div>
-                </div>
-
-                <div class="language-card cpp" onclick="goToCourse('cpp')">
-                    <div class="language-icon">⚙️</div>
-                    <div class="language-name">C++</div>
-                    <div class="language-desc">High-performance language for system programming and game development</div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="cppProgress" style="width: 0%"></div>
-                    </div>
-                    <div class="progress-text"><span id="cppCompleted">0</span> of <span id="cppTotal">0</span> lessons</div>
-                    <div class="language-actions">
-                        <button class="enroll-btn" data-lang="cpp">Enroll</button>
-                        <span class="enroll-status" id="cppEnrollStatus"></span>
-                    </div>
-                </div>
-
-                <div class="language-card c" onclick="goToCourse('c')">
-                    <div class="language-icon">C</div>
-                    <div class="language-name">C Programming</div>
-                    <div class="language-desc">Core systems language for fundamentals, memory, and embedded programming</div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="cProgress" style="width: 0%"></div>
-                    </div>
-                    <div class="progress-text"><span id="cCompleted">0</span> of <span id="cTotal">0</span> lessons</div>
-                    <div class="language-actions">
-                        <button class="enroll-btn" data-lang="c">Enroll</button>
-                        <span class="enroll-status" id="cEnrollStatus"></span>
-                    </div>
-                </div>
-
-
-                <div class="language-card java" onclick="goToCourse('java')">
-                    <div class="language-icon">☕</div>
-                    <div class="language-name">Java</div>
-                    <div class="language-desc">Enterprise-level language for Android apps and large-scale applications</div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="javaProgress" style="width: 0%"></div>
-                    </div>
-                    <div class="progress-text"><span id="javaCompleted">0</span> of <span id="javaTotal">0</span> lessons</div>
-                    <div class="language-actions">
-                        <button class="enroll-btn" data-lang="java">Enroll</button>
-                        <span class="enroll-status" id="javaEnrollStatus"></span>
-                    </div>
-                </div>
                 <div class="language-card sql" onclick="goToCourse('sql')">
                     <div class="language-icon">DB</div>
                     <div class="language-name">SQL</div>
@@ -232,17 +184,63 @@
                     </div>
                 </div>
 
-                <div class="language-card coming-soon" onclick="showComingSoon()">
-                    <div class="language-icon">🤖</div>
-                    <div class="language-name">ML Learning</div>
-                    <div class="language-desc">Machine learning fundamentals, models, and hands-on projects</div>
-                    <div class="coming-soon-badge">Coming Soon</div>
+                <div class="language-card java" onclick="goToCourse('java')">
+                    <div class="language-icon">&#x2615;</div>
+                    <div class="language-name">Java</div>
+                    <div class="language-desc">Enterprise-level language for Android apps and large-scale applications</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="javaProgress" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-text"><span id="javaCompleted">0</span> of <span id="javaTotal">0</span> lessons</div>
+                    <div class="language-actions">
+                        <button class="enroll-btn" data-lang="java">Enroll</button>
+                        <span class="enroll-status" id="javaEnrollStatus"></span>
+                    </div>
                 </div>
-                <div class="language-card coming-soon" onclick="showComingSoon()">
-                    <div class="language-icon">📊</div>
-                    <div class="language-name">Data Science</div>
-                    <div class="language-desc">Data analysis, visualization, and statistical modeling</div>
-                    <div class="coming-soon-badge">Coming Soon</div>
+                <div class="language-card javascript" onclick="goToCourse('javascript')">
+                    <div class="language-icon">&#x26A1;</div>
+                    <div class="language-name">JavaScript</div>
+                    <div class="language-desc">Essential for web development, powers interactive websites and web apps</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="javascriptProgress" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-text"><span id="javascriptCompleted">0</span> of <span id="javascriptTotal">0</span> lessons</div>
+                    <div class="language-actions">
+                        <button class="enroll-btn" data-lang="javascript">Enroll</button>
+                        <span class="enroll-status" id="javascriptEnrollStatus"></span>
+                    </div>
+                </div>
+
+                <div class="show-all-courses-row">
+                    <a class="show-all-courses-btn" href="all-courses.html">Show All Courses</a>
+                </div>
+
+                <div class="language-card c home-hidden-course" onclick="goToCourse('c')" aria-hidden="true">
+                    <div class="language-icon">C</div>
+                    <div class="language-name">C Programming</div>
+                    <div class="language-desc">Core systems language for fundamentals, memory, and embedded programming</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="cProgress" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-text"><span id="cCompleted">0</span> of <span id="cTotal">0</span> lessons</div>
+                    <div class="language-actions">
+                        <button class="enroll-btn" data-lang="c">Enroll</button>
+                        <span class="enroll-status" id="cEnrollStatus"></span>
+                    </div>
+                </div>
+
+                <div class="language-card cpp home-hidden-course" onclick="goToCourse('cpp')" aria-hidden="true">
+                    <div class="language-icon">&#x2699;&#xFE0F;</div>
+                    <div class="language-name">C++</div>
+                    <div class="language-desc">High-performance language for system programming and game development</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="cppProgress" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-text"><span id="cppCompleted">0</span> of <span id="cppTotal">0</span> lessons</div>
+                    <div class="language-actions">
+                        <button class="enroll-btn" data-lang="cpp">Enroll</button>
+                        <span class="enroll-status" id="cppEnrollStatus"></span>
+                    </div>
                 </div>
             </div>
 
@@ -281,13 +279,13 @@
         <!-- Learning Section -->
         <div id="learningSection" class="learning-section">
             <button class="back-button" onclick="backToLanguages()">
-                <span>←</span> Back to Languages
+                <span>&#x2190;</span> Back to Languages
             </button>
 
             <div class="learning-container">
                 <!-- Curriculum Sidebar -->
                 <aside class="curriculum">
-                    <h3><span>📖</span> Curriculum</h3>
+                    <h3><span>&#x1F4D6;</span> Curriculum</h3>
                     <div id="curriculumContent"></div>
                 </aside>
 
@@ -306,10 +304,10 @@
 
                     <div class="lesson-nav">
                         <button class="btn-nav prev" id="prevBtn" onclick="navigateLesson(-1)">
-                            <span>←</span> Previous
+                            <span>&#x2190;</span> Previous
                         </button>
                         <button class="btn-nav next" id="nextBtn" onclick="navigateLesson(1)">
-                            Next <span>→</span>
+                            Next <span>&#x2192;</span>
                         </button>
                     </div>
                 </main>
@@ -322,7 +320,7 @@
         <div class="exam-modal-panel">
             <div class="exam-modal-head">
                 <h3 id="homeExamTitle">Exam</h3>
-                <button type="button" class="exam-modal-close" id="homeExamClose" aria-label="Close exam">×</button>
+                <button type="button" class="exam-modal-close" id="homeExamClose" aria-label="Close exam">&#xD7;</button>
             </div>
             <iframe id="homeExamFrame" class="exam-modal-frame" title="Exam Window"></iframe>
         </div>
@@ -341,14 +339,14 @@
         <div class="resume-upload-panel">
             <div class="resume-upload-header">
                 <div class="resume-upload-icon-wrap">
-                    <span class="resume-upload-icon" aria-hidden="true">📄</span>
+                    <span class="resume-upload-icon" aria-hidden="true">&#x1F4C4;</span>
                 </div>
                 <h3>Upload Resume</h3>
-                <p>PDF only · Max 5MB · Analysis in seconds</p>
+                <p>PDF only &#xB7; Max 5MB &#xB7; Analysis in seconds</p>
             </div>
 
             <div class="drag-drop-area" id="dragDropArea">
-                <span class="drag-drop-icon">📤</span>
+                <span class="drag-drop-icon">&#x1F4E4;</span>
                 <p class="drag-drop-title">Drag & drop your resume here</p>
                 <p class="drag-drop-sub">or click to browse</p>
                 <span class="drag-drop-divider">or</span>
@@ -359,7 +357,7 @@
             </div>
 
             <button type="button" id="analyzeResumeBtn" class="analyze-btn">
-                <span class="analyze-btn-icon">✨</span>
+                <span class="analyze-btn-icon">&#x2728;</span>
                 Analyze Resume
             </button>
         </div>
@@ -367,7 +365,7 @@
         <!-- RIGHT PANEL: Results -->
         <div class="resume-result-panel" id="resumeResults">
             <div class="result-placeholder">
-                <div class="result-placeholder-icon">📊</div>
+                <div class="result-placeholder-icon">&#x1F4CA;</div>
                 <h4>ATS Analysis Result</h4>
                 <p>Your resume score and detailed breakdown will appear here after you upload and analyze.</p>
             </div>
@@ -379,7 +377,7 @@
     <!-- Chat Assistant (bottom-right) -->
     <div class="chatbot-widget" id="chatbotWidget" aria-live="polite">
         <button class="chatbot-fab" id="chatbotFab" type="button">
-            💬 Need help?
+            &#x1F4AC; Need help?
         </button>
         <div class="chatbot-panel" id="chatbotPanel" role="dialog" aria-modal="false" aria-label="Code Nectous assistant">
             <div class="chatbot-header">
@@ -392,7 +390,7 @@
                 </div>
                 <div style="display:flex; align-items:center; gap:0.4rem;">
                     <button class="chatbot-theme" id="chatbotTheme" type="button">Theme</button>
-                    <button class="chatbot-close" id="chatbotClose" type="button" aria-label="Close chat">×</button>
+                    <button class="chatbot-close" id="chatbotClose" type="button" aria-label="Close chat">&#xD7;</button>
                 </div>
             </div>
             <div class="chatbot-messages" id="chatbotMessages"></div>
@@ -447,12 +445,12 @@
         </footer>
 
     
-        <script defer src="site.js?v=20260304_activity1"></script>
-        <script defer src="app.js?v=20260304_activity1"></script>
+        <script defer src="site.js?v=20260307_final6"></script>
+        <script defer src="app.js?v=20260307_final5"></script>
         <!-- PDF.js CDN -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
-        <script defer src="resume-analyzer.js?v=20260304_activity1"></script>
+        <script defer src="resume-analyzer.js?v=20260307_final5"></script>
 </body>
 </html>
 

@@ -145,6 +145,9 @@
         const fileInput = document.getElementById('atsFileInput');
         const chooseBtn = document.getElementById('atsChooseBtn');
         const removeBtn = document.getElementById('atsRemoveBtn');
+        const analyzeBtn = document.getElementById('atsAnalyzeBtn');
+        const keywordsInput = document.getElementById('atsKeywords');
+        const resetBtn = document.getElementById('atsResetBtn');
         // ATS checker references removed
         const filePreview = document.getElementById('atsFilePreview');
         const fileName = document.getElementById('atsFileName');
@@ -567,6 +570,152 @@ IMPORTANT: Return ONLY the JSON object, no other text or markdown formatting.`;
 // ==========================
 
 document.addEventListener("DOMContentLoaded", () => {
+    function ensureNavDropdown() {
+        const headerLinks = document.querySelector(".header-links");
+        if (!headerLinks) return;
+        if (headerLinks.querySelector(".nav-dropdown")) return;
+
+        const linksToRemove = headerLinks.querySelectorAll('a[href="progress.html"], a[href="interview-questions.html"], a[href="all-courses.html"]');
+        linksToRemove.forEach((link) => link.remove());
+
+        const dropdown = document.createElement("div");
+        dropdown.className = "nav-dropdown";
+        dropdown.innerHTML = `
+            <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                <span class="nav-dropdown-label">Explore</span>
+                <span class="nav-dropdown-arrow">&#x25BC;</span>
+            </button>
+            <div class="nav-dropdown-menu" role="menu">
+                <a href="index.html" role="menuitem">Home</a>
+                <a href="progress.html" role="menuitem">View Progress</a>
+                <a href="interview-questions.html" role="menuitem">Interview Questions</a>
+                <a href="all-courses.html" role="menuitem">All Courses</a>
+            </div>
+        `;
+
+        const authLink = headerLinks.querySelector(".auth-link");
+        const themeToggle = headerLinks.querySelector(".theme-toggle");
+        if (authLink) {
+            headerLinks.insertBefore(dropdown, authLink);
+        } else if (themeToggle) {
+            headerLinks.insertBefore(dropdown, themeToggle);
+        } else {
+            headerLinks.appendChild(dropdown);
+        }
+    }
+
+    function bindNavDropdowns() {
+        const dropdowns = document.querySelectorAll(".nav-dropdown");
+        if (!dropdowns.length) return;
+
+        const closeAll = () => {
+            dropdowns.forEach((drop) => {
+                drop.classList.remove("open");
+                const btn = drop.querySelector(".nav-dropdown-toggle");
+                if (btn) btn.setAttribute("aria-expanded", "false");
+            });
+        };
+
+        dropdowns.forEach((drop) => {
+            const btn = drop.querySelector(".nav-dropdown-toggle");
+            if (!btn) return;
+            btn.addEventListener("click", (event) => {
+                event.stopPropagation();
+                const nextOpen = !drop.classList.contains("open");
+                closeAll();
+                drop.classList.toggle("open", nextOpen);
+                btn.setAttribute("aria-expanded", nextOpen ? "true" : "false");
+            });
+        });
+
+        document.addEventListener("click", (event) => {
+            if (event.target.closest(".nav-dropdown")) return;
+            closeAll();
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") closeAll();
+        });
+    }
+
+    function ensureDrawerHomeLink() {
+        const drawerLinks = document.querySelector(".drawer-links");
+        if (!drawerLinks) return;
+        if (drawerLinks.querySelector('a[href="index.html"]')) return;
+        const home = document.createElement("a");
+        home.href = "index.html";
+        home.textContent = "Home";
+        drawerLinks.prepend(home);
+    }
+
+    function ensureHeaderInterviewLink() {
+        const headerLinks = document.querySelector(".header-links");
+        if (!headerLinks || headerLinks.querySelector('[data-nav-link="interview"], a[href="interview-questions.html"]')) return;
+
+        const link = document.createElement("a");
+        link.href = "interview-questions.html";
+        link.textContent = "Interview Questions";
+        link.setAttribute("data-nav-link", "interview");
+
+        const authLink = headerLinks.querySelector(".auth-link");
+        const themeToggle = headerLinks.querySelector(".theme-toggle");
+
+        if (authLink) {
+            headerLinks.insertBefore(link, authLink);
+            return;
+        }
+
+        if (themeToggle) {
+            headerLinks.insertBefore(link, themeToggle);
+            return;
+        }
+
+        headerLinks.appendChild(link);
+    }
+
+    function ensureDrawerInterviewLink() {
+        const drawerLinks = document.querySelector(".drawer-links");
+        if (!drawerLinks || drawerLinks.querySelector('[data-nav-link="interview"], a[href="interview-questions.html"]')) return;
+
+        const link = document.createElement("a");
+        link.href = "interview-questions.html";
+        link.textContent = "Interview Questions";
+        link.setAttribute("data-nav-link", "interview");
+
+        const accountLink = drawerLinks.querySelector("#drawerAccountLink");
+        if (accountLink) {
+            drawerLinks.insertBefore(link, accountLink);
+            return;
+        }
+
+        drawerLinks.appendChild(link);
+    }
+
+    function runWelcomeTyping() {
+        const el = document.querySelector(".home-welcome");
+        if (!el) return;
+        const text = (el.dataset.fullText || el.textContent || "").trim();
+        if (!text) return;
+        el.dataset.fullText = text;
+        el.textContent = "";
+        el.classList.add("typing");
+        let index = 0;
+        const step = () => {
+            if (index <= text.length) {
+                el.textContent = text.slice(0, index);
+                index += 1;
+                window.setTimeout(step, 60);
+            }
+        };
+        step();
+    }
+
+    ensureHeaderInterviewLink();
+    ensureDrawerInterviewLink();
+    ensureNavDropdown();
+    ensureDrawerHomeLink();
+    bindNavDropdowns();
+    runWelcomeTyping();
 
     const desktopToggle = document.getElementById("themeToggleDesktop");
     const drawerToggle = document.getElementById("themeToggleDrawer");

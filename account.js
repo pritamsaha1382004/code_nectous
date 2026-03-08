@@ -32,9 +32,11 @@ function updateHeader(profile = {}, progress = {}) {
   const avatar = profile.avatar || "";
 
   const chip = document.getElementById("currentUserChip");
+  const mobileAvatar = document.getElementById("mobileAvatar");
   const drawerChip = document.getElementById("drawerUserChip");
 
   applyAvatar(chip, avatar);
+  applyAvatar(mobileAvatar, avatar);
   applyAvatar(drawerChip, avatar);
 
   const drawerName = document.getElementById("drawerUserName");

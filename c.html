@@ -28,7 +28,7 @@
             <div class="mobile-controls">
                 <span class="user-chip guest mobile-avatar" id="mobileAvatar" aria-label="User profile"></span>
                 <button class="drawer-toggle" id="drawerToggle" aria-label="Open menu" type="button">
-                    ☰
+                    &#x2630;
                 </button>
             </div>
             <div class="header-right">
@@ -58,6 +58,7 @@
                 <div class="header-links">
                     <a class="back-home" href="index.html">Back to Home</a>
                     <a class="progress-link" id="progressLink" href="progress.html">View Progress</a>
+                    <a class="progress-link" href="interview-questions.html">Interview Questions</a>
                     <a class="auth-link" href="auth.html">Login / Sign Up</a>
                     <span class="user-chip guest" id="currentUserChip" aria-label="Login status"></span>
                     <button class="auth-logout" id="logoutBtn" type="button" hidden>Logout</button>
@@ -79,7 +80,7 @@
     <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
         <div class="drawer-header">
             <span>Menu</span>
-            <button class="drawer-close" id="drawerClose" type="button" aria-label="Close menu">✕</button>
+            <button class="drawer-close" id="drawerClose" type="button" aria-label="Close menu">&#x2715;</button>
         </div>
         <div class="drawer-profile">
             <span class="user-chip guest" id="drawerUserChip" aria-label="Login status"></span>
@@ -97,6 +98,7 @@
         </div>
         <nav class="drawer-links">
             <a href="progress.html">View Progress</a>
+            <a href="interview-questions.html">Interview Questions</a>
             <a href="account.html" id="drawerAccountLink">Account</a>
         </nav>
         <div class="drawer-theme">
@@ -130,7 +132,7 @@
             <h2 style="font-size: 2rem; margin-bottom: 2rem; text-align: center;">C Learning Path</h2>
             <div class="language-grid">
                 <div class="language-card python" onclick="goToCourse('python')">
-                    <div class="language-icon">🐍</div>
+                    <div class="language-icon">&#x1F40D;</div>
                     <div class="language-name">Python</div>
                     <div class="language-desc">Beginner-friendly, versatile language for web, data science, and automation</div>
                     <div class="progress-bar">
@@ -144,7 +146,7 @@
                 </div>
 
                 <div class="language-card javascript" onclick="goToCourse('javascript')">
-                    <div class="language-icon">⚡</div>
+                    <div class="language-icon">&#x26A1;</div>
                     <div class="language-name">JavaScript</div>
                     <div class="language-desc">Essential for web development, powers interactive websites and web apps</div>
                     <div class="progress-bar">
@@ -158,7 +160,7 @@
                 </div>
 
                 <div class="language-card cpp" onclick="goToCourse('cpp')">
-                    <div class="language-icon">⚙️</div>
+                    <div class="language-icon">&#x2699;&#xFE0F;</div>
                     <div class="language-name">C++</div>
                     <div class="language-desc">High-performance language for system programming and game development</div>
                     <div class="progress-bar">
@@ -187,7 +189,7 @@
 
 
                 <div class="language-card java" onclick="goToCourse('java')">
-                    <div class="language-icon">☕</div>
+                    <div class="language-icon">&#x2615;</div>
                     <div class="language-name">Java</div>
                     <div class="language-desc">Enterprise-level language for Android apps and large-scale applications</div>
                     <div class="progress-bar">
@@ -217,13 +219,13 @@
 
         <div id="learningSection" class="learning-section">
             <button class="back-button" onclick="backToLanguages()">
-                <span>←</span> Back to Languages
+                <span>&#x2190;</span> Back to Languages
             </button>
 
             <div class="learning-container">
                 <!-- Curriculum Sidebar -->
                 <aside class="curriculum">
-                    <h3><span>📖</span> Curriculum</h3>
+                    <h3><span>&#x1F4D6;</span> Curriculum</h3>
                     <div id="curriculumContent"></div>
                 </aside>
 
@@ -242,10 +244,10 @@
 
                     <div class="lesson-nav">
                         <button class="btn-nav prev" id="prevBtn" onclick="navigateLesson(-1)">
-                            <span>←</span> Previous
+                            <span>&#x2190;</span> Previous
                         </button>
                         <button class="btn-nav next" id="nextBtn" onclick="navigateLesson(1)">
-                            Next <span>→</span>
+                            Next <span>&#x2192;</span>
                         </button>
                     </div>
 </main>

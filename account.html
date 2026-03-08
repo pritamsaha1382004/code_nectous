@@ -18,9 +18,12 @@
                     <span class="logo-tagline">Account</span>
                 </div>
             </div>
-            <button class="drawer-toggle" id="drawerToggle" aria-label="Open menu" type="button">
-                ☰
-            </button>
+            <div class="mobile-controls">
+                <span class="user-chip guest mobile-avatar" id="mobileAvatar" aria-label="User profile"></span>
+                <button class="drawer-toggle" id="drawerToggle" aria-label="Open menu" type="button">
+                    &#x2630;
+                </button>
+            </div>
             <div class="header-right">
                 <div class="user-stats">
                     <div class="stat-badge">
@@ -47,6 +50,7 @@
                 </div>
                 <div class="header-links">
                     <a class="progress-link" href="index.html">Home</a>
+                    <a class="progress-link" href="interview-questions.html">Interview Questions</a>
                     <a class="auth-link" id="accountLink" href="account.html">Account</a>
                     <span class="user-chip guest" id="currentUserChip" aria-label="Login status"></span>
                     <button class="auth-logout" id="logoutBtn" type="button" hidden>Logout</button>
@@ -68,7 +72,7 @@
     <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
         <div class="drawer-header">
             <span>Menu</span>
-            <button class="drawer-close" id="drawerClose" type="button" aria-label="Close menu">✕</button>
+            <button class="drawer-close" id="drawerClose" type="button" aria-label="Close menu">&#x2715;</button>
         </div>
         <div class="drawer-profile">
             <span class="user-chip guest" id="drawerUserChip" aria-label="Login status"></span>
@@ -85,6 +89,7 @@
         </div>
         <nav class="drawer-links">
             <a href="index.html">Home</a>
+            <a href="interview-questions.html">Interview Questions</a>
             <a href="progress.html">View Progress</a>
         </nav>
         <div class="drawer-theme">
@@ -126,7 +131,7 @@
 
             <form id="accountForm" class="account-form">
                 <div class="account-avatar">
-                    <div class="avatar-preview" id="avatarPreview">👤</div>
+                    <div class="avatar-preview" id="avatarPreview">&#x1F464;</div>
                     <div class="avatar-actions">
                         <label class="auth-submit" for="profileAvatar">Upload Photo</label>
                         <input type="file" id="profileAvatar" accept="image/*" hidden>

@@ -30,7 +30,7 @@
                                 </ul>
 
                                 <div class="info-box tip">
-                                    <strong>💡 Fun Fact</strong>
+                                    <strong>\u{1F4A1} Fun Fact</strong>
                                     <p>Python is named after the British comedy series "Monty Python's Flying Circus," not the snake!</p>
                                 </div>
 
@@ -54,7 +54,7 @@
                         content: `
                             <div class="practice-section">
                                 <div class="challenge-goal">
-                                    <h4>🎯 Challenge Goal</h4>
+                                    <h4>\u{1F3AF} Challenge Goal</h4>
                                     <ul>
                                         <li>Use the print() function to display "Hello, World!"</li>
                                         <li>Run your code and see the output</li>
@@ -62,7 +62,7 @@
                                 </div>
 
                                 <div class="info-box">
-                                    <strong>📝 The print() Function</strong>
+                                    <strong>\u{1F4DD} The print() Function</strong>
                                     <p>The print() function displays text or values to the console. Simply put the text you want to display inside quotes within the parentheses.</p>
                                 </div>
                             </div>
@@ -102,7 +102,7 @@ is_student = True</pre>
 
                                 <h4>Variable Naming Rules</h4>
                                 <div class="info-box warning">
-                                    <strong>⚠️ Important Rules</strong>
+                                    <strong>\u26A0\uFE0F Important Rules</strong>
                                     <ul>
                                         <li>Must start with a letter or underscore</li>
                                         <li>Can contain letters, numbers, and underscores</li>
@@ -124,7 +124,7 @@ print(age)   <span class="code-comment"># Outputs: 31</span></pre>
                                 </div>
 
                                 <div class="info-box tip">
-                                    <strong>💡 Best Practice</strong>
+                                    <strong>\u{1F4A1} Best Practice</strong>
                                     <p>Use descriptive variable names like student_name instead of sn. Your code should be readable!</p>
                                 </div>
                             </div>
@@ -139,7 +139,7 @@ print(age)   <span class="code-comment"># Outputs: 31</span></pre>
                         content: `
                             <div class="practice-section">
                                 <div class="challenge-goal">
-                                    <h4>🎯 Challenge Goal</h4>
+                                    <h4>\u{1F3AF} Challenge Goal</h4>
                                     <ul>
                                         <li>Create a variable called "name" with your name</li>
                                         <li>Create a variable called "age" with your age</li>
@@ -148,7 +148,7 @@ print(age)   <span class="code-comment"># Outputs: 31</span></pre>
                                 </div>
 
                                 <div class="info-box">
-                                    <strong>💡 Hint</strong>
+                                    <strong>\u{1F4A1} Hint</strong>
                                     <p>Remember: strings need quotes, numbers don't!</p>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@ print(10 - 5)   <span class="code-comment"># Subtraction: 5</span>
 print(10 * 5)   <span class="code-comment"># Multiplication: 50</span>
 print(10 / 5)   <span class="code-comment"># Division: 2.0</span>
 print(10 % 3)   <span class="code-comment"># Modulus (remainder): 1</span>
-print(2 ** 3)   <span class="code-comment"># Exponent (2³): 8</span>
+print(2 ** 3)   <span class="code-comment"># Exponent (2\u00B3): 8</span>
 print(10 // 3)  <span class="code-comment"># Floor division: 3</span></pre>
                                 </div>
 
@@ -202,12 +202,12 @@ print(full_name)  <span class="code-comment"># Outputs: John Doe</span></pre>
                                 </div>
 
                                 <div class="info-box warning">
-                                    <strong>⚠️ Common Mistake</strong>
+                                    <strong>\u26A0\uFE0F Common Mistake</strong>
                                     <p>You can't add numbers and strings directly. This will cause an error:<br>
                                     <code>age = 25</code><br>
-                                    <code>print("I am " + age)</code> ❌<br><br>
+                                    <code>print("I am " + age)</code> \u274C<br><br>
                                     Instead, convert the number to a string:<br>
-                                    <code>print("I am " + str(age))</code> ✓</p>
+                                    <code>print("I am " + str(age))</code> \u2713</p>
                                 </div>
                             </div>
                         `,
@@ -221,7 +221,7 @@ print(full_name)  <span class="code-comment"># Outputs: John Doe</span></pre>
                         content: `
                             <div class="practice-section">
                                 <div class="challenge-goal">
-                                    <h4>🎯 Challenge Goal</h4>
+                                    <h4>\u{1F3AF} Challenge Goal</h4>
                                     <ul>
                                         <li>Create two variables: a = 15 and b = 4</li>
                                         <li>Calculate and print their sum</li>
@@ -261,7 +261,7 @@ if age >= 18:
                                 </div>
 
                                 <div class="info-box warning">
-                                    <strong>⚠️ Indentation is Critical!</strong>
+                                    <strong>\u26A0\uFE0F Indentation is Critical!</strong>
                                     <p>Python uses indentation (spaces) to define code blocks. The code inside the if statement must be indented (usually 4 spaces).</p>
                                 </div>
 
@@ -318,7 +318,7 @@ else:
                         content: `
                             <div class="practice-section">
                                 <div class="challenge-goal">
-                                    <h4>🎯 Challenge Goal</h4>
+                                    <h4>\u{1F3AF} Challenge Goal</h4>
                                     <ul>
                                         <li>Create a variable "temperature" set to 75</li>
                                         <li>If temperature > 80, print "It's hot!"</li>
@@ -327,7 +327,7 @@ else:
                                 </div>
 
                                 <div class="info-box">
-                                    <strong>💡 Remember</strong>
+                                    <strong>\u{1F4A1} Remember</strong>
                                     <p>Don't forget the colon (:) at the end of if/else lines and proper indentation!</p>
                                 </div>
                             </div>
@@ -385,7 +385,7 @@ while count < 5:
                                 </div>
 
                                 <div class="info-box warning">
-                                    <strong>⚠️ Infinite Loops</strong>
+                                    <strong>\u26A0\uFE0F Infinite Loops</strong>
                                     <p>Be careful with while loops! If the condition never becomes false, the loop will run forever.</p>
                                 </div>
 
@@ -409,7 +409,7 @@ for letter in name:
                         content: `
                             <div class="practice-section">
                                 <div class="challenge-goal">
-                                    <h4>🎯 Challenge Goal</h4>
+                                    <h4>\u{1F3AF} Challenge Goal</h4>
                                     <ul>
                                         <li>Use a for loop with range(1, 6)</li>
                                         <li>Print each number</li>
@@ -417,7 +417,7 @@ for letter in name:
                                 </div>
 
                                 <div class="info-box tip">
-                                    <strong>💡 Hint</strong>
+                                    <strong>\u{1F4A1} Hint</strong>
                                     <p>Remember: range(1, 6) will give you numbers 1 through 5!</p>
                                 </div>
                             </div>
@@ -750,9 +750,9 @@ Jython</pre>
             <div class="code-example">
 <pre>
         Top
-         ↓
+         \u2193
        +----+
-       | 20 |   ← Last pushed
+       | 20 |   \u2190 Last pushed
        +----+
        | 10 |
        +----+
@@ -810,13 +810,13 @@ Stack after pop: [10, 20]</pre>
     content: `
         <div class="theory-content">
 
-            <h4>1️⃣ Simple Queue (Linear Queue)</h4>
+            <h4>1\uFE0F\u20E3 Simple Queue (Linear Queue)</h4>
             <p>A basic queue that follows FIFO (First In, First Out).
             Elements are inserted at the rear and removed from the front.</p>
 
             <div class="code-example">
 <pre>
-Front →  +----+  +----+  +----+  ← Rear
+Front \u2192  +----+  +----+  +----+  \u2190 Rear
           | 10 |  | 20 |  | 30 |
           +----+  +----+  +----+
 </pre>
@@ -826,7 +826,7 @@ Front →  +----+  +----+  +----+  ← Rear
 
             <hr>
 
-            <h4>2️⃣ Circular Queue</h4>
+            <h4>2\uFE0F\u20E3 Circular Queue</h4>
             <p>A circular queue connects the last position back to the first,
             forming a circle. This avoids wasted space.</p>
 
@@ -835,8 +835,8 @@ Front →  +----+  +----+  +----+  ← Rear
         +----+      +----+
         | 40 |      | 10 |
         +----+      +----+
-           ↑            ↓
-        +----+ ←---- +----+
+           \u2191            \u2193
+        +----+ \u2190---- +----+
         | 30 |        | 20 |
         +----+        +----+
 </pre>
@@ -846,7 +846,7 @@ Front →  +----+  +----+  +----+  ← Rear
 
             <hr>
 
-            <h4>3️⃣ Priority Queue</h4>
+            <h4>3\uFE0F\u20E3 Priority Queue</h4>
             <p>Elements are removed based on priority instead of insertion order.
             Highest (or lowest) priority element is removed first.</p>
 
@@ -857,7 +857,7 @@ Elements with Priority:
 (20, Priority 1)
 (30, Priority 3)
 
-Removed first → 20 (Highest Priority)
+Removed first \u2192 20 (Highest Priority)
 </pre>
             </div>
 
@@ -881,13 +881,13 @@ print(heapq.heappop(pq))</pre>
 
             <hr>
 
-            <h4>4️⃣ Double Ended Queue (Deque)</h4>
+            <h4>4\uFE0F\u20E3 Double Ended Queue (Deque)</h4>
             <p>A Deque (Double Ended Queue) allows insertion and deletion 
             from both front and rear.</p>
 
             <div class="code-example">
 <pre>
-Front →  +----+  +----+  +----+  ← Rear
+Front \u2192  +----+  +----+  +----+  \u2190 Rear
           |  5 |  | 10 |  | 15 |
           +----+  +----+  +----+
 Insert/Delete from BOTH sides
@@ -957,8 +957,8 @@ print(dq)</pre>
 
             <p>Here:</p>
             <ul>
-                <li>"a", "b", "c" → Keys</li>
-                <li>10, 20, 30 → Values</li>
+                <li>"a", "b", "c" \u2192 Keys</li>
+                <li>10, 20, 30 \u2192 Values</li>
             </ul>
 
             <h4>Properties of Dictionary</h4>
@@ -1101,18 +1101,18 @@ print(list(result))</pre>
 
             <h4>Structure of a Node</h4>
             <ul>
-                <li><strong>Data</strong> → Stores value</li>
-                <li><strong>Next</strong> → Points to next node</li>
+                <li><strong>Data</strong> \u2192 Stores value</li>
+                <li><strong>Next</strong> \u2192 Points to next node</li>
             </ul>
 
             <h4>Visual Representation (Singly Linked List)</h4>
             <div class="code-example">
 <pre>
    Head
-     ↓
-┌─────────┬─────────┐     ┌─────────┬─────────┐     ┌─────────┬─────────┐
-│  Data=1 │  Next ─────────> Data=2 │  Next ─────────> Data=3 │  Next → NULL
-└─────────┴─────────┘     └─────────┴─────────┘     └─────────┴─────────┘
+     \u2193
+\u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510     \u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510     \u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510
+\u2502  Data=1 \u2502  Next \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500> Data=2 \u2502  Next \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500> Data=3 \u2502  Next \u2192 NULL
+\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518     \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518     \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518
 </pre>
             </div>
 
@@ -1123,7 +1123,7 @@ print(list(result))</pre>
             <h4>Doubly Linked List Structure</h4>
             <div class="code-example">
 <pre>
-NULL ← [Prev | 10 | Next] ⇄ [Prev | 20 | Next] ⇄ [Prev | 30 | Next] → NULL
+NULL \u2190 [Prev | 10 | Next] \u21C4 [Prev | 20 | Next] \u21C4 [Prev | 30 | Next] \u2192 NULL
 </pre>
             </div>
 
@@ -1139,19 +1139,19 @@ NULL ← [Prev | 10 | Next] ⇄ [Prev | 20 | Next] ⇄ [Prev | 30 | Next] → NU
             <h4>Circular Linked List Structure</h4>
             <div class="code-example">
 <pre>
-        ┌─────────┐
-        │  Data=1 │
-        └────┬────┘
-             ↓
-        ┌─────────┐
-        │  Data=2 │
-        └────┬────┘
-             ↓
-        ┌─────────┐
-        │  Data=3 │
-        └────┬────┘
-             ↑
-             └───────────────┘
+        \u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510
+        \u2502  Data=1 \u2502
+        \u2514\u2500\u2500\u2500\u2500\u252C\u2500\u2500\u2500\u2500\u2518
+             \u2193
+        \u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510
+        \u2502  Data=2 \u2502
+        \u2514\u2500\u2500\u2500\u2500\u252C\u2500\u2500\u2500\u2500\u2518
+             \u2193
+        \u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510
+        \u2502  Data=3 \u2502
+        \u2514\u2500\u2500\u2500\u2500\u252C\u2500\u2500\u2500\u2500\u2518
+             \u2191
+             \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518
 </pre>
             </div>
 
@@ -1376,9 +1376,9 @@ print(root.right.val)</pre>
 
             <div class="code-example">
 <pre>
-Level 1 → 1
-Level 2 → 2 3
-Level 3 → 4 5
+Level 1 \u2192 1
+Level 2 \u2192 2 3
+Level 3 \u2192 4 5
 
 Final BFS Order:
 1 2 3 4 5
@@ -1462,1961 +1462,29 @@ def bfs(root):
         </div>
     `,
     xp: 10
-
 },
 
     // ========= DFS =========
-   {
-    id: "algorithm-topic-25",
-    type: "theory",
-    title: "Depth First Search (DFS)",
-    description: "Understanding the DFS traversal algorithm used in graphs and trees",
-    content: `
-
-<style>
-.theory-content {
-    font-family: Arial, sans-serif;
-    line-height: 1.7;
-    padding: 20px;
-}
-
-.theory-content h2 {
-    margin-top: 30px;
-}
-
-.code-example {
-    background: #1e1e1e;
-    color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
-    overflow-x: auto;
-    font-family: Consolas, monospace;
-}
-
-.code-example code {
-    color: #00ffcc;
-}
-
-.image-section {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.image-section img {
-    max-width: 600px;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-</style>
-
-<div class="theory-content">
-
-<h2>📌 Introduction</h2>
-
-<p>
-Depth First Search (DFS) is a graph traversal algorithm.
-It explores as far as possible along each branch before backtracking.
-DFS is commonly used in graphs, trees, maze solving, and path finding.
-</p>
-
-<hr>
-
-<h2>🔹 1. How DFS Works</h2>
-
-<p>
-DFS starts from a node and visits its neighbor.
-It keeps going deeper until no unvisited nodes remain,
-then it backtracks to explore other paths.
-</p>
-
-<p>Example traversal order:</p>
-
-<div class="code-example">
-<pre><code>Graph:
-
-    A
-   / \\
-  B   C
- / \\   \\
-D   E   F
-
-DFS Traversal:
-
-A → B → D → E → C → F</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 2. DFS Using Recursion (Python)</h2>
-
-<div class="code-example">
-<pre><code>graph = {
-    'A': ['B', 'C'],
-    'B': ['D', 'E'],
-    'C': ['F'],
-    'D': [],
-    'E': [],
-    'F': []
-}
-
-visited = set()
-
-def dfs(node):
-    if node not in visited:
-        print(node)
-        visited.add(node)
-
-        for neighbor in graph[node]:
-            dfs(neighbor)
-
-dfs('A')</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>A
-B
-D
-E
-C
-F</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 3. DFS Using Stack (Iterative)</h2>
-
-<div class="code-example">
-<pre><code>graph = {
-    'A': ['B', 'C'],
-    'B': ['D', 'E'],
-    'C': ['F'],
-    'D': [],
-    'E': [],
-    'F': []
-}
-
-stack = ['A']
-visited = set()
-
-while stack:
-    node = stack.pop()
-
-    if node not in visited:
-        print(node)
-        visited.add(node)
-
-        stack.extend(graph[node])</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>A
-C
-F
-B
-E
-D</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 4. Applications of DFS</h2>
-
-<ul>
-<li>Graph traversal</li>
-<li>Maze solving</li>
-<li>Topological sorting</li>
-<li>Cycle detection</li>
-<li>Connected components</li>
-<li>Backtracking algorithms</li>
-</ul>
-
-<hr>
-
-<h2>🔹 5. Time Complexity</h2>
-
-<div class="code-example">
-<pre><code>Time Complexity:  O(V + E)
-
-V = Number of vertices
-E = Number of edges</code></pre>
-</div>
-
-<hr>
-
-<h2>🚀 Conclusion</h2>
-
-<p>
-Depth First Search is one of the fundamental graph algorithms.
-It explores deeper nodes first before backtracking.
-DFS is widely used in competitive programming,
-graph theory, and problem solving.
-</p>
-
-</div>
-`,
-    xp: 20
-},
     {
-    id: "python-topic-26",
-    type: "theory",
-    title: "Classes in Python",
-    description: "Understanding how classes work in Python for object oriented programming",
-    content: `
-
-<style>
-.theory-content {
-    font-family: Arial, sans-serif;
-    line-height: 1.7;
-    padding: 20px;
-}
-
-.theory-content h2 {
-    margin-top: 30px;
-}
-
-.code-example {
-    background: #1e1e1e;
-    color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
-    overflow-x: auto;
-    font-family: Consolas, monospace;
-}
-
-.code-example code {
-    color: #00ffcc;
-}
-
-.image-section {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.image-section img {
-    max-width: 600px;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-</style>
-
-<div class="theory-content">
-
-<h2>📌 Introduction</h2>
-
-<p>
-A class in Python is a blueprint used to create objects.
-It allows developers to group data and functions together.
-Classes are the foundation of Object-Oriented Programming (OOP).
-</p>
-
-
-<hr>
-
-<h2>🔹 1. Creating a Class</h2>
-
-<p>
-In Python, a class is created using the <strong>class</strong> keyword.
-</p>
-
-<div class="code-example">
-<pre><code>class Person:
-    name = "Pritam"</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 2. Creating an Object</h2>
-
-<p>
-An object is an instance of a class.
-</p>
-
-<div class="code-example">
-<pre><code>class Person:
-    name = "Pritam"
-
-p1 = Person()
-
-print(p1.name)</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Pritam</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 3. Using __init__ Constructor</h2>
-
-<p>
-The <strong>__init__()</strong> method is a constructor that runs when
-an object is created.
-</p>
-
-<div class="code-example">
-<pre><code>class Person:
-
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-p1 = Person("Rahul", 21)
-
-print(p1.name)
-print(p1.age)</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Rahul
-21</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 4. Class Methods</h2>
-
-<p>
-Classes can contain functions called methods.
-</p>
-
-<div class="code-example">
-<pre><code>class Student:
-
-    def __init__(self, name):
-        self.name = name
-
-    def greet(self):
-        print("Hello", self.name)
-
-s1 = Student("Pritam")
-
-s1.greet()</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Hello Pritam</code></pre>
-</div>
-
-<hr>
-
-<h2>🚀 Conclusion</h2>
-
-<p>
-Classes are a core part of Python programming.
-They help organize code, represent real-world objects,
-and enable powerful object-oriented programming concepts.
-</p>
-
-</div>
-`,
-    xp: 20
-},
-{
-    id: "python-topic-27",
-    type: "theory",
-    title: "Encapsulation in Python",
-    description: "Understanding how encapsulation protects data in object oriented programming",
-    content: `
-
-<style>
-.theory-content {
-    font-family: Arial, sans-serif;
-    line-height: 1.7;
-    padding: 20px;
-}
-
-.theory-content h2 {
-    margin-top: 30px;
-}
-
-.code-example {
-    background: #1e1e1e;
-    color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
-    overflow-x: auto;
-    font-family: Consolas, monospace;
-}
-
-.code-example code {
-    color: #00ffcc;
-}
-
-.image-section {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.image-section img {
-    max-width: 600px;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-</style>
-
-<div class="theory-content">
-
-<h2>📌 Introduction</h2>
-
-<p>
-Encapsulation is one of the four main pillars of Object-Oriented Programming.
-It means binding data and methods together inside a class
-and restricting direct access to some parts of the object.
-</p>
-
-<div class="image-section">
-<img src="assets/images/encapsulation.webp" alt="Encapsulation">
-<p><em>Encapsulation protects internal data of a class.</em></p>
-</div>
-
-<hr>
-
-<h2>🔹 1. What is Encapsulation?</h2>
-
-<p>
-Encapsulation hides the internal details of a class and allows
-access only through specific methods.
-</p>
-
-<ul>
-<li>Protects data from accidental modification</li>
-<li>Improves code security</li>
-<li>Improves maintainability</li>
-</ul>
-
-<hr>
-
-<h2>🔹 2. Example Without Encapsulation</h2>
-
-<div class="code-example">
-<pre><code>class BankAccount:
-
-    def __init__(self, balance):
-        self.balance = balance
-
-account = BankAccount(1000)
-
-print(account.balance)</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>1000</code></pre>
-</div>
-
-<p>
-Here the balance can be accessed directly.
-</p>
-
-<hr>
-
-<h2>🔹 3. Encapsulation Using Private Variables</h2>
-
-<p>
-In Python, private variables are created using double underscores.
-</p>
-
-<div class="code-example">
-<pre><code>class BankAccount:
-
-    def __init__(self, balance):
-        self.__balance = balance
-
-    def show_balance(self):
-        print(self.__balance)
-
-account = BankAccount(2000)
-
-account.show_balance()</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>2000</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 4. Getter and Setter Methods</h2>
-
-<p>
-Getter and setter methods allow controlled access to private variables.
-</p>
-
-<div class="code-example">
-<pre><code>class Student:
-
-    def __init__(self):
-        self.__marks = 0
-
-    def set_marks(self, marks):
-        self.__marks = marks
-
-    def get_marks(self):
-        return self.__marks
-
-s = Student()
-
-s.set_marks(95)
-
-print(s.get_marks())</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>95</code></pre>
-</div>
-
-<hr>
-
-<h2>🚀 Conclusion</h2>
-
-<p>
-Encapsulation ensures that sensitive data is protected
-and can only be accessed through controlled methods.
-It improves security, modularity, and maintainability
-in object-oriented programs.
-</p>
-
-</div>
-`,
-    xp: 20
-},
-{
-    id: "python-topic-28",
-    type: "theory",
-    title: "Inheritance in Python",
-    description: "Understanding how classes inherit properties and methods from other classes",
-    content: `
-
-<style>
-.theory-content {
-    font-family: Arial, sans-serif;
-    line-height: 1.7;
-    padding: 20px;
-}
-
-.theory-content h2 {
-    margin-top: 30px;
-}
-
-.code-example {
-    background: #1e1e1e;
-    color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
-    overflow-x: auto;
-    font-family: Consolas, monospace;
-}
-
-.code-example code {
-    color: #00ffcc;
-}
-
-.image-section {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.image-section img {
-    max-width: 600px;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-</style>
-
-<div class="theory-content">
-
-<h2>📌 Introduction</h2>
-
-<p>
-Inheritance is one of the core concepts of Object-Oriented Programming.
-It allows one class to inherit properties and methods from another class.
-This helps reuse code and build hierarchical relationships between classes.
-</p>
-
-<div class="image-section">
-<img src="assets/images/inheritance_python.webp" alt="Python Inheritance">
-<p><em>Child classes inherit properties and methods from parent classes.</em></p>
-</div>
-
-<hr>
-
-<h2>🔹 1. What is Inheritance?</h2>
-
-<p>
-Inheritance allows a new class (child class) to use the features of an existing class (parent class).
-</p>
-
-<ul>
-<li>Parent Class → Base class</li>
-<li>Child Class → Derived class</li>
-</ul>
-
-<hr>
-
-<h2>🔹 2. Basic Inheritance Example</h2>
-
-<div class="code-example">
-<pre><code>class Animal:
-
-    def speak(self):
-        print("Animal makes a sound")
-
-
-class Dog(Animal):
-
-    def bark(self):
-        print("Dog barks")
-
-
-d = Dog()
-
-d.speak()
-d.bark()</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Animal makes a sound
-Dog barks</code></pre>
-</div>
-
-<p>
-The Dog class inherits the speak() method from the Animal class.
-</p>
-
-<hr>
-
-<h2>🔹 3. Using super() Function</h2>
-
-<p>
-The <strong>super()</strong> function allows a child class to call methods from the parent class.
-</p>
-
-<div class="code-example">
-<pre><code>class Person:
-
-    def __init__(self, name):
-        self.name = name
-
-
-class Student(Person):
-
-    def __init__(self, name, grade):
-        super().__init__(name)
-        self.grade = grade
-
-
-s = Student("Pritam", "A")
-
-print(s.name)
-print(s.grade)</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Pritam
-A</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 4. Types of Inheritance</h2>
-
-<ul>
-<li>Single Inheritance</li>
-<li>Multiple Inheritance</li>
-<li>Multilevel Inheritance</li>
-<li>Hierarchical Inheritance</li>
-<li>Hybrid Inheritance</li>
-</ul>
-
-<hr>
-
-<h2>🚀 Conclusion</h2>
-
-<p>
-Inheritance allows classes to reuse existing code and create
-a logical hierarchy between objects.
-It improves maintainability and reduces duplication in programs.
-</p>
-
-</div>
-`,
-    xp: 20
-},
-{
-    id: "python-topic-29",
-    type: "theory",
-    title: "Polymorphism in Python",
-    description: "Understanding how the same method name can behave differently in different classes",
-    content: `
-
-<style>
-.theory-content {
-    font-family: Arial, sans-serif;
-    line-height: 1.7;
-    padding: 20px;
-}
-
-.theory-content h2 {
-    margin-top: 30px;
-}
-
-.code-example {
-    background: #1e1e1e;
-    color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
-    overflow-x: auto;
-    font-family: Consolas, monospace;
-}
-
-.code-example code {
-    color: #00ffcc;
-}
-
-.image-section {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.image-section img {
-    max-width: 600px;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-</style>
-
-<div class="theory-content">
-
-<h2>📌 Introduction</h2>
-
-<p>
-Polymorphism is one of the four pillars of Object-Oriented Programming.
-The word polymorphism means <strong>"many forms"</strong>.
-It allows the same method name to perform different actions
-depending on the object or class.
-</p>
-
-<div class="image-section">
-<img src="assets/images/polymorphism_python.gif" alt="Python Polymorphism">
-<p><em>One interface, multiple implementations.</em></p>
-</div>
-
-<hr>
-
-<h2>🔹 1. What is Polymorphism?</h2>
-
-<p>
-Polymorphism allows objects of different classes
-to respond to the same method call in different ways.
-</p>
-
-<ul>
-<li>Same method name</li>
-<li>Different behavior</li>
-<li>Improves flexibility</li>
-</ul>
-
-<hr>
-
-<h2>🔹 2. Polymorphism Example</h2>
-
-<div class="code-example">
-<pre><code>class Dog:
-
-    def sound(self):
-        print("Dog barks")
-
-
-class Cat:
-
-    def sound(self):
-        print("Cat meows")
-
-
-d = Dog()
-c = Cat()
-
-d.sound()
-c.sound()</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Dog barks
-Cat meows</code></pre>
-</div>
-
-<p>
-Both classes use the same method name <strong>sound()</strong>,
-but the behavior is different.
-</p>
-
-<hr>
-
-<h2>🔹 3. Polymorphism with Functions</h2>
-
-<div class="code-example">
-<pre><code>class Bird:
-
-    def fly(self):
-        print("Bird flies")
-
-
-class Airplane:
-
-    def fly(self):
-        print("Airplane flies")
-
-
-def start_flying(obj):
-    obj.fly()
-
-
-b = Bird()
-a = Airplane()
-
-start_flying(b)
-start_flying(a)</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Bird flies
-Airplane flies</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 4. Method Overriding</h2>
-
-<p>
-Polymorphism often appears through method overriding,
-where a child class provides its own implementation
-of a parent class method.
-</p>
-
-<div class="code-example">
-<pre><code>class Animal:
-
-    def speak(self):
-        print("Animal makes sound")
-
-
-class Dog(Animal):
-
-    def speak(self):
-        print("Dog barks")
-
-
-d = Dog()
-
-d.speak()</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Dog barks</code></pre>
-</div>
-
-<hr>
-
-<h2>🚀 Conclusion</h2>
-
-<p>
-Polymorphism allows the same interface to be used for different data types.
-It improves flexibility, scalability, and code reuse in
-object-oriented programming.
-</p>
-
-</div>
-`,
-    xp: 20
-},
-{
-    id: "python-topic-30",
-    type: "theory",
-    title: "Abstraction in Python",
-    description: "Understanding how abstraction hides complex implementation details",
-    content: `
-
-<style>
-.theory-content {
-    font-family: Arial, sans-serif;
-    line-height: 1.7;
-    padding: 20px;
-}
-
-.theory-content h2 {
-    margin-top: 30px;
-}
-
-.code-example {
-    background: #1e1e1e;
-    color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
-    overflow-x: auto;
-    font-family: Consolas, monospace;
-}
-
-.code-example code {
-    color: #00ffcc;
-}
-
-.image-section {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.image-section img {
-    max-width: 600px;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-</style>
-
-<div class="theory-content">
-
-<h2>📌 Introduction</h2>
-
-<p>
-Abstraction is one of the four pillars of Object-Oriented Programming.
-It focuses on hiding complex internal implementation details
-and showing only the necessary features of an object.
-</p>
-
-<div class="image-section">
-<img src="assets/images/abstraction.jpg" alt="Python Abstraction">
-<p><em>Abstraction hides complexity and shows only essential functionality.</em></p>
-</div>
-
-<hr>
-
-<h2>🔹 1. What is Abstraction?</h2>
-
-<p>
-Abstraction allows programmers to interact with objects
-without knowing how they are implemented internally.
-</p>
-
-<ul>
-<li>Hides internal implementation</li>
-<li>Shows only required functionality</li>
-<li>Improves code readability</li>
-<li>Reduces complexity</li>
-</ul>
-
-<hr>
-
-<h2>🔹 2. Real Life Example</h2>
-
-<p>
-When you drive a car, you use the steering wheel, accelerator,
-and brakes without knowing the internal engine mechanism.
-This is abstraction.
-</p>
-
-<hr>
-
-<h2>🔹 3. Abstraction Using Abstract Classes</h2>
-
-<p>
-Python provides abstraction using the <strong>abc module</strong>
-(Abstract Base Classes).
-</p>
-
-<div class="code-example">
-<pre><code>from abc import ABC, abstractmethod
-
-
-class Animal(ABC):
-
-    @abstractmethod
-    def sound(self):
-        pass
-
-
-class Dog(Animal):
-
-    def sound(self):
-        print("Dog barks")
-
-
-d = Dog()
-
-d.sound()</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Dog barks</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 4. Why Abstraction is Important</h2>
-
-<ul>
-<li>Reduces program complexity</li>
-<li>Improves code maintainability</li>
-<li>Encourages modular design</li>
-<li>Provides a clear interface</li>
-</ul>
-
-<hr>
-
-<h2>🚀 Conclusion</h2>
-
-<p>
-Abstraction hides internal implementation details
-and exposes only the necessary functionality.
-It makes complex systems easier to use and maintain
-in object-oriented programming.
-</p>
-
-</div>
-`,
-    xp: 20
-},
-{
-    id: "python-topic-31",
-    type: "theory",
-    title: "List Comprehension in Python",
-    description: "Creating lists in a concise and efficient way",
-    content: `
-
-<style>
-.theory-content {
-    font-family: Arial, sans-serif;
-    line-height: 1.7;
-    padding: 20px;
-}
-
-.theory-content h2 {
-    margin-top: 30px;
-}
-
-.code-example {
-    background: #1e1e1e;
-    color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
-    overflow-x: auto;
-    font-family: Consolas, monospace;
-}
-
-.code-example code {
-    color: #00ffcc;
-}
-</style>
-
-<div class="theory-content">
-
-<h2>📌 Introduction</h2>
-
-<p>
-List comprehension is a concise way to create lists in Python.
-It allows developers to generate lists using a single line of code
-instead of writing multiple lines with loops.
-</p>
-
-<hr>
-
-<h2>🔹 1. Basic List Creation</h2>
-
-<div class="code-example">
-<pre><code>numbers = [1, 2, 3, 4, 5]
-
-print(numbers)</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>[1, 2, 3, 4, 5]</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 2. Using List Comprehension</h2>
-
-<p>
-List comprehension allows creating lists using a single expression.
-</p>
-
-<div class="code-example">
-<pre><code>squares = [x*x for x in range(5)]
-
-print(squares)</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>[0, 1, 4, 9, 16]</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 3. List Comprehension with Condition</h2>
-
-<div class="code-example">
-<pre><code>even_numbers = [x for x in range(10) if x % 2 == 0]
-
-print(even_numbers)</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>[0, 2, 4, 6, 8]</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 4. Advantages of List Comprehension</h2>
-
-<ul>
-<li>Shorter and cleaner code</li>
-<li>Faster execution</li>
-<li>Improves readability</li>
-<li>Widely used in data processing</li>
-</ul>
-
-<hr>
-
-<h2>🚀 Conclusion</h2>
-
-<p>
-List comprehension is a powerful feature in Python
-that allows developers to create lists in a concise,
-readable, and efficient way.
-</p>
-
-</div>
-`,
-    xp: 10
-},
-{
-    id: "python-topic-32",
-    type: "theory",
-    title: "Decorators in Python",
-    description: "Understanding how decorators modify the behavior of functions",
-    content: `
-
-<style>
-.theory-content {
-    font-family: Arial, sans-serif;
-    line-height: 1.7;
-    padding: 20px;
-}
-
-.theory-content h2 {
-    margin-top: 30px;
-}
-
-.code-example {
-    background: #1e1e1e;
-    color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
-    overflow-x: auto;
-    font-family: Consolas, monospace;
-}
-
-.code-example code {
-    color: #00ffcc;
-}
-</style>
-
-<div class="theory-content">
-
-<h2>📌 Introduction</h2>
-
-<p>
-A decorator in Python is a function that modifies the behavior
-of another function without changing its actual code.
-Decorators are widely used for logging, authentication,
-timing functions, and access control.
-</p>
-
-<hr>
-
-<h2>🔹 1. Functions as Objects</h2>
-
-<p>
-In Python, functions can be passed as arguments to other functions.
-</p>
-
-<div class="code-example">
-<pre><code>def greet():
-    print("Hello")
-
-def call_function(func):
-    func()
-
-call_function(greet)</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Hello</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 2. Creating a Decorator</h2>
-
-<div class="code-example">
-<pre><code>def my_decorator(func):
-
-    def wrapper():
-        print("Before function runs")
-        func()
-        print("After function runs")
-
-    return wrapper
-
-
-def say_hello():
-    print("Hello World")
-
-decorated = my_decorator(say_hello)
-
-decorated()</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Before function runs
-Hello World
-After function runs</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 3. Using @ Decorator Syntax</h2>
-
-<p>
-Python provides a cleaner way to apply decorators using the <strong>@</strong> symbol.
-</p>
-
-<div class="code-example">
-<pre><code>def my_decorator(func):
-
-    def wrapper():
-        print("Start")
-        func()
-        print("End")
-
-    return wrapper
-
-
-@my_decorator
-def greet():
-    print("Hello")
-
-greet()</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Start
-Hello
-End</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 4. Why Decorators Are Useful</h2>
-
-<ul>
-<li>Add functionality to existing functions</li>
-<li>Avoid code repetition</li>
-<li>Improve code organization</li>
-<li>Used in frameworks like Flask and Django</li>
-</ul>
-
-<hr>
-
-<h2>🚀 Conclusion</h2>
-
-<p>
-Decorators provide a powerful way to extend or modify
-function behavior without altering the original function.
-They are widely used in advanced Python programming
-and web development frameworks.
-</p>
-
-</div>
-`,
-    xp: 10
-},
-{
-    id: "python-topic-33",
-    type: "theory",
-    title: "Generators in Python",
-    description: "Understanding how generators produce values lazily using yield",
-    content: `
-
-<style>
-.theory-content {
-    font-family: Arial, sans-serif;
-    line-height: 1.7;
-    padding: 20px;
-}
-
-.theory-content h2 {
-    margin-top: 30px;
-}
-
-.code-example {
-    background: #1e1e1e;
-    color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
-    overflow-x: auto;
-    font-family: Consolas, monospace;
-}
-
-.code-example code {
-    color: #00ffcc;
-}
-</style>
-
-<div class="theory-content">
-
-<h2>📌 Introduction</h2>
-
-<p>
-Generators are a special type of function in Python that return
-an iterator. Instead of returning all values at once,
-generators produce values one at a time using the <strong>yield</strong> keyword.
-</p>
-
-<p>
-This makes generators memory efficient and useful for working with
-large data sets.
-</p>
-
-<hr>
-
-<h2>🔹 1. Normal Function Example</h2>
-
-<div class="code-example">
-<pre><code>def numbers():
-    return [1, 2, 3]
-
-print(numbers())</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>[1, 2, 3]</code></pre>
-</div>
-
-<p>
-This function returns all values at once.
-</p>
-
-<hr>
-
-<h2>🔹 2. Generator Function Using yield</h2>
-
-<div class="code-example">
-<pre><code>def numbers():
-
-    yield 1
-    yield 2
-    yield 3
-
-gen = numbers()
-
-print(next(gen))
-print(next(gen))
-print(next(gen))</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>1
-2
-3</code></pre>
-</div>
-
-<p>
-Each call to <strong>next()</strong> returns the next value.
-</p>
-
-<hr>
-
-<h2>🔹 3. Generator with Loop</h2>
-
-<div class="code-example">
-<pre><code>def count_up_to(n):
-
-    for i in range(n):
-        yield i
-
-for num in count_up_to(5):
-    print(num)</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>0
-1
-2
-3
-4</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 4. Advantages of Generators</h2>
-
-<ul>
-<li>Memory efficient</li>
-<li>Lazy evaluation</li>
-<li>Good for large datasets</li>
-<li>Improves performance</li>
-</ul>
-
-<hr>
-
-<h2>🚀 Conclusion</h2>
-
-<p>
-Generators allow Python programs to produce values one at a time
-instead of storing everything in memory.
-They are useful when working with large data streams
-or infinite sequences.
-</p>
-
-</div>
-`,
-    xp: 10
-},
-{
-    id: "python-topic-34",
-    type: "theory",
-    title: "File Handling in Python",
-    description: "Understanding how to create, read, write, and append files in Python",
-    content: `
-
-<style>
-.theory-content {
-    font-family: Arial, sans-serif;
-    line-height: 1.7;
-    padding: 20px;
-}
-
-.theory-content h2 {
-    margin-top: 30px;
-}
-
-.code-example {
-    background: #1e1e1e;
-    color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
-    overflow-x: auto;
-    font-family: Consolas, monospace;
-}
-
-.code-example code {
-    color: #00ffcc;
-}
-</style>
-
-<div class="theory-content">
-
-<h2>📌 Introduction</h2>
-
-<p>
-File handling allows Python programs to store data permanently
-by reading from or writing to files. This is useful when working
-with logs, configuration files, or user data.
-</p>
-
-<hr>
-
-<h2>🔹 1. Opening a File</h2>
-
-<p>
-Python provides the <strong>open()</strong> function to open a file.
-</p>
-
-<div class="code-example">
-<pre><code>file = open("example.txt", "r")</code></pre>
-</div>
-
-<p>
-Common file modes:
-</p>
-
-<ul>
-<li><strong>r</strong> → Read file</li>
-<li><strong>w</strong> → Write file (overwrites)</li>
-<li><strong>a</strong> → Append file</li>
-<li><strong>x</strong> → Create file</li>
-</ul>
-
-<hr>
-
-<h2>🔹 2. Reading a File</h2>
-
-<div class="code-example">
-<pre><code>file = open("example.txt", "r")
-
-content = file.read()
-
-print(content)
-
-file.close()</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Hello Python</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 3. Writing to a File</h2>
-
-<div class="code-example">
-<pre><code>file = open("example.txt", "w")
-
-file.write("Hello Python")
-
-file.close()</code></pre>
-</div>
-
-<p>
-This will create or overwrite the file.
-</p>
-
-<hr>
-
-<h2>🔹 4. Appending to a File</h2>
-
-<div class="code-example">
-<pre><code>file = open("example.txt", "a")
-
-file.write("\\nWelcome to file handling")
-
-file.close()</code></pre>
-</div>
-
-<h4>Output (file content):</h4>
-
-<div class="code-example">
-<pre><code>Hello Python
-Welcome to file handling</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 5. Using with Statement</h2>
-
-<p>
-The <strong>with</strong> statement automatically closes the file.
-</p>
-
-<div class="code-example">
-<pre><code>with open("example.txt", "r") as file:
-    print(file.read())</code></pre>
-</div>
-
-<hr>
-
-<h2>🚀 Conclusion</h2>
-
-<p>
-File handling allows Python programs to store and retrieve
-data from files. Using the with statement is recommended
-because it automatically manages file closing.
-</p>
-
-</div>
-`,
-    xp: 10
-},
-{
-    id: "python-topic-35",
-    type: "theory",
-    title: "Exception Handling in Python",
-    description: "Handling runtime errors using try, except, else, and finally",
-    content: `
-
-<style>
-.theory-content {
-    font-family: Arial, sans-serif;
-    line-height: 1.7;
-    padding: 20px;
-}
-
-.theory-content h2 {
-    margin-top: 30px;
-}
-
-.code-example {
-    background: #1e1e1e;
-    color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
-    overflow-x: auto;
-    font-family: Consolas, monospace;
-}
-
-.code-example code {
-    color: #00ffcc;
-}
-</style>
-
-<div class="theory-content">
-
-<h2>📌 Introduction</h2>
-
-<p>
-Exception handling allows Python programs to deal with runtime errors
-without crashing the program. When an error occurs, Python raises an
-exception which can be handled using special blocks like
-<strong>try</strong> and <strong>except</strong>.
-</p>
-
-<hr>
-
-<h2>🔹 1. Basic try and except</h2>
-
-<div class="code-example">
-<pre><code>try:
-    x = 10 / 0
-except:
-    print("An error occurred")</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>An error occurred</code></pre>
-</div>
-
-<p>
-Here the program does not crash even though division by zero occurs.
-</p>
-
-<hr>
-
-<h2>🔹 2. Catching Specific Exceptions</h2>
-
-<div class="code-example">
-<pre><code>try:
-    number = int("abc")
-except ValueError:
-    print("Invalid conversion")</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Invalid conversion</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 3. Using else Block</h2>
-
-<p>
-The <strong>else</strong> block executes if no exception occurs.
-</p>
-
-<div class="code-example">
-<pre><code>try:
-    num = 10 / 2
-except:
-    print("Error occurred")
-else:
-    print("Result:", num)</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Result: 5.0</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 4. Using finally Block</h2>
-
-<p>
-The <strong>finally</strong> block always runs whether an exception occurs or not.
-</p>
-
-<div class="code-example">
-<pre><code>try:
-    print("Running program")
-except:
-    print("Error")
-finally:
-    print("Execution finished")</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Running program
-Execution finished</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 5. Raising Custom Exceptions</h2>
-
-<div class="code-example">
-<pre><code>age = 16
-
-if age < 18:
-    raise Exception("You must be 18 or older")</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Exception: You must be 18 or older</code></pre>
-</div>
-
-<hr>
-
-<h2>🚀 Conclusion</h2>
-
-<p>
-Exception handling helps make programs more reliable and user friendly.
-By handling errors properly, developers can prevent unexpected crashes
-and provide meaningful error messages.
-</p>
-
-</div>
-`,
-    xp: 10
-},
-{
-    id: "python-topic-36",
-    type: "theory",
-    title: "Modules and Packages in Python",
-    description: "Understanding how Python organizes code using modules and packages",
-    content: `
-
-<style>
-.theory-content {
-    font-family: Arial, sans-serif;
-    line-height: 1.7;
-    padding: 20px;
-}
-
-.theory-content h2 {
-    margin-top: 30px;
-}
-
-.code-example {
-    background: #1e1e1e;
-    color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
-    overflow-x: auto;
-    font-family: Consolas, monospace;
-}
-
-.code-example code {
-    color: #00ffcc;
-}
-</style>
-
-<div class="theory-content">
-
-<h2>📌 Introduction</h2>
-
-<p>
-As Python programs grow larger, it becomes important to organize code properly.
-Python provides <strong>modules</strong> and <strong>packages</strong>
-to structure programs into reusable components.
-</p>
-
-<hr>
-
-<h2>🔹 1. What is a Module?</h2>
-
-<p>
-A module is simply a Python file containing functions, variables,
-or classes that can be reused in other programs.
-</p>
-
-<div class="code-example">
-<pre><code># file: math_operations.py
-
-def add(a, b):
-    return a + b</code></pre>
-</div>
-
-<p>
-This file can be imported and used in another program.
-</p>
-
-<hr>
-
-<h2>🔹 2. Importing a Module</h2>
-
-<div class="code-example">
-<pre><code>import math_operations
-
-result = math_operations.add(5, 3)
-
-print(result)</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>8</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 3. Import Specific Function</h2>
-
-<p>
-You can import only the required functions from a module.
-</p>
-
-<div class="code-example">
-<pre><code>from math_operations import add
-
-print(add(10, 5))</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>15</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 4. What is a Package?</h2>
-
-<p>
-A package is a collection of multiple modules organized in a folder.
-It helps manage large projects by grouping related modules together.
-</p>
-
-<div class="code-example">
-<pre><code>project/
-│
-├── main.py
-├── utils/
-│   ├── __init__.py
-│   ├── math_tools.py
-│   └── string_tools.py</code></pre>
-</div>
-
-<p>
-The <strong>__init__.py</strong> file tells Python that the folder
-should be treated as a package.
-</p>
-
-<hr>
-
-<h2>🔹 5. Built-in Modules</h2>
-
-<p>
-Python also provides many built-in modules such as:
-</p>
-
-<ul>
-<li>math</li>
-<li>random</li>
-<li>datetime</li>
-<li>os</li>
-<li>sys</li>
-</ul>
-
-<div class="code-example">
-<pre><code>import math
-
-print(math.sqrt(16))</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>4.0</code></pre>
-</div>
-
-<hr>
-
-<h2>🚀 Conclusion</h2>
-
-<p>
-Modules and packages help organize Python code into reusable,
-manageable components. They make large projects easier to maintain
-and encourage code reuse across applications.
-</p>
-
-</div>
-`,
-    xp: 10
-},
-
+        id: 'py-adv-dfs-practice',
+        type: 'practice',
+        title: 'DFS Concept',
+        description: 'Print DFS order',
+        content: `
+            <div class="practice-section">
+                <div class="challenge-goal">
+                    <h4>Goal</h4>
+                    <ul>
+                        <li>Print DFS traversal: 1 2 3</li>
+                    </ul>
+                </div>
+            </div>
+        `,
+        starterCode: `# Write your code here\n`,
+        solution: `stack = [1, 2, 3]\nwhile stack:\n    print(stack.pop())`,
+        test: (output) => output.replace(/\\s/g, '') === '321',
+        xp: 10
+    }
 
 ],
 },
@@ -3450,7 +1518,7 @@ and encourage code reuse across applications.
                                 </ul>
 
                                 <div class="info-box">
-                                    <strong>📝 JavaScript vs Java</strong>
+                                    <strong>\u{1F4DD} JavaScript vs Java</strong>
                                     <p>Despite the similar names, JavaScript and Java are completely different languages! JavaScript was named to capitalize on Java's popularity in 1995.</p>
                                 </div>
 
@@ -3472,14 +1540,14 @@ and encourage code reuse across applications.
                         content: `
                             <div class="practice-section">
                                 <div class="challenge-goal">
-                                    <h4>🎯 Challenge Goal</h4>
+                                    <h4>\u{1F3AF} Challenge Goal</h4>
                                     <ul>
                                         <li>Use console.log() to print "Hello, JavaScript!"</li>
                                     </ul>
                                 </div>
 
                                 <div class="info-box">
-                                    <strong>📝 About console.log()</strong>
+                                    <strong>\u{1F4DD} About console.log()</strong>
                                     <p>This is JavaScript's way of printing output. Don't forget the semicolon at the end (though it's optional in modern JavaScript).</p>
                                 </div>
                             </div>
@@ -3506,7 +1574,7 @@ var city = "New York";   <span class="code-comment">// Old way (avoid using)</sp
                                 </div>
 
                                 <div class="info-box tip">
-                                    <strong>💡 Best Practice</strong>
+                                    <strong>\u{1F4A1} Best Practice</strong>
                                     <p>Use <code>const</code> by default. Only use <code>let</code> if you need to reassign the variable. Avoid <code>var</code>.</p>
                                 </div>
 
@@ -3533,7 +1601,7 @@ let empty = null;</pre>
                                 <ul>
                                     <li>Use camelCase: firstName, lastName, studentAge</li>
                                     <li>Start with a letter, $, or _</li>
-                                    <li>Case-sensitive (age ≠ Age)</li>
+                                    <li>Case-sensitive (age \u2260 Age)</li>
                                     <li>Cannot use reserved words (let, const, if, etc.)</li>
                                 </ul>
 
@@ -3560,7 +1628,7 @@ console.log(greeting);  <span class="code-comment">// Hello, John!</span></pre>
                         content: `
                             <div class="practice-section">
                                 <div class="challenge-goal">
-                                    <h4>🎯 Challenge Goal</h4>
+                                    <h4>\u{1F3AF} Challenge Goal</h4>
                                     <ul>
                                         <li>Create a const variable "message" with value "Learning JavaScript"</li>
                                         <li>Log it to the console</li>
@@ -3632,7 +1700,7 @@ const square = x => x * x;</pre>
                                 </div>
 
                                 <div class="info-box tip">
-                                    <strong>💡 Why Use Functions?</strong>
+                                    <strong>\u{1F4A1} Why Use Functions?</strong>
                                     <ul>
                                         <li>Avoid repeating code</li>
                                         <li>Make code more organized</li>
@@ -3652,7 +1720,7 @@ const square = x => x * x;</pre>
                         content: `
                             <div class="practice-section">
                                 <div class="challenge-goal">
-                                    <h4>🎯 Challenge Goal</h4>
+                                    <h4>\u{1F3AF} Challenge Goal</h4>
                                     <ul>
                                         <li>Create a function called multiply that takes two parameters</li>
                                         <li>Return the product of the two numbers</li>
@@ -3871,7 +1939,7 @@ table th, table td {
 
 <div class="theory-content">
 
-    <h2>📌 Introduction</h2>
+    <h2>\u{1F4CC} Introduction</h2>
     <p>
         Arrays and Objects are non-primitive data types in JavaScript.
         They allow storing multiple values in a single structure.
@@ -3881,7 +1949,7 @@ table th, table td {
 
     <hr>
 
-    <h2>🔹 1. Arrays in JavaScript</h2>
+    <h2>\u{1F539} 1. Arrays in JavaScript</h2>
 
     <p>
         An Array stores multiple values in an ordered list.
@@ -3896,7 +1964,7 @@ table th, table td {
         <p><em>Array elements are accessed using index numbers.</em></p>
     </div>
 
-    <h3>✅ Creating an Array</h3>
+    <h3>\u2705 Creating an Array</h3>
 
     <div class="code-example">
 <pre><code>const numbers = [10, 20, 30, 40];
@@ -3910,7 +1978,7 @@ console.log(numbers);</code></pre>
 <pre><code>[10, 20, 30, 40]</code></pre>
     </div>
 
-    <h3>✅ Accessing Array Elements</h3>
+    <h3>\u2705 Accessing Array Elements</h3>
 
     <div class="code-example">
 <pre><code>const numbers = [10, 20, 30];
@@ -3926,7 +1994,7 @@ console.log(numbers[2]);</code></pre>
 30</code></pre>
     </div>
 
-    <h3>✅ Array Length</h3>
+    <h3>\u2705 Array Length</h3>
 
     <div class="code-example">
 <pre><code>const arr = [1, 2, 3];
@@ -3942,7 +2010,7 @@ console.log(arr.length);</code></pre>
 
     <hr>
 
-    <h2>🔹 2. Objects in JavaScript</h2>
+    <h2>\u{1F539} 2. Objects in JavaScript</h2>
 
     <p>
         Objects store data in key-value pairs.
@@ -3957,7 +2025,7 @@ console.log(arr.length);</code></pre>
         <p><em>Objects store data using key-value pairs.</em></p>
     </div>
 
-    <h3>✅ Creating an Object</h3>
+    <h3>\u2705 Creating an Object</h3>
 
     <div class="code-example">
 <pre><code>const user = {
@@ -3975,7 +2043,7 @@ console.log(user);</code></pre>
 <pre><code>{ name: "Pritam", score: 95, city: "Midnapore" }</code></pre>
     </div>
 
-    <h3>✅ Accessing Object Properties</h3>
+    <h3>\u2705 Accessing Object Properties</h3>
 
     <div class="code-example">
 <pre><code>const user = { score: 95 };
@@ -3993,7 +2061,7 @@ console.log(user["score"]);</code></pre>
 
     <hr>
 
-    <h2>🎯 Real World Example</h2>
+    <h2>\u{1F3AF} Real World Example</h2>
 
     <div class="code-example">
 <pre><code>const students = [
@@ -4012,7 +2080,7 @@ console.log(students[1].name);</code></pre>
 
     <hr>
 
-    <h2>🚀 Conclusion</h2>
+    <h2>\u{1F680} Conclusion</h2>
     <p>
         Arrays are best for ordered collections.
         Objects are best for structured data.
@@ -4070,7 +2138,7 @@ console.log(students[1].name);</code></pre>
 
 <div class="theory-content">
 
-    <h2>📌 Introduction</h2>
+    <h2>\u{1F4CC} Introduction</h2>
     <p>
         Data Types define the kind of value a variable can hold.
         JavaScript has two main categories of data types:
@@ -4079,7 +2147,7 @@ console.log(students[1].name);</code></pre>
 
     <hr>
 
-    <h2>🔹 1. Primitive Data Types</h2>
+    <h2>\u{1F539} 1. Primitive Data Types</h2>
 
     <p>
         Primitive data types store single values and are immutable.
@@ -4093,7 +2161,7 @@ console.log(students[1].name);</code></pre>
         <p><em>Primitive data types in JavaScript.</em></p>
     </div>
 
-    <h3>✅ String</h3>
+    <h3>\u2705 String</h3>
 
     <div class="code-example">
 <pre><code>const name = "Pritam";
@@ -4107,7 +2175,7 @@ console.log(typeof name);</code></pre>
 <pre><code>string</code></pre>
     </div>
 
-    <h3>✅ Number</h3>
+    <h3>\u2705 Number</h3>
 
     <div class="code-example">
 <pre><code>const age = 21;
@@ -4121,7 +2189,7 @@ console.log(typeof age);</code></pre>
 <pre><code>number</code></pre>
     </div>
 
-    <h3>✅ Boolean</h3>
+    <h3>\u2705 Boolean</h3>
 
     <div class="code-example">
 <pre><code>const isStudent = true;
@@ -4135,7 +2203,7 @@ console.log(typeof isStudent);</code></pre>
 <pre><code>boolean</code></pre>
     </div>
 
-    <h3>✅ Undefined</h3>
+    <h3>\u2705 Undefined</h3>
 
     <div class="code-example">
 <pre><code>let score;
@@ -4149,7 +2217,7 @@ console.log(typeof score);</code></pre>
 <pre><code>undefined</code></pre>
     </div>
 
-    <h3>✅ Null</h3>
+    <h3>\u2705 Null</h3>
 
     <div class="code-example">
 <pre><code>const value = null;
@@ -4164,19 +2232,19 @@ console.log(typeof value);</code></pre>
     </div>
 
     <p>
-        ⚠ Note: typeof null returns "object" due to a historical JavaScript bug.
+        \u26A0 Note: typeof null returns "object" due to a historical JavaScript bug.
     </p>
 
     <hr>
 
-    <h2>🔹 2. Non-Primitive Data Types</h2>
+    <h2>\u{1F539} 2. Non-Primitive Data Types</h2>
 
     <p>
         Non-Primitive data types can store collections of values.
         These include Objects, Arrays, and Functions.
     </p>
 
-    <h3>✅ Object</h3>
+    <h3>\u2705 Object</h3>
 
     <div class="code-example">
 <pre><code>const user = {
@@ -4193,7 +2261,7 @@ console.log(typeof user);</code></pre>
 <pre><code>object</code></pre>
     </div>
 
-    <h3>✅ Array</h3>
+    <h3>\u2705 Array</h3>
 
     <div class="code-example">
 <pre><code>const numbers = [1, 2, 3];
@@ -4207,7 +2275,7 @@ console.log(typeof numbers);</code></pre>
 <pre><code>object</code></pre>
     </div>
 
-    <h3>✅ Function</h3>
+    <h3>\u2705 Function</h3>
 
     <div class="code-example">
 <pre><code>function greet() {
@@ -4225,7 +2293,7 @@ console.log(typeof greet);</code></pre>
 
     <hr>
 
-    <h2>🚀 Conclusion</h2>
+    <h2>\u{1F680} Conclusion</h2>
     <p>
         Understanding data types is fundamental in JavaScript.
         Primitive types store single values.
@@ -4284,7 +2352,7 @@ console.log(typeof greet);</code></pre>
 
 <div class="theory-content">
 
-    <h2>📌 Introduction</h2>
+    <h2>\u{1F4CC} Introduction</h2>
     <p>
         Operators are symbols used to perform operations on values.
         JavaScript provides different types of operators for calculations,
@@ -4301,7 +2369,7 @@ console.log(typeof greet);</code></pre>
 
     <hr>
 
-    <h2>🔹 1. Arithmetic Operators</h2>
+    <h2>\u{1F539} 1. Arithmetic Operators</h2>
 
     <p>
         Used for mathematical calculations.
@@ -4328,7 +2396,7 @@ console.log(a / b);</code></pre>
 
     <hr>
 
-    <h2>🔹 2. Comparison Operators</h2>
+    <h2>\u{1F539} 2. Comparison Operators</h2>
 
     <p>
         Used to compare two values.
@@ -4351,7 +2419,7 @@ true</code></pre>
 
     <hr>
 
-    <h2>🔹 3. Logical Operators</h2>
+    <h2>\u{1F539} 3. Logical Operators</h2>
 
     <p>
         Used to combine multiple conditions.
@@ -4373,7 +2441,7 @@ false</code></pre>
 
     <hr>
 
-    <h2>🔹 4. Ternary Operator</h2>
+    <h2>\u{1F539} 4. Ternary Operator</h2>
 
     <p>
         A shorthand for if-else statements.
@@ -4395,7 +2463,7 @@ console.log(result);</code></pre>
 
     <hr>
 
-    <h2>🚀 Conclusion</h2>
+    <h2>\u{1F680} Conclusion</h2>
     <p>
         Operators are essential in JavaScript.
         They allow calculations, comparisons, and logical decisions.
@@ -4453,7 +2521,7 @@ console.log(result);</code></pre>
 
 <div class="theory-content">
 
-    <h2>📌 Introduction</h2>
+    <h2>\u{1F4CC} Introduction</h2>
     <p>
         Type Conversion is the process of converting a value from one data type to another.
         JavaScript automatically converts types when needed (Implicit Conversion),
@@ -4470,7 +2538,7 @@ console.log(result);</code></pre>
 
     <hr>
 
-    <h2>🔹 1. Implicit Type Conversion (Coercion)</h2>
+    <h2>\u{1F539} 1. Implicit Type Conversion (Coercion)</h2>
 
     <p>
         JavaScript automatically converts data types when performing operations.
@@ -4492,20 +2560,20 @@ console.log(true + 1);</code></pre>
 
     <p>
         Explanation:
-        - "5" + 2 → string concatenation
-        - "5" - 2 → number conversion
+        - "5" + 2 \u2192 string concatenation
+        - "5" - 2 \u2192 number conversion
         - true becomes 1
     </p>
 
     <hr>
 
-    <h2>🔹 2. Explicit Type Conversion</h2>
+    <h2>\u{1F539} 2. Explicit Type Conversion</h2>
 
     <p>
         Explicit conversion is done manually using built-in functions.
     </p>
 
-    <h3>✅ Convert to Number</h3>
+    <h3>\u2705 Convert to Number</h3>
 
     <div class="code-example">
 <pre><code>const value = "100";
@@ -4521,7 +2589,7 @@ console.log(parseInt(value));</code></pre>
 100</code></pre>
     </div>
 
-    <h3>✅ Convert to String</h3>
+    <h3>\u2705 Convert to String</h3>
 
     <div class="code-example">
 <pre><code>const num = 50;
@@ -4535,7 +2603,7 @@ console.log(String(num));</code></pre>
 <pre><code>"50"</code></pre>
     </div>
 
-    <h3>✅ Convert to Boolean</h3>
+    <h3>\u2705 Convert to Boolean</h3>
 
     <div class="code-example">
 <pre><code>console.log(Boolean(1));
@@ -4553,7 +2621,7 @@ false</code></pre>
 
     <hr>
 
-    <h2>🔹 3. Truthy and Falsy Values</h2>
+    <h2>\u{1F539} 3. Truthy and Falsy Values</h2>
 
     <p>
         Some values are automatically treated as false.
@@ -4577,7 +2645,7 @@ true</code></pre>
 
     <hr>
 
-    <h2>🚀 Conclusion</h2>
+    <h2>\u{1F680} Conclusion</h2>
     <p>
         Type Conversion is very important in JavaScript because it is loosely typed.
         Understanding implicit and explicit conversion helps avoid unexpected bugs.
@@ -4635,7 +2703,7 @@ true</code></pre>
 
 <div class="theory-content">
 
-    <h2>📌 Introduction</h2>
+    <h2>\u{1F4CC} Introduction</h2>
     <p>
         A function is a reusable block of code designed to perform a specific task.
         Functions help make code modular, reusable, and organized.
@@ -4651,7 +2719,7 @@ true</code></pre>
 
     <hr>
 
-    <h2>🔹 1. Function Declaration</h2>
+    <h2>\u{1F539} 1. Function Declaration</h2>
 
     <p>
         A function declaration defines a named function using the <strong>function</strong> keyword.
@@ -4673,7 +2741,7 @@ console.log(greet());</code></pre>
 
     <hr>
 
-    <h2>🔹 2. Function with Parameters</h2>
+    <h2>\u{1F539} 2. Function with Parameters</h2>
 
     <p>
         Functions can accept inputs called parameters.
@@ -4695,7 +2763,7 @@ console.log(add(5, 3));</code></pre>
 
     <hr>
 
-    <h2>🔹 3. Function Expression</h2>
+    <h2>\u{1F539} 3. Function Expression</h2>
 
     <p>
         A function can also be stored inside a variable.
@@ -4717,7 +2785,7 @@ console.log(multiply(4, 3));</code></pre>
 
     <hr>
 
-    <h2>🔹 4. Arrow Functions (ES6)</h2>
+    <h2>\u{1F539} 4. Arrow Functions (ES6)</h2>
 
     <p>
         Arrow functions provide a shorter syntax for writing functions.
@@ -4739,7 +2807,7 @@ console.log(subtract(10, 4));</code></pre>
 
     <hr>
 
-    <h2>🔹 5. Default Parameters</h2>
+    <h2>\u{1F539} 5. Default Parameters</h2>
 
     <p>
         Functions can have default parameter values.
@@ -4763,7 +2831,7 @@ Hello Pritam</code></pre>
 
     <hr>
 
-    <h2>🚀 Conclusion</h2>
+    <h2>\u{1F680} Conclusion</h2>
     <p>
         Functions are fundamental building blocks in JavaScript.
         They help structure code, improve readability, and enable reuse.
@@ -4821,7 +2889,7 @@ Hello Pritam</code></pre>
 
 <div class="theory-content">
 
-    <h2>📌 Introduction</h2>
+    <h2>\u{1F4CC} Introduction</h2>
     <p>
         Scope determines where variables and functions are accessible in your code.
         It controls the visibility and lifetime of variables.
@@ -4837,7 +2905,7 @@ Hello Pritam</code></pre>
 
     <hr>
 
-    <h2>🔹 1. Global Scope</h2>
+    <h2>\u{1F539} 1. Global Scope</h2>
 
     <p>
         Variables declared outside any function are globally scoped.
@@ -4862,7 +2930,7 @@ showName();</code></pre>
 
     <hr>
 
-    <h2>🔹 2. Function Scope</h2>
+    <h2>\u{1F539} 2. Function Scope</h2>
 
     <p>
         Variables declared inside a function are accessible only inside that function.
@@ -4889,7 +2957,7 @@ test();</code></pre>
 
     <hr>
 
-    <h2>🔹 3. Block Scope (let & const)</h2>
+    <h2>\u{1F539} 3. Block Scope (let & const)</h2>
 
     <p>
         Variables declared using <strong>let</strong> and <strong>const</strong>
@@ -4911,7 +2979,7 @@ test();</code></pre>
 
     <hr>
 
-    <h2>🔹 4. Lexical Scope</h2>
+    <h2>\u{1F539} 4. Lexical Scope</h2>
 
     <p>
         JavaScript uses lexical scope, meaning inner functions
@@ -4940,7 +3008,7 @@ outer();</code></pre>
 
     <hr>
 
-    <h2>🚀 Conclusion</h2>
+    <h2>\u{1F680} Conclusion</h2>
     <p>
         Scope controls accessibility of variables.
         Understanding scope helps prevent bugs and variable conflicts.
@@ -4998,7 +3066,7 @@ outer();</code></pre>
 
 <div class="theory-content">
 
-    <h2>📌 Introduction</h2>
+    <h2>\u{1F4CC} Introduction</h2>
     <p>
         Hoisting is JavaScript's default behavior of moving declarations 
         to the top of the current scope before code execution.
@@ -5014,11 +3082,11 @@ outer();</code></pre>
 
     <hr>
 
-    <h2>🔹 1. Variable Hoisting (var)</h2>
+    <h2>\u{1F539} 1. Variable Hoisting (var)</h2>
 
     <p>
         Variables declared with <strong>var</strong> are hoisted,
-        but only the declaration is hoisted — not the initialization.
+        but only the declaration is hoisted \u2014 not the initialization.
     </p>
 
     <div class="code-example">
@@ -5045,7 +3113,7 @@ x = 10;</code></pre>
 
     <hr>
 
-    <h2>🔹 2. let and const Hoisting</h2>
+    <h2>\u{1F539} 2. let and const Hoisting</h2>
 
     <p>
         Variables declared with <strong>let</strong> and <strong>const</strong>
@@ -5071,7 +3139,7 @@ let y = 5;</code></pre>
 
     <hr>
 
-    <h2>🔹 3. Function Hoisting</h2>
+    <h2>\u{1F539} 3. Function Hoisting</h2>
 
     <p>
         Function declarations are fully hoisted.
@@ -5093,7 +3161,7 @@ function greet() {
 
     <hr>
 
-    <h2>🔹 4. Function Expression Hoisting</h2>
+    <h2>\u{1F539} 4. Function Expression Hoisting</h2>
 
     <p>
         Function expressions are NOT fully hoisted.
@@ -5115,7 +3183,7 @@ var sayHi = function() {
 
     <hr>
 
-    <h2>🚀 Conclusion</h2>
+    <h2>\u{1F680} Conclusion</h2>
     <p>
         Hoisting can cause unexpected behavior if not understood properly.
         Always declare variables at the top and prefer <strong>let</strong> 
@@ -5173,7 +3241,7 @@ var sayHi = function() {
 
 <div class="theory-content">
 
-    <h2>📌 Introduction</h2>
+    <h2>\u{1F4CC} Introduction</h2>
     <p>
         A closure is created when a function remembers and accesses 
         variables from its outer (lexical) scope even after the outer 
@@ -5190,7 +3258,7 @@ var sayHi = function() {
 
     <hr>
 
-    <h2>🔹 1. Basic Example of Closure</h2>
+    <h2>\u{1F539} 1. Basic Example of Closure</h2>
 
     <div class="code-example">
 <pre><code>function outer() {
@@ -5220,7 +3288,7 @@ myFunc();</code></pre>
 
     <hr>
 
-    <h2>🔹 2. Closure with Counter Example</h2>
+    <h2>\u{1F539} 2. Closure with Counter Example</h2>
 
     <div class="code-example">
 <pre><code>function counter() {
@@ -5254,7 +3322,7 @@ increment();</code></pre>
 
     <hr>
 
-    <h2>🔹 3. Why Closures Are Important</h2>
+    <h2>\u{1F539} 3. Why Closures Are Important</h2>
 
     <ul>
         <li>Data privacy</li>
@@ -5266,7 +3334,7 @@ increment();</code></pre>
 
     <hr>
 
-    <h2>🚀 Conclusion</h2>
+    <h2>\u{1F680} Conclusion</h2>
     <p>
         Closures are one of the most powerful concepts in JavaScript.
         They allow functions to maintain access to outer variables,
@@ -5324,7 +3392,7 @@ increment();</code></pre>
 
 <div class="theory-content">
 
-    <h2>📌 Introduction</h2>
+    <h2>\u{1F4CC} Introduction</h2>
     <p>
         A callback function is a function passed as an argument to another function.
         It is executed after the main function finishes its task.
@@ -5340,7 +3408,7 @@ increment();</code></pre>
 
     <hr>
 
-    <h2>🔹 1. Basic Callback Example</h2>
+    <h2>\u{1F539} 1. Basic Callback Example</h2>
 
     <div class="code-example">
 <pre><code>function greet(name) {
@@ -5363,7 +3431,7 @@ processUser(greet);</code></pre>
 
     <hr>
 
-    <h2>🔹 2. Anonymous Callback</h2>
+    <h2>\u{1F539} 2. Anonymous Callback</h2>
 
     <p>
         We can also pass an anonymous function as a callback.
@@ -5383,7 +3451,7 @@ processUser(greet);</code></pre>
 
     <hr>
 
-    <h2>🔹 3. Callbacks in Asynchronous Code</h2>
+    <h2>\u{1F539} 3. Callbacks in Asynchronous Code</h2>
 
     <p>
         Callbacks are commonly used in asynchronous operations.
@@ -5403,7 +3471,7 @@ processUser(greet);</code></pre>
 
     <hr>
 
-    <h2>🔹 4. Why Callbacks Are Important</h2>
+    <h2>\u{1F539} 4. Why Callbacks Are Important</h2>
 
     <ul>
         <li>Used in asynchronous programming</li>
@@ -5414,7 +3482,7 @@ processUser(greet);</code></pre>
 
     <hr>
 
-    <h2>🚀 Conclusion</h2>
+    <h2>\u{1F680} Conclusion</h2>
     <p>
         Callback functions allow flexibility and asynchronous execution.
         They are essential for handling events, timers, and server responses.
@@ -5472,11 +3540,11 @@ processUser(greet);</code></pre>
 
 <div class="theory-content">
 
-    <h2>📌 Introduction</h2>
+    <h2>\u{1F4CC} Introduction</h2>
     <p>
         A Higher Order Function (HOF) is a function that either:
-        <br>• Takes another function as an argument
-        <br>• Returns another function
+        <br>\u2022 Takes another function as an argument
+        <br>\u2022 Returns another function
         <br><br>
         JavaScript treats functions as first-class citizens,
         meaning they can be passed and returned like variables.
@@ -5492,7 +3560,7 @@ processUser(greet);</code></pre>
 
     <hr>
 
-    <h2>🔹 1. Function Taking Another Function</h2>
+    <h2>\u{1F539} 1. Function Taking Another Function</h2>
 
     <div class="code-example">
 <pre><code>function greet(name) {
@@ -5515,7 +3583,7 @@ processUser(greet);</code></pre>
 
     <hr>
 
-    <h2>🔹 2. Function Returning Another Function</h2>
+    <h2>\u{1F539} 2. Function Returning Another Function</h2>
 
     <div class="code-example">
 <pre><code>function multiplier(x) {
@@ -5542,7 +3610,7 @@ console.log(double(5));</code></pre>
 
     <hr>
 
-    <h2>🔹 3. Real-World Example (Array Methods)</h2>
+    <h2>\u{1F539} 3. Real-World Example (Array Methods)</h2>
 
     <div class="code-example">
 <pre><code>const numbers = [1, 2, 3, 4];
@@ -5567,7 +3635,7 @@ console.log(doubled);</code></pre>
 
     <hr>
 
-    <h2>🚀 Conclusion</h2>
+    <h2>\u{1F680} Conclusion</h2>
     <p>
         Higher Order Functions make JavaScript powerful and flexible.
         They are heavily used in functional programming,
@@ -5625,7 +3693,7 @@ console.log(doubled);</code></pre>
 
 <div class="theory-content">
 
-    <h2>📌 Introduction</h2>
+    <h2>\u{1F4CC} Introduction</h2>
     <p>
         Functions in JavaScript can be classified as Pure or Impure.
         Understanding this difference is important for writing predictable
@@ -5642,13 +3710,13 @@ console.log(doubled);</code></pre>
 
     <hr>
 
-    <h2>🔹 1. Pure Function</h2>
+    <h2>\u{1F539} 1. Pure Function</h2>
 
     <p>
         A pure function:
-        <br>• Always returns the same output for the same input
-        <br>• Has no side effects
-        <br>• Does not modify external variables
+        <br>\u2022 Always returns the same output for the same input
+        <br>\u2022 Has no side effects
+        <br>\u2022 Does not modify external variables
     </p>
 
     <div class="code-example">
@@ -5673,13 +3741,13 @@ console.log(add(2, 3));</code></pre>
 
     <hr>
 
-    <h2>🔹 2. Impure Function</h2>
+    <h2>\u{1F539} 2. Impure Function</h2>
 
     <p>
         An impure function:
-        <br>• May produce different outputs for the same input
-        <br>• Has side effects
-        <br>• Modifies external state
+        <br>\u2022 May produce different outputs for the same input
+        <br>\u2022 Has side effects
+        <br>\u2022 Modifies external state
     </p>
 
     <div class="code-example">
@@ -5707,7 +3775,7 @@ console.log(addToTotal(5));</code></pre>
 
     <hr>
 
-    <h2>🔹 3. Why Pure Functions Are Important</h2>
+    <h2>\u{1F539} 3. Why Pure Functions Are Important</h2>
 
     <ul>
         <li>Easier to test</li>
@@ -5719,7 +3787,7 @@ console.log(addToTotal(5));</code></pre>
 
     <hr>
 
-    <h2>🚀 Conclusion</h2>
+    <h2>\u{1F680} Conclusion</h2>
     <p>
         Pure functions improve code reliability and maintainability.
         Impure functions can be useful but should be handled carefully.
@@ -5777,7 +3845,7 @@ console.log(addToTotal(5));</code></pre>
 
 <div class="theory-content">
 
-    <h2>📌 Introduction</h2>
+    <h2>\u{1F4CC} Introduction</h2>
     <p>
         Objects are one of the most important data structures in JavaScript.
         Advanced object concepts help in managing complex data efficiently.
@@ -5787,7 +3855,7 @@ console.log(addToTotal(5));</code></pre>
 
     <hr>
 
-    <h2>🔹 1. Object Methods</h2>
+    <h2>\u{1F539} 1. Object Methods</h2>
 
     <p>
         Objects can contain functions as properties.
@@ -5813,7 +3881,7 @@ console.log(user.greet());</code></pre>
 
     <hr>
 
-    <h2>🔹 2. Object.keys(), Object.values(), Object.entries()</h2>
+    <h2>\u{1F539} 2. Object.keys(), Object.values(), Object.entries()</h2>
 
     <div class="code-example">
 <pre><code>const person = {
@@ -5836,7 +3904,7 @@ console.log(Object.entries(person));</code></pre>
 
     <hr>
 
-    <h2>🔹 3. Object Destructuring</h2>
+    <h2>\u{1F539} 3. Object Destructuring</h2>
 
     <p>
         Destructuring allows extracting properties from objects easily.
@@ -5863,7 +3931,7 @@ console.log(marks);</code></pre>
 
     <hr>
 
-    <h2>🔹 4. Spread Operator with Objects</h2>
+    <h2>\u{1F539} 4. Spread Operator with Objects</h2>
 
     <div class="code-example">
 <pre><code>const user1 = { name: "Amit" };
@@ -5880,7 +3948,7 @@ console.log(user2);</code></pre>
 
     <hr>
 
-    <h2>🚀 Conclusion</h2>
+    <h2>\u{1F680} Conclusion</h2>
     <p>
         Advanced object techniques improve data manipulation and readability.
         Mastering object methods and destructuring is essential for modern JavaScript development.
@@ -5937,7 +4005,7 @@ console.log(user2);</code></pre>
 
 <div class="theory-content">
 
-<h2>📌 Introduction</h2>
+<h2>\u{1F4CC} Introduction</h2>
 
 <p>
 Destructuring is a JavaScript feature introduced in ES6 that allows
@@ -5952,7 +4020,7 @@ in a simpler way.
 
 <hr>
 
-<h2>🔹 1. Array Destructuring</h2>
+<h2>\u{1F539} 1. Array Destructuring</h2>
 
 <p>
 Array destructuring allows us to assign array elements to variables easily.
@@ -5978,7 +4046,7 @@ console.log(c);</code></pre>
 
 <hr>
 
-<h2>🔹 2. Skipping Values</h2>
+<h2>\u{1F539} 2. Skipping Values</h2>
 
 <p>
 We can skip elements while destructuring arrays.
@@ -6002,7 +4070,7 @@ console.log(third);</code></pre>
 
 <hr>
 
-<h2>🔹 3. Object Destructuring</h2>
+<h2>\u{1F539} 3. Object Destructuring</h2>
 
 <p>
 Object destructuring extracts properties from objects.
@@ -6029,7 +4097,7 @@ console.log(age);</code></pre>
 
 <hr>
 
-<h2>🔹 4. Renaming Variables</h2>
+<h2>\u{1F539} 4. Renaming Variables</h2>
 
 <p>
 You can rename variables while destructuring objects.
@@ -6054,7 +4122,7 @@ console.log(username);</code></pre>
 
 <hr>
 
-<h2>🚀 Conclusion</h2>
+<h2>\u{1F680} Conclusion</h2>
 
 <p>
 Destructuring makes code cleaner and more readable.
@@ -6113,7 +4181,7 @@ frameworks like React when handling props and API data.
 
 <div class="theory-content">
 
-<h2>📌 Introduction</h2>
+<h2>\u{1F4CC} Introduction</h2>
 
 <p>
 The <strong>Spread Operator (...)</strong> is used to expand elements of an
@@ -6128,7 +4196,7 @@ It was introduced in ES6 and is widely used in modern JavaScript.
 
 <hr>
 
-<h2>🔹 1. Spread with Arrays</h2>
+<h2>\u{1F539} 1. Spread with Arrays</h2>
 
 <p>
 The spread operator can copy or expand elements of an array.
@@ -6150,7 +4218,7 @@ console.log(newNumbers);</code></pre>
 
 <hr>
 
-<h2>🔹 2. Merging Arrays</h2>
+<h2>\u{1F539} 2. Merging Arrays</h2>
 
 <p>
 We can merge multiple arrays using the spread operator.
@@ -6173,7 +4241,7 @@ console.log(merged);</code></pre>
 
 <hr>
 
-<h2>🔹 3. Spread with Objects</h2>
+<h2>\u{1F539} 3. Spread with Objects</h2>
 
 <p>
 The spread operator can also copy object properties.
@@ -6205,7 +4273,7 @@ city: "Kolkata"
 
 <hr>
 
-<h2>🔹 4. Spread in Function Arguments</h2>
+<h2>\u{1F539} 4. Spread in Function Arguments</h2>
 
 <p>
 The spread operator can pass array elements as individual arguments.
@@ -6229,7 +4297,7 @@ console.log(add(...nums));</code></pre>
 
 <hr>
 
-<h2>🚀 Conclusion</h2>
+<h2>\u{1F680} Conclusion</h2>
 
 <p>
 The spread operator makes it easier to copy arrays,
@@ -6289,7 +4357,7 @@ like React for state updates.
 
 <div class="theory-content">
 
-<h2>📌 Introduction</h2>
+<h2>\u{1F4CC} Introduction</h2>
 
 <p>
 The <strong>Rest Operator (...)</strong> is used to collect multiple values
@@ -6304,7 +4372,7 @@ accept an unlimited number of arguments.
 
 <hr>
 
-<h2>🔹 1. Rest Operator in Functions</h2>
+<h2>\u{1F539} 1. Rest Operator in Functions</h2>
 
 <p>
 The rest operator allows a function to accept multiple arguments.
@@ -6326,7 +4394,7 @@ console.log(sum(5, 10, 15));</code></pre>
 
 <hr>
 
-<h2>🔹 2. Rest Operator with Array Destructuring</h2>
+<h2>\u{1F539} 2. Rest Operator with Array Destructuring</h2>
 
 <p>
 The rest operator can collect the remaining elements of an array.
@@ -6350,7 +4418,7 @@ console.log(rest);</code></pre>
 
 <hr>
 
-<h2>🔹 3. Rest Operator with Objects</h2>
+<h2>\u{1F539} 3. Rest Operator with Objects</h2>
 
 <p>
 The rest operator can also collect remaining properties of an object.
@@ -6378,7 +4446,7 @@ console.log(details);</code></pre>
 
 <hr>
 
-<h2>🔹 4. Difference Between Spread and Rest</h2>
+<h2>\u{1F539} 4. Difference Between Spread and Rest</h2>
 
 <p>
 Although they use the same syntax <strong>...</strong>,
@@ -6392,7 +4460,7 @@ their purpose is different.
 
 <hr>
 
-<h2>🚀 Conclusion</h2>
+<h2>\u{1F680} Conclusion</h2>
 
 <p>
 The rest operator simplifies handling multiple arguments
@@ -6451,7 +4519,7 @@ It is widely used in modern JavaScript development.
 
 <div class="theory-content">
 
-<h2>📌 Introduction</h2>
+<h2>\u{1F4CC} Introduction</h2>
 
 <p>
 Template literals are a modern way to work with strings in JavaScript.
@@ -6461,7 +4529,7 @@ instead of single or double quotes.
 
 <hr>
 
-<h2>🔹 1. Basic Template Literal</h2>
+<h2>\u{1F539} 1. Basic Template Literal</h2>
 
 <p>
 Template literals use backticks instead of quotes.
@@ -6483,7 +4551,7 @@ console.log(message);</code></pre>
 
 <hr>
 
-<h2>🔹 2. Expression Inside Template Literals</h2>
+<h2>\u{1F539} 2. Expression Inside Template Literals</h2>
 
 <p>
 We can insert expressions using <strong>\${ }</strong>.
@@ -6504,7 +4572,7 @@ console.log(\`Sum is \${a + b}\`);</code></pre>
 
 <hr>
 
-<h2>🔹 3. Multi-line Strings</h2>
+<h2>\u{1F539} 3. Multi-line Strings</h2>
 
 <p>
 Template literals allow multi-line strings without using \\n.
@@ -6528,7 +4596,7 @@ This is line three</code></pre>
 
 <hr>
 
-<h2>🔹 4. Using Template Literals in HTML</h2>
+<h2>\u{1F539} 4. Using Template Literals in HTML</h2>
 
 <p>
 Template literals are often used for generating HTML dynamically.
@@ -6550,7 +4618,7 @@ console.log(html);</code></pre>
 
 <hr>
 
-<h2>🚀 Conclusion</h2>
+<h2>\u{1F680} Conclusion</h2>
 
 <p>
 Template literals make string manipulation easier and cleaner.
@@ -6609,7 +4677,7 @@ HTML templates, and API responses.
 
 <div class="theory-content">
 
-<h2>📌 Introduction</h2>
+<h2>\u{1F4CC} Introduction</h2>
 
 <p>
 JSON stands for <strong>JavaScript Object Notation</strong>.  
@@ -6624,7 +4692,7 @@ servers and applications.
 
 <hr>
 
-<h2>🔹 1. JSON Structure</h2>
+<h2>\u{1F539} 1. JSON Structure</h2>
 
 <p>
 JSON looks very similar to JavaScript objects but follows strict rules.
@@ -6641,7 +4709,7 @@ Keys and string values must be written in double quotes.
 
 <hr>
 
-<h2>🔹 2. Converting Object to JSON (JSON.stringify)</h2>
+<h2>\u{1F539} 2. Converting Object to JSON (JSON.stringify)</h2>
 
 <p>
 The <strong>JSON.stringify()</strong> method converts a JavaScript object
@@ -6667,7 +4735,7 @@ console.log(jsonData);</code></pre>
 
 <hr>
 
-<h2>🔹 3. Converting JSON to Object (JSON.parse)</h2>
+<h2>\u{1F539} 3. Converting JSON to Object (JSON.parse)</h2>
 
 <p>
 The <strong>JSON.parse()</strong> method converts JSON data back
@@ -6690,7 +4758,7 @@ console.log(obj.name);</code></pre>
 
 <hr>
 
-<h2>🔹 4. Why JSON is Important</h2>
+<h2>\u{1F539} 4. Why JSON is Important</h2>
 
 <ul>
 <li>Used in APIs</li>
@@ -6701,7 +4769,7 @@ console.log(obj.name);</code></pre>
 
 <hr>
 
-<h2>🚀 Conclusion</h2>
+<h2>\u{1F680} Conclusion</h2>
 
 <p>
 JSON is a fundamental part of modern web development.
@@ -6761,7 +4829,7 @@ for working with APIs and databases.
 
 <div class="theory-content">
 
-<h2>📌 Introduction</h2>
+<h2>\u{1F4CC} Introduction</h2>
 
 <p>
 JavaScript executes code in a single thread.  
@@ -6777,7 +4845,7 @@ like API requests, timers, and file operations without blocking execution.
 
 <hr>
 
-<h2>🔹 1. Synchronous JavaScript</h2>
+<h2>\u{1F539} 1. Synchronous JavaScript</h2>
 
 <p>
 In synchronous execution, code runs line by line.
@@ -6806,7 +4874,7 @@ Every statement waits for the previous one to finish executing.
 
 <hr>
 
-<h2>🔹 2. Asynchronous JavaScript</h2>
+<h2>\u{1F539} 2. Asynchronous JavaScript</h2>
 
 <p>
 Asynchronous code allows certain operations to run in the background
@@ -6837,7 +4905,7 @@ The timer runs in the background, so the program continues executing.
 
 <hr>
 
-<h2>🔹 3. Why Asynchronous Programming is Important</h2>
+<h2>\u{1F539} 3. Why Asynchronous Programming is Important</h2>
 
 <ul>
 <li>Handles API requests</li>
@@ -6848,7 +4916,7 @@ The timer runs in the background, so the program continues executing.
 
 <hr>
 
-<h2>🔹 4. Common Asynchronous Features</h2>
+<h2>\u{1F539} 4. Common Asynchronous Features</h2>
 
 <ul>
 <li>Callbacks</li>
@@ -6860,7 +4928,7 @@ The timer runs in the background, so the program continues executing.
 
 <hr>
 
-<h2>🚀 Conclusion</h2>
+<h2>\u{1F680} Conclusion</h2>
 
 <p>
 Synchronous code executes step by step,
@@ -6920,7 +4988,7 @@ timers, and real-world web applications.
 
 <div class="theory-content">
 
-<h2>📌 Introduction</h2>
+<h2>\u{1F4CC} Introduction</h2>
 
 <p>
 JavaScript provides built-in timer functions that allow code to run after a delay
@@ -6932,7 +5000,7 @@ Two important timer functions are <strong>setTimeout()</strong> and
 
 <hr>
 
-<h2>🔹 1. setTimeout()</h2>
+<h2>\u{1F539} 1. setTimeout()</h2>
 
 <p>
 The <strong>setTimeout()</strong> function executes a function once after
@@ -6963,7 +5031,7 @@ The timer runs in the background and executes after the delay.
 
 <hr>
 
-<h2>🔹 2. setInterval()</h2>
+<h2>\u{1F539} 2. setInterval()</h2>
 
 <p>
 The <strong>setInterval()</strong> function repeatedly executes a function
@@ -6987,7 +5055,7 @@ Running every 1 second
 
 <hr>
 
-<h2>🔹 3. clearTimeout() and clearInterval()</h2>
+<h2>\u{1F539} 3. clearTimeout() and clearInterval()</h2>
 
 <p>
 These functions stop timers from executing.
@@ -7009,7 +5077,7 @@ clearTimeout(timer);</code></pre>
 
 <hr>
 
-<h2>🔹 4. Real World Use Cases</h2>
+<h2>\u{1F539} 4. Real World Use Cases</h2>
 
 <ul>
 <li>Delaying notifications</li>
@@ -7021,7 +5089,7 @@ clearTimeout(timer);</code></pre>
 
 <hr>
 
-<h2>🚀 Conclusion</h2>
+<h2>\u{1F680} Conclusion</h2>
 
 <p>
 Timer functions like setTimeout() and setInterval()
@@ -7081,7 +5149,7 @@ programming and real-time applications.
 
 <div class="theory-content">
 
-<h2>📌 Introduction</h2>
+<h2>\u{1F4CC} Introduction</h2>
 
 <p>
 A <strong>Promise</strong> is an object that represents the eventual completion
@@ -7096,21 +5164,21 @@ Promises help manage asynchronous code more effectively than callbacks.
 
 <hr>
 
-<h2>🔹 1. Promise States</h2>
+<h2>\u{1F539} 1. Promise States</h2>
 
 <p>
 A Promise can have three states:
 </p>
 
 <ul>
-<li><strong>Pending</strong> – Initial state, operation not completed</li>
-<li><strong>Fulfilled</strong> – Operation completed successfully</li>
-<li><strong>Rejected</strong> – Operation failed</li>
+<li><strong>Pending</strong> \u2013 Initial state, operation not completed</li>
+<li><strong>Fulfilled</strong> \u2013 Operation completed successfully</li>
+<li><strong>Rejected</strong> \u2013 Operation failed</li>
 </ul>
 
 <hr>
 
-<h2>🔹 2. Creating a Promise</h2>
+<h2>\u{1F539} 2. Creating a Promise</h2>
 
 <div class="code-example">
 <pre><code>const myPromise = new Promise(function(resolve, reject) {
@@ -7138,7 +5206,7 @@ myPromise.then(function(result) {
 
 <hr>
 
-<h2>🔹 3. Handling Errors with catch()</h2>
+<h2>\u{1F539} 3. Handling Errors with catch()</h2>
 
 <p>
 If a promise fails, the <strong>catch()</strong> method handles the error.
@@ -7168,7 +5236,7 @@ promise
 
 <hr>
 
-<h2>🔹 4. Promise Chaining</h2>
+<h2>\u{1F539} 4. Promise Chaining</h2>
 
 <p>
 Promises can be chained using multiple <strong>.then()</strong> calls.
@@ -7192,7 +5260,7 @@ Promises can be chained using multiple <strong>.then()</strong> calls.
 
 <hr>
 
-<h2>🔹 5. Why Promises are Important</h2>
+<h2>\u{1F539} 5. Why Promises are Important</h2>
 
 <ul>
 <li>Handle asynchronous tasks</li>
@@ -7203,7 +5271,7 @@ Promises can be chained using multiple <strong>.then()</strong> calls.
 
 <hr>
 
-<h2>🚀 Conclusion</h2>
+<h2>\u{1F680} Conclusion</h2>
 
 <p>
 Promises simplify asynchronous programming in JavaScript.
@@ -7262,7 +5330,7 @@ traditional callback-based approaches.
 
 <div class="theory-content">
 
-<h2>📌 Introduction</h2>
+<h2>\u{1F4CC} Introduction</h2>
 
 <p>
 <strong>Async / Await</strong> is a modern way to handle asynchronous
@@ -7278,7 +5346,7 @@ code that looks like synchronous code.
 
 <hr>
 
-<h2>🔹 1. async Function</h2>
+<h2>\u{1F539} 1. async Function</h2>
 
 <p>
 The <strong>async</strong> keyword is used to declare a function that
@@ -7303,7 +5371,7 @@ greet().then(function(result) {
 
 <hr>
 
-<h2>🔹 2. await Keyword</h2>
+<h2>\u{1F539} 2. await Keyword</h2>
 
 <p>
 The <strong>await</strong> keyword pauses the execution of an async
@@ -7337,7 +5405,7 @@ getData();</code></pre>
 
 <hr>
 
-<h2>🔹 3. Error Handling with try...catch</h2>
+<h2>\u{1F539} 3. Error Handling with try...catch</h2>
 
 <p>
 Errors inside async functions can be handled using
@@ -7372,7 +5440,7 @@ example();</code></pre>
 
 <hr>
 
-<h2>🔹 4. Advantages of Async/Await</h2>
+<h2>\u{1F539} 4. Advantages of Async/Await</h2>
 
 <ul>
 <li>Cleaner syntax</li>
@@ -7383,7 +5451,7 @@ example();</code></pre>
 
 <hr>
 
-<h2>🚀 Conclusion</h2>
+<h2>\u{1F680} Conclusion</h2>
 
 <p>
 Async/Await makes asynchronous JavaScript easier to write and understand.
@@ -7442,7 +5510,7 @@ for API calls and server communication.
 
 <div class="theory-content">
 
-<h2>📌 Introduction</h2>
+<h2>\u{1F4CC} Introduction</h2>
 
 <p>
 Error handling is an important part of programming.
@@ -7452,7 +5520,7 @@ without stopping the entire program.
 
 <hr>
 
-<h2>🔹 1. Basic Try Catch</h2>
+<h2>\u{1F539} 1. Basic Try Catch</h2>
 
 <p>
 The <strong>try</strong> block contains code that might produce an error.
@@ -7479,7 +5547,7 @@ If an error occurs, the <strong>catch</strong> block handles it.
 
 <hr>
 
-<h2>🔹 2. Accessing Error Message</h2>
+<h2>\u{1F539} 2. Accessing Error Message</h2>
 
 <p>
 The catch block can access details about the error.
@@ -7505,7 +5573,7 @@ The catch block can access details about the error.
 
 <hr>
 
-<h2>🔹 3. finally Block</h2>
+<h2>\u{1F539} 3. finally Block</h2>
 
 <p>
 The <strong>finally</strong> block always executes whether an error occurs
@@ -7537,7 +5605,7 @@ Execution finished</code></pre>
 
 <hr>
 
-<h2>🔹 4. Throwing Custom Errors</h2>
+<h2>\u{1F539} 4. Throwing Custom Errors</h2>
 
 <p>
 Developers can create custom errors using <strong>throw</strong>.
@@ -7572,7 +5640,7 @@ try {
 
 <hr>
 
-<h2>🚀 Conclusion</h2>
+<h2>\u{1F680} Conclusion</h2>
 
 <p>
 Error handling ensures applications do not crash when unexpected
@@ -7584,345 +5652,100 @@ gracefully and maintain application stability.
 `,
     xp: 20
 },
-{
-    id: "javascript-topic-29",
-    type: "theory",
-    title: "DOM Selection in JavaScript",
-    description: "Selecting HTML elements using JavaScript DOM methods",
-    content: `
-
-<style>
-.theory-content {
-    font-family: Arial, sans-serif;
-    line-height: 1.7;
-    padding: 20px;
-}
-
-.theory-content h2 {
-    margin-top: 30px;
-}
-
-.code-example {
-    background: #1e1e1e;
-    color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
-    overflow-x: auto;
-    font-family: Consolas, monospace;
-}
-
-.code-example code {
-    color: #00ffcc;
-}
-
-.image-section {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.image-section img {
-    max-width: 600px;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-</style>
-
-<div class="theory-content">
-
-<h2>📌 Introduction</h2>
-
-<p>
-The DOM (Document Object Model) allows JavaScript to interact with
-HTML elements on a web page.  
-DOM selection methods are used to select elements so that we can
-modify them dynamically.
-</p>
-
-<div class="image-section">
-<img src="assets/images/dom.jpg" alt="DOM Selection">
-<p><em>JavaScript can access and modify HTML using the DOM.</em></p>
-</div>
-
-<hr>
-
-<h2>🔹 1. getElementById()</h2>
-
-<p>
-The <strong>getElementById()</strong> method selects an element using its id.
-</p>
-
-<div class="code-example">
-<pre><code>&lt;h1 id="title"&gt;Hello World&lt;/h1&gt;
-
-const element = document.getElementById("title");
-
-console.log(element.textContent);</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Hello World</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 2. getElementsByClassName()</h2>
-
-<p>
-This method selects all elements with the specified class name.
-</p>
-
-<div class="code-example">
-<pre><code>&lt;p class="text"&gt;Item 1&lt;/p&gt;
-&lt;p class="text"&gt;Item 2&lt;/p&gt;
-
-const elements = document.getElementsByClassName("text");
-
-console.log(elements.length);</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>2</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 3. querySelector()</h2>
-
-<p>
-The <strong>querySelector()</strong> method selects the first element
-that matches a CSS selector.
-</p>
-
-<div class="code-example">
-<pre><code>&lt;p class="demo"&gt;Example Text&lt;/p&gt;
-
-const element = document.querySelector(".demo");
-
-console.log(element.textContent);</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Example Text</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 4. querySelectorAll()</h2>
-
-<p>
-The <strong>querySelectorAll()</strong> method selects all elements
-matching a CSS selector.
-</p>
-
-<div class="code-example">
-<pre><code>&lt;li&gt;Apple&lt;/li&gt;
-&lt;li&gt;Banana&lt;/li&gt;
-&lt;li&gt;Orange&lt;/li&gt;
-
-const items = document.querySelectorAll("li");
-
-console.log(items.length);</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>3</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 5. Why DOM Selection is Important</h2>
-
-<ul>
-<li>Modify HTML content dynamically</li>
-<li>Create interactive user interfaces</li>
-<li>Handle events</li>
-<li>Build dynamic web applications</li>
-</ul>
-
-<hr>
-
-<h2>🚀 Conclusion</h2>
-
-<p>
-DOM selection is the foundation of front-end JavaScript.
-It allows developers to access HTML elements and modify
-them dynamically to build interactive web pages.
-</p>
-
-</div>
-`,
-    xp: 20
-},
-{
-    id: "javascript-topic-30",
-    type: "theory",
-    title: "Event Handling in JavaScript",
-    description: "Understanding how JavaScript responds to user interactions",
-    content: `
-
-<style>
-.theory-content {
-    font-family: Arial, sans-serif;
-    line-height: 1.7;
-    padding: 20px;
-}
-
-.theory-content h2 {
-    margin-top: 30px;
-}
-
-.code-example {
-    background: #1e1e1e;
-    color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
-    overflow-x: auto;
-    font-family: Consolas, monospace;
-}
-
-.code-example code {
-    color: #00ffcc;
-}
-
-.image-section {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.image-section img {
-    max-width: 600px;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-</style>
-
-<div class="theory-content">
-
-<h2>📌 Introduction</h2>
-
-<p>
-Event handling allows JavaScript to respond to user interactions
-such as clicking a button, typing in an input field, or moving the mouse.
-Events make web pages interactive and dynamic.
-</p>
-
-<div class="image-section">
-<img src="assets/images/event.webp" alt="Event Handling">
-<p><em>JavaScript listens for events and executes code when they occur.</em></p>
-</div>
-
-<hr>
-
-<h2>🔹 1. Click Event</h2>
-
-<p>
-The click event occurs when a user clicks on an element.
-</p>
-
-<div class="code-example">
-<pre><code>&lt;button id="btn"&gt;Click Me&lt;/button&gt;
-
-const button = document.getElementById("btn");
-
-button.addEventListener("click", function() {
-    console.log("Button clicked");
-});</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Button clicked</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 2. Input Event</h2>
-
-<p>
-The input event triggers when the user types in an input field.
-</p>
-
-<div class="code-example">
-<pre><code>&lt;input id="nameInput" /&gt;
-
-const input = document.getElementById("nameInput");
-
-input.addEventListener("input", function() {
-    console.log("Typing...");
-});</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Typing...</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 3. Mouse Events</h2>
-
-<p>
-JavaScript can detect mouse actions such as hover and click.
-</p>
-
-<div class="code-example">
-<pre><code>&lt;div id="box"&gt;Hover Here&lt;/div&gt;
-
-const box = document.getElementById("box");
-
-box.addEventListener("mouseover", function() {
-    console.log("Mouse over element");
-});</code></pre>
-</div>
-
-<h4>Output:</h4>
-
-<div class="code-example">
-<pre><code>Mouse over element</code></pre>
-</div>
-
-<hr>
-
-<h2>🔹 4. Why Event Handling is Important</h2>
-
-<ul>
-<li>Creates interactive websites</li>
-<li>Responds to user actions</li>
-<li>Used in forms and buttons</li>
-<li>Essential for modern web apps</li>
-</ul>
-
-<hr>
-
-<h2>🚀 Conclusion</h2>
-
-<p>
-Event handling allows JavaScript to react to user actions.
-By combining DOM selection with events, developers can
-build dynamic and interactive web applications.
-</p>
-
-</div>
-`,
-    xp: 20
-},
 
                 ],
-    
+                master: [
+                    {
+                        id: 'javascript-master-01',
+                        type: 'practice',
+                        title: 'Master Challenge 1 (Easy)',
+                        description: 'Print the square of 7',
+                        content: `
+                            <div class="practice-section">
+                                <div class="challenge-goal">
+                                    <h4>Goal</h4>
+                                    <ul>
+                                        <li>Print the square of <code>7</code></li>
+                                    </ul>
+                                </div>
+                                <div class="info-box">
+                                    <strong>Master Badge</strong>
+                                    <p>Complete all 4 Master Challenges to unlock <strong>Master in JavaScript</strong>.</p>
+                                </div>
+                            </div>
+                        `,
+                        starterCode: `// Master Challenge (Easy)\n// Print the square of 7\n`,
+                        solution: `console.log(7 ** 2);`,
+                        test: (output) => output.trim() === '49',
+                        xp: 100,
+                        forceSubmit: true
+                    },
+                    {
+                        id: 'javascript-master-02',
+                        type: 'practice',
+                        title: 'Master Challenge 2 (Medium)',
+                        description: 'Print Pass when score >= 60',
+                        content: `
+                            <div class="practice-section">
+                                <div class="challenge-goal">
+                                    <h4>Goal</h4>
+                                    <ul>
+                                        <li>Create <code>score = 72</code></li>
+                                        <li>If <code>score &gt;= 60</code>, print <code>"Pass"</code>, else print <code>"Fail"</code></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        `,
+                        starterCode: `// Master Challenge (Medium)\n// Write your code below\n`,
+                        solution: `const score = 72;\nif (score >= 60) {\n  console.log(\"Pass\");\n} else {\n  console.log(\"Fail\");\n}`,
+                        test: (output) => output.trim() === 'Pass',
+                        xp: 150,
+                        forceSubmit: true
+                    },
+                    {
+                        id: 'javascript-master-03',
+                        type: 'practice',
+                        title: 'Master Challenge 3 (Medium)',
+                        description: 'Print 1 to 5 (each on new line)',
+                        content: `
+                            <div class="practice-section">
+                                <div class="challenge-goal">
+                                    <h4>Goal</h4>
+                                    <ul>
+                                        <li>Use a loop to print <code>1 2 3 4 5</code></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        `,
+                        starterCode: `// Master Challenge (Medium)\n// Use a for loop\n`,
+                        solution: `for (let i = 1; i <= 5; i++) {\n  console.log(i);\n}`,
+                        test: (output) => output.replace(/\s/g, '') === '12345',
+                        xp: 150,
+                        forceSubmit: true
+                    },
+                    {
+                        id: 'javascript-master-04',
+                        type: 'practice',
+                        title: 'Master Challenge 4 (Hard)',
+                        description: 'Write sumToN(n) and print sumToN(10)',
+                        content: `
+                            <div class="practice-section">
+                                <div class="challenge-goal">
+                                    <h4>Goal</h4>
+                                    <ul>
+                                        <li>Create a function <code>sumToN(n)</code> that returns the sum <code>1 + 2 + ... + n</code></li>
+                                        <li>Print <code>sumToN(10)</code> (expected output: <code>55</code>)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        `,
+                        starterCode: `// Master Challenge (Hard)\n// Define sumToN(n)\n`,
+                        solution: `function sumToN(n) {\n  let total = 0;\n  for (let i = 1; i <= n; i++) total += i;\n  return total;\n}\n\nconsole.log(sumToN(10));`,
+                        test: (output) => output.trim() === '55',
+                        xp: 250,
+                        forceSubmit: true
+                    }
+                ],
 },
             cpp: {
                 basics: [
@@ -7965,7 +5788,7 @@ int main() {
                                 </div>
 
                                 <div class="info-box">
-                                    <strong>📝 Understanding the Code</strong>
+                                    <strong>\u{1F4DD} Understanding the Code</strong>
                                     <ul>
                                         <li><code>#include &lt;iostream&gt;</code> - Imports input/output library</li>
                                         <li><code>using namespace std;</code> - Allows using cout without std::</li>
@@ -7986,14 +5809,14 @@ int main() {
                         content: `
                             <div class="practice-section">
                                 <div class="challenge-goal">
-                                    <h4>🎯 Challenge Goal</h4>
+                                    <h4>\u{1F3AF} Challenge Goal</h4>
                                     <ul>
                                         <li>Complete the program to print "Hello, C++!"</li>
                                     </ul>
                                 </div>
 
                                 <div class="info-box warning">
-                                    <strong>⚠️ Note</strong>
+                                    <strong>\u26A0\uFE0F Note</strong>
                                     <p>C++ requires compilation, so this is a simulation. In real development, you'd use a compiler like g++.</p>
                                 </div>
                             </div>
@@ -8059,7 +5882,7 @@ int main() {
                                 </div>
 
                                 <div class="info-box warning">
-                                    <strong>⚠️ Type Safety</strong>
+                                    <strong>\u26A0\uFE0F Type Safety</strong>
                                     <p>C++ is strongly typed. You cannot assign a string to an int variable. This makes code more reliable but requires careful planning.</p>
                                 </div>
                             </div>
@@ -8418,7 +6241,7 @@ if (score >= 60) {
                                 </div>
 
                                 <div class="info-box">
-                                    <strong>📝 Understanding the Code</strong>
+                                    <strong>\u{1F4DD} Understanding the Code</strong>
                                     <ul>
                                         <li><code>public class</code> - Defines a class (building block of Java)</li>
                                         <li><code>main</code> - Entry point of the program</li>
@@ -8429,7 +6252,7 @@ if (score >= 60) {
                                 </div>
 
                                 <div class="info-box tip">
-                                    <strong>💡 Fun Fact</strong>
+                                    <strong>\u{1F4A1} Fun Fact</strong>
                                     <p>Java was originally called "Oak" after an oak tree outside the creator's office. It was renamed Java after the coffee from the Indonesian island!</p>
                                 </div>
                             </div>
@@ -8444,14 +6267,14 @@ if (score >= 60) {
                         content: `
                             <div class="practice-section">
                                 <div class="challenge-goal">
-                                    <h4>🎯 Challenge Goal</h4>
+                                    <h4>\u{1F3AF} Challenge Goal</h4>
                                     <ul>
                                         <li>Complete the program to print "Hello, Java!"</li>
                                     </ul>
                                 </div>
 
                                 <div class="info-box">
-                                    <strong>📝 Remember</strong>
+                                    <strong>\u{1F4DD} Remember</strong>
                                     <p>Use System.out.println() to print in Java, and don't forget the semicolon!</p>
                                 </div>
                             </div>
@@ -8519,7 +6342,7 @@ int rounded = (int) price;  <span class="code-comment">// 9</span></pre>
                                 </div>
 
                                 <div class="info-box tip">
-                                    <strong>💡 Naming Conventions</strong>
+                                    <strong>\u{1F4A1} Naming Conventions</strong>
                                     <p>Variables: camelCase (firstName, studentAge)<br>
                                     Constants: UPPER_SNAKE_CASE (MAX_VALUE, PI)<br>
                                     Classes: PascalCase (HelloWorld, StudentRecord)</p>
@@ -8536,7 +6359,7 @@ int rounded = (int) price;  <span class="code-comment">// 9</span></pre>
                         content: `
                             <div class="practice-section">
                                 <div class="challenge-goal">
-                                    <h4>🎯 Challenge Goal</h4>
+                                    <h4>\u{1F3AF} Challenge Goal</h4>
                                     <ul>
                                         <li>Create an int variable "score" with value 95</li>
                                         <li>Print it using System.out.println()</li>
@@ -9496,7 +7319,7 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
                     chip.style.backgroundPosition = 'center';
                 } else {
                     chip.style.backgroundImage = '';
-                    chip.textContent = '👤';
+                    chip.textContent = '\u{1F464}';
                 }
                 logoutBtn.hidden = false;
                 if (drawerLogout) drawerLogout.hidden = false;
@@ -9510,7 +7333,7 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
                         mobileAvatar.style.backgroundPosition = 'center';
                     } else {
                         mobileAvatar.style.backgroundImage = '';
-                        mobileAvatar.textContent = '👤';
+                        mobileAvatar.textContent = '\u{1F464}';
                     }
                 }
 
@@ -9523,7 +7346,7 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
                         drawerChip.style.backgroundPosition = 'center';
                     } else {
                         drawerChip.style.backgroundImage = '';
-                        drawerChip.textContent = '👤';
+                        drawerChip.textContent = '\u{1F464}';
                     }
                 }
                 const displayName = (userProfile && userProfile.name) ? userProfile.name : (user.name || 'User');
@@ -9533,7 +7356,7 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
             } else {
                 authLink.textContent = 'Login / Sign Up';
                 authLink.href = 'auth.html';
-                chip.textContent = '🔒';
+                chip.textContent = '\u{1F512}';
                 chip.classList.add('guest');
                 chip.hidden = false;
                 chip.style.backgroundImage = '';
@@ -9541,13 +7364,13 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
                 if (drawerLogout) drawerLogout.hidden = true;
 
                 if (mobileAvatar) {
-                    mobileAvatar.textContent = '🔒';
+                    mobileAvatar.textContent = '\u{1F512}';
                     mobileAvatar.classList.add('guest');
                     mobileAvatar.style.backgroundImage = '';
                 }
 
                 if (drawerChip) {
-                    drawerChip.textContent = '🔒';
+                    drawerChip.textContent = '\u{1F512}';
                     drawerChip.classList.add('guest');
                     drawerChip.style.backgroundImage = '';
                 }
@@ -9754,7 +7577,7 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
                         break;
                     case 'login':
                         setTimeout(() => {
-                            replaceTyping(typing, 'Check your email/password, or use “Forgot password”. During signup, accept the Terms to enable the button.');
+                            replaceTyping(typing, 'Check your email/password, or use \u201CForgot password\u201D. During signup, accept the Terms to enable the button.');
                             renderClosePrompt();
                         }, 2000);
                         break;
@@ -9892,12 +7715,12 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
             if (!grid) return;
 
             const subjects = [
-                { key: 'python', label: 'Python', icon: '🐍' },
-                { key: 'javascript', label: 'JavaScript', icon: '⚡' },
-                { key: 'java', label: 'Java', icon: '☕' },
-                { key: 'cpp', label: 'C++', icon: '🧩' },
-                { key: 'c', label: 'C', icon: '🔧' },
-                { key: 'sql', label: 'SQL', icon: '🗄️' }
+                { key: 'python', label: 'Python', icon: '\u{1F40D}' },
+                { key: 'javascript', label: 'JavaScript', icon: '\u26A1' },
+                { key: 'java', label: 'Java', icon: '\u2615' },
+                { key: 'cpp', label: 'C++', icon: '\u{1F9E9}' },
+                { key: 'c', label: 'C', icon: '\u{1F527}' },
+                { key: 'sql', label: 'SQL', icon: '\u{1F5C4}\uFE0F' }
             ];
 
             const attempts = examAttempts && typeof examAttempts === 'object' ? examAttempts : {};
@@ -10000,7 +7823,7 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
                 const soundBtn = document.createElement('button');
                 soundBtn.type = 'button';
                 soundBtn.className = 'language-video-sound';
-                soundBtn.textContent = '🔇';
+                soundBtn.textContent = '\u{1F507}';
                 soundBtn.setAttribute('aria-label', 'Unmute video');
                 iconWrap.appendChild(soundBtn);
 
@@ -10022,7 +7845,7 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
                     event.preventDefault();
                     event.stopPropagation();
                     video.muted = !video.muted;
-                    soundBtn.textContent = video.muted ? '🔇' : '🔊';
+                    soundBtn.textContent = video.muted ? '\u{1F507}' : '\u{1F50A}';
                     soundBtn.setAttribute('aria-label', video.muted ? 'Unmute video' : 'Mute video');
                     if (!video.muted) {
                         video.volume = 1;
@@ -10217,7 +8040,7 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
                     
                     const icon = document.createElement('span');
                     icon.className = 'lesson-icon';
-                    icon.textContent = lesson.type === 'theory' ? '📖' : '💻';
+                    icon.textContent = lesson.type === 'theory' ? '\u{1F4D6}' : '\u{1F4BB}';
                     
                     const name = document.createElement('span');
                     name.className = 'lesson-name';
@@ -10225,7 +8048,7 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
 
                     const check = document.createElement('span');
                     check.className = 'lesson-check';
-                    check.textContent = isCompleted ? '✓' : '';
+                    check.textContent = isCompleted ? '\u2713' : '';
                     check.setAttribute('aria-hidden', 'true');
                     
                     lessonDiv.appendChild(icon);
@@ -10276,9 +8099,9 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
                         <div class="editor-header">
                             <span class="editor-title">code.${getFileExtension(currentLanguage)}</span>
                             <div class="editor-actions">
-                                <button class="btn btn-reset" onclick="resetCode()">↻ Reset</button>
-                                <button class="btn btn-run" onclick="runCode()">▶ Run</button>
-                                <button class="btn btn-submit" onclick="submitCode()">✓ Submit</button>
+                                <button class="btn btn-reset" onclick="resetCode()">\u21BB Reset</button>
+                                <button class="btn btn-run" onclick="runCode()">\u25B6 Run</button>
+                                <button class="btn btn-submit" onclick="submitCode()">\u2713 Submit</button>
                             </div>
                         </div>
                         <textarea id="codeEditor" spellcheck="false">${lesson.starterCode}</textarea>
@@ -10434,10 +8257,10 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
                         showAchievement(lesson.title, `+${lesson.xp} XP`);
                         maybeAwardMasteryBadge(currentLanguage);
                     }
-                    output.textContent = `✓ Success! You earned ${lesson.xp} XP!\n\n` + outputText;
+                    output.textContent = `\u2713 Success! You earned ${lesson.xp} XP!\n\n` + outputText;
                     output.className = 'output-success';
                 } else {
-                    output.textContent = `✗ Not quite right. Try again!\n\n` + outputText;
+                    output.textContent = `\u2717 Not quite right. Try again!\n\n` + outputText;
                     output.className = 'output-error';
                 }
             } catch (error) {
@@ -10979,7 +8802,7 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
                 const badgeId = `xp-${milestone.xp}`;
                 if (!badges.has(badgeId)) {
                     badges.add(badgeId);
-                    showBadge('Badge Unlocked', `${milestone.name} • ${milestone.xp} XP`);
+                    showBadge('Badge Unlocked', `${milestone.name} \u2022 ${milestone.xp} XP`);
                 }
             }
         }
@@ -11253,7 +9076,7 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
             modal.innerHTML = `
                 <div class="logo-modal-backdrop" data-close="true"></div>
                 <div class="logo-modal-panel" role="dialog" aria-modal="true" aria-label="Logo preview">
-                    <button type="button" class="logo-modal-close" data-close="true">×</button>
+                    <button type="button" class="logo-modal-close" data-close="true">\u00D7</button>
                     <div class="logo-modal-content">
                         <img src="assets/logo.png" alt="Code Nectous logo">
                         <div class="logo-modal-tagline">Learn. Build. Create.</div>
@@ -11281,6 +9104,24 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
             document.body.classList.remove('pdf-open');
         }
 
+        // PDF Viewer (PDF.js). Note: we can hide the in-app "download" UI, but any file
+        // sent to the browser can still be downloaded via devtools/network.
+        let pdfModalDoc = null;
+        let pdfModalObserver = null;
+        let pdfModalRenders = new Map();
+        let pdfModalLoadingTask = null;
+        let pdfModalRenderVersion = 0;
+        let pdfModalScale = 1;
+        let pdfWorkerConfigured = false;
+
+        function configurePdfJsWorkerOnce() {
+            if (pdfWorkerConfigured) return;
+            if (!window.pdfjsLib) return;
+            // Use the matching worker from the same CDN version we include in index.html.
+            window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+            pdfWorkerConfigured = true;
+        }
+
         function ensurePdfModal() {
             if (document.getElementById('pdfModal')) return;
             const modal = document.createElement('div');
@@ -11293,7 +9134,13 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
                         <span class="pdf-modal-title" id="pdfModalTitle">Course PDF</span>
                         <button type="button" class="pdf-modal-close" data-close="true">Close</button>
                     </div>
-                    <iframe id="pdfModalFrame" class="pdf-modal-frame" title="PDF viewer"></iframe>
+                    <div class="pdf-viewer-bar" aria-live="polite">
+                        <span class="pdf-viewer-status" id="pdfViewerStatus">Loading...</span>
+                        <span class="pdf-viewer-pages" id="pdfViewerPages"></span>
+                    </div>
+                    <div id="pdfViewerScroller" class="pdf-modal-frame" tabindex="0" aria-label="PDF document">
+                        <div id="pdfPages" class="pdf-pages"></div>
+                    </div>
                 </div>
             `;
             document.body.appendChild(modal);
@@ -11308,22 +9155,165 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
             });
         }
 
+        async function renderPdfPageInModal(pageNumber, pageEl, version) {
+            if (!pdfModalDoc) return;
+            if (version !== pdfModalRenderVersion) return;
+            if (!Number.isFinite(pageNumber) || pageNumber < 1) return;
+            if (!pageEl) return;
+            if (pageEl.dataset.rendered === String(pdfModalScale)) return;
+            if (pdfModalRenders.has(pageNumber)) return;
+
+            const canvas = pageEl.querySelector('canvas');
+            if (!canvas) return;
+
+            const task = (async () => {
+                const page = await pdfModalDoc.getPage(pageNumber);
+                if (version !== pdfModalRenderVersion) return;
+
+                const dpr = window.devicePixelRatio || 1;
+                const viewport = page.getViewport({ scale: pdfModalScale * dpr });
+
+                canvas.width = Math.floor(viewport.width);
+                canvas.height = Math.floor(viewport.height);
+                canvas.style.width = `${Math.floor(viewport.width / dpr)}px`;
+                canvas.style.height = `${Math.floor(viewport.height / dpr)}px`;
+
+                const ctx = canvas.getContext('2d', { alpha: false });
+                if (!ctx) return;
+
+                await page.render({ canvasContext: ctx, viewport }).promise;
+                pageEl.dataset.rendered = String(pdfModalScale);
+            })().catch(() => {
+                // Ignore per-page failures; keep the viewer usable.
+            }).finally(() => {
+                pdfModalRenders.delete(pageNumber);
+            });
+
+            pdfModalRenders.set(pageNumber, task);
+            await task;
+        }
+
+        async function loadPdfIntoModal(file) {
+            const statusEl = document.getElementById('pdfViewerStatus');
+            const pagesMetaEl = document.getElementById('pdfViewerPages');
+            const scroller = document.getElementById('pdfViewerScroller');
+            const pagesEl = document.getElementById('pdfPages');
+            if (!statusEl || !pagesMetaEl || !scroller || !pagesEl) return;
+
+            pdfModalRenderVersion += 1;
+            const version = pdfModalRenderVersion;
+
+            // Reset UI + cancel previous rendering.
+            pagesEl.innerHTML = '';
+            pagesMetaEl.textContent = '';
+            statusEl.textContent = 'Loading PDF...';
+            pdfModalRenders = new Map();
+            if (pdfModalObserver) {
+                pdfModalObserver.disconnect();
+                pdfModalObserver = null;
+            }
+            if (pdfModalLoadingTask && typeof pdfModalLoadingTask.destroy === 'function') {
+                try { await pdfModalLoadingTask.destroy(); } catch { /* noop */ }
+            }
+            pdfModalLoadingTask = null;
+            pdfModalDoc = null;
+
+            if (!window.pdfjsLib) {
+                statusEl.textContent = 'PDF viewer failed to load (PDF.js missing).';
+                return;
+            }
+
+            configurePdfJsWorkerOnce();
+
+            try {
+                pdfModalLoadingTask = window.pdfjsLib.getDocument({ url: file });
+                const doc = await pdfModalLoadingTask.promise;
+                if (version !== pdfModalRenderVersion) return;
+                pdfModalDoc = doc;
+
+                const totalPages = doc.numPages || 0;
+                pagesMetaEl.textContent = totalPages ? `${totalPages} pages` : '';
+                statusEl.textContent = 'Scroll to read.';
+
+                // Compute a scale that fits the page width to the scroller.
+                try {
+                    const first = await doc.getPage(1);
+                    const base = first.getViewport({ scale: 1 });
+                    const available = Math.max(320, scroller.clientWidth - 32);
+                    const fit = available / base.width;
+                    pdfModalScale = Math.max(0.6, Math.min(1.6, fit));
+                } catch {
+                    pdfModalScale = 1;
+                }
+
+                // Build page placeholders.
+                for (let n = 1; n <= totalPages; n += 1) {
+                    const pageWrap = document.createElement('div');
+                    pageWrap.className = 'pdf-page';
+                    pageWrap.dataset.page = String(n);
+                    pageWrap.innerHTML = `
+                        <div class="pdf-page-label">Page ${n}</div>
+                        <canvas class="pdf-page-canvas" aria-label="PDF page ${n}"></canvas>
+                    `;
+                    pagesEl.appendChild(pageWrap);
+                }
+
+                // Lazy render pages as they come into view.
+                pdfModalObserver = new IntersectionObserver((entries) => {
+                    for (const entry of entries) {
+                        if (!entry.isIntersecting) continue;
+                        const el = entry.target;
+                        const n = Number(el.dataset.page);
+                        renderPdfPageInModal(n, el, version);
+                    }
+                }, { root: scroller, rootMargin: '900px 0px' });
+
+                for (const pageEl of pagesEl.querySelectorAll('.pdf-page')) {
+                    pdfModalObserver.observe(pageEl);
+                }
+
+                // Render the first page immediately so the viewer feels responsive.
+                const firstEl = pagesEl.querySelector('.pdf-page');
+                if (firstEl) {
+                    renderPdfPageInModal(1, firstEl, version);
+                }
+            } catch (err) {
+                if (version !== pdfModalRenderVersion) return;
+                statusEl.textContent = 'Unable to open this PDF right now.';
+            }
+        }
+
         function openPdfModal(file, label) {
             ensurePdfModal();
             const modal = document.getElementById('pdfModal');
-            const frame = document.getElementById('pdfModalFrame');
             const title = document.getElementById('pdfModalTitle');
-            if (!modal || !frame || !title) return;
+            if (!modal || !title) return;
             title.textContent = label;
-            frame.src = `${file}#toolbar=0&navpanes=0&scrollbar=0`;
             modal.classList.add('show');
             document.body.classList.add('pdf-open');
+            loadPdfIntoModal(file);
         }
 
         function closePdfModal() {
             const modal = document.getElementById('pdfModal');
-            const frame = document.getElementById('pdfModalFrame');
-            if (frame) frame.src = '';
+            const statusEl = document.getElementById('pdfViewerStatus');
+            const pagesMetaEl = document.getElementById('pdfViewerPages');
+            const pagesEl = document.getElementById('pdfPages');
+            // Cancel any in-flight work.
+            pdfModalRenderVersion += 1;
+            if (pdfModalObserver) {
+                pdfModalObserver.disconnect();
+                pdfModalObserver = null;
+            }
+            if (pdfModalLoadingTask && typeof pdfModalLoadingTask.destroy === 'function') {
+                try { pdfModalLoadingTask.destroy(); } catch { /* noop */ }
+            }
+            pdfModalLoadingTask = null;
+            pdfModalDoc = null;
+            pdfModalRenders = new Map();
+            if (pagesEl) pagesEl.innerHTML = '';
+            if (pagesMetaEl) pagesMetaEl.textContent = '';
+            if (statusEl) statusEl.textContent = '';
             if (modal) modal.classList.remove('show');
             document.body.classList.remove('pdf-open');
         }

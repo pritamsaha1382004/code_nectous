@@ -687,6 +687,7 @@ function bindLogout() {
 function updateHeaderAuth({ user, profile, progress }) {
   const accountLink = document.getElementById('accountLink');
   const chip = document.getElementById('currentUserChip');
+  const mobileAvatar = document.getElementById('mobileAvatar');
   const logoutBtn = document.getElementById('logoutBtn');
   const drawerChip = document.getElementById('drawerUserChip');
   const drawerName = document.getElementById('drawerUserName');
@@ -722,6 +723,7 @@ function updateHeaderAuth({ user, profile, progress }) {
   };
 
   applyChip(chip);
+  applyChip(mobileAvatar);
   applyChip(drawerChip);
   if (drawerName) drawerName.textContent = displayName;
   if (drawerEmail) drawerEmail.textContent = user.email || '';

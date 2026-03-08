@@ -1,0 +1,10 @@
+# Netlify headers to encourage PDFs to open inline in the browser (not forced download).
+# Note: it's not possible to fully prevent downloading of any file that is delivered to a browser.
+
+[[headers]]
+  for = "/pdf/*"
+  [headers.values]
+    Content-Type = "application/pdf"
+    Content-Disposition = "inline"
+    X-Content-Type-Options = "nosniff"
+

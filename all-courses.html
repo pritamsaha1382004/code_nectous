@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Nectous - All Courses</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20260307_final2">
+    <script type="module" src="firebase-init.js?v=20260307_final2"></script>
+</head>
+<body data-page="all-courses" data-requires-login="false">
+    <div class="achievement" id="achievementToast">
+        <div class="achievement-title"><span id="achievementTitle">Code Nectous</span></div>
+        <div class="achievement-desc" id="achievementDesc">Browse all available courses.</div>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Code Nectous logo">
+                <div class="logo-text">
+                    <span class="logo-title"><span class="logo-elite">Code</span><span class="logo-coders">Nectous</span></span>
+                    <span class="logo-tagline">All Courses</span>
+                </div>
+            </div>
+            <div class="mobile-controls">
+                <span class="user-chip guest mobile-avatar" id="mobileAvatar" aria-label="User profile"></span>
+                <button class="drawer-toggle" id="drawerToggle" aria-label="Open menu" type="button">&#x2630;</button>
+            </div>
+            <div class="header-right">
+                <div class="user-stats">
+                    <div class="stat-badge">
+                        <span class="icon">&#128218;</span>
+                        <span class="value" id="completedLessons">0</span>
+                        <span>/</span>
+                        <span id="totalLessons">0</span>
+                    </div>
+                    <div class="stat-badge">
+                        <span class="icon">&#9889;</span>
+                        <span class="value" id="totalXP">0</span>
+                        <span>XP</span>
+                    </div>
+                    <div class="stat-badge" title="Max streak ever">
+                        <span class="icon">&#127942;</span>
+                        <span class="value" id="maxStreak">0</span>
+                        <span>Max</span>
+                    </div>
+                    <div class="stat-badge" title="Current streak">
+                        <span class="icon">&#128293;</span>
+                        <span class="value" id="streak">0</span>
+                        <span>Day</span>
+                    </div>
+                </div>
+                <div class="header-links">
+                    <a class="back-home" href="index.html">Back to Home</a>
+                    <a class="progress-link" id="progressLink" href="progress.html">View Progress</a>
+                    <a class="progress-link" href="interview-questions.html">Interview Questions</a>
+                    <a class="auth-link" href="auth.html">Login / Sign Up</a>
+                    <span class="user-chip guest" id="currentUserChip" aria-label="Login status">G</span>
+                    <button class="auth-logout" id="logoutBtn" type="button" hidden>Logout</button>
+                    <button class="theme-toggle" id="themeToggleDesktop" type="button" aria-label="Toggle theme" title="Toggle theme">
+                        <span class="theme-icon theme-icon--sun" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M19.4 4.6l-2.1 2.1M6.7 17.3l-2.1 2.1"></path>
+                            </svg>
+                        </span>
+                        <span class="theme-icon theme-icon--moon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                                <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5Z"></path>
+                            </svg>
+                        </span>
+                        <span class="theme-switch" aria-hidden="true">
+                            <span class="theme-knob"></span>
+                        </span>
+                    </button>
+                </div>
+                <div class="overall-progress" hidden>
+                    <div class="progress-label">
+                        <span>Overall Progress</span>
+                        <span class="progress-percent" id="overallPercent">0%</span>
+                    </div>
+                    <div class="overall-bar" id="overallProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <div class="overall-fill" id="overallProgressFill" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+        <div class="drawer-header">
+            <span>Menu</span>
+            <button class="drawer-close" id="drawerClose" type="button" aria-label="Close menu">&#x2715;</button>
+        </div>
+        <div class="drawer-profile">
+            <span class="user-chip guest" id="drawerUserChip" aria-label="Login status">G</span>
+            <div>
+                <div class="drawer-name" id="drawerUserName">Guest</div>
+                <div class="drawer-sub" id="drawerUserEmail">Login to continue</div>
+            </div>
+        </div>
+        <div class="drawer-stats">
+            <div><strong id="drawerXP">0</strong><span>XP</span></div>
+            <div><strong id="drawerMaxStreak">0</strong><span>Max</span></div>
+            <div><strong id="drawerStreak">0</strong><span>Current</span></div>
+            <div><strong id="drawerLessons">0</strong><span>Topics</span></div>
+        </div>
+        <nav class="drawer-links">
+            <a href="progress.html">View Progress</a>
+            <a href="interview-questions.html">Interview Questions</a>
+            <a href="account.html" id="drawerAccountLink">Account</a>
+        </nav>
+        <div class="drawer-theme">
+            <span>Theme</span>
+            <button class="theme-toggle" id="themeToggleDrawer" type="button" aria-label="Toggle theme" title="Toggle theme">
+                <span class="theme-icon theme-icon--sun" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M19.4 4.6l-2.1 2.1M6.7 17.3l-2.1 2.1"></path>
+                    </svg>
+                </span>
+                <span class="theme-icon theme-icon--moon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                        <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5Z"></path>
+                    </svg>
+                </span>
+                <span class="theme-switch" aria-hidden="true">
+                    <span class="theme-knob"></span>
+                </span>
+            </button>
+        </div>
+        <div class="drawer-actions">
+            <button class="auth-logout" id="drawerLogout" type="button" hidden>Logout</button>
+        </div>
+    </aside>
+
+    <main class="container catalog-page">
+        <section class="catalog-hero">
+            <div>
+                <p class="catalog-eyebrow">Course Catalog</p>
+                <h1>All available and upcoming courses</h1>
+                <p class="catalog-subtitle">The page is structured for future login-only access. For now, browsing is open and locked courses show a toast instead of opening.</p>
+            </div>
+            <div class="catalog-summary">
+                <strong id="allCoursesCount">0 courses</strong>
+                <span>Search by subject, topic, or keyword</span>
+            </div>
+        </section>
+
+        <section class="catalog-toolbar">
+            <label class="catalog-search" for="allCoursesSearch">
+                <span>Search Courses</span>
+                <input id="allCoursesSearch" type="search" placeholder="Search Python, DSA, Operating System, Cryptography...">
+            </label>
+        </section>
+
+        <section class="catalog-grid" id="allCoursesGrid" aria-live="polite"></section>
+        <p class="catalog-empty" id="allCoursesEmpty" hidden>No courses matched your search.</p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom footer-bottom-single">
+            <span>&copy; 2026 Code Nectous. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script defer src="site.js?v=20260307_final2"></script>
+    <script defer src="app2.js?v=20260307_final2"></script>
+    <script defer src="app3.js?v=20260307_final2"></script>
+    <script defer src="app4.js?v=20260307_final2"></script>
+    <script defer src="app5.js?v=20260307_final2"></script>
+    <script defer src="course-catalog.js?v=20260307_final2"></script>
+</body>
+</html>
