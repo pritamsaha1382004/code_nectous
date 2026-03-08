@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Nectous - Browse All Lessons</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="firebase-init.js"></script>
+    <style>
+        .browse-container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1.5rem 3rem;
+        }
+
+        .browse-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .browse-header h1 {
+            font-size: 2rem;
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .browse-header p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .browse-search {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .browse-search-input {
+            width: 100%;
+            max-width: 480px;
+            padding: 0.65rem 1.1rem;
+            background: var(--bg-medium);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .browse-search-input:focus {
+            border-color: var(--accent-blue);
+        }
+
+        .browse-search-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .browse-lang-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .browse-lang-tab {
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: var(--bg-medium);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .browse-lang-tab:hover,
+        .browse-lang-tab.active {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: #fff;
+        }
+
+        .browse-lang-block {
+            margin-bottom: 2.5rem;
+        }
+
+        .browse-lang-title {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.3rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .browse-lang-icon {
+            font-size: 1.4rem;
+        }
+
+        .browse-section-block {
+            margin-bottom: 1.2rem;
+        }
+
+        .browse-section-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            padding-left: 0.3rem;
+        }
+
+        .browse-lessons-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 0.6rem;
+        }
+
+        .browse-lesson-card {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.65rem 0.9rem;
+            background: var(--bg-medium);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: background 0.2s, border-color 0.2s, transform 0.15s;
+        }
+
+        .browse-lesson-card:hover {
+            background: var(--bg-light);
+            border-color: var(--accent-blue);
+            transform: translateY(-1px);
+        }
+
+        .browse-lesson-icon {
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .browse-lesson-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .browse-lesson-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .browse-lesson-desc {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .browse-lesson-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        .browse-lesson-type {
+            font-size: 0.65rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            text-transform: capitalize;
+            font-weight: 600;
+        }
+
+        .browse-lesson-type.theory {
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent-blue);
+        }
+
+        .browse-lesson-type.practice {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent-green);
+        }
+
+        .browse-lesson-xp {
+            font-size: 0.68rem;
+            color: var(--text-secondary);
+        }
+
+        .browse-no-results {
+            text-align: center;
+            color: var(--text-secondary);
+            padding: 3rem 1rem;
+            font-size: 1rem;
+        }
+
+        .browse-stats {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .browse-stat {
+            text-align: center;
+        }
+
+        .browse-stat-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .browse-stat-label {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 600px) {
+            .browse-lessons-list {
+                grid-template-columns: 1fr;
+            }
+            .browse-header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Achievement Toast -->
+    <div class="achievement" id="achievementToast">
+        <div class="achievement-title"><span id="achievementTitle">Achievement Unlocked!</span></div>
+        <div class="achievement-desc" id="achievementDesc">Lesson completed!</div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Code Nectous logo">
+                <div class="logo-text">
+                    <span class="logo-title"><span class="logo-elite">Code</span><span class="logo-coders">Nectous</span></span>
+                    <span class="logo-tagline">Master Programming</span>
+                </div>
+            </div>
+            <div class="mobile-controls">
+                <span class="user-chip guest mobile-avatar" id="mobileAvatar" aria-label="User profile"></span>
+                <button class="drawer-toggle" id="drawerToggle" aria-label="Open menu" type="button">
+                    ☰
+                </button>
+            </div>
+            <div class="header-right">
+                <div class="user-stats">
+                    <div class="stat-badge">
+                        <span class="icon">&#128218;</span>
+                        <span class="value" id="completedLessons">0</span>
+                        <span>/</span>
+                        <span id="totalLessons">0</span>
+                    </div>
+                    <div class="stat-badge">
+                        <span class="icon">&#9889;</span>
+                        <span class="value" id="totalXP">0</span>
+                        <span>XP</span>
+                    </div>
+                    <div class="stat-badge" title="Max streak ever">
+                        <span class="icon">&#127942;</span>
+                        <span class="value" id="maxStreak">0</span>
+                        <span>Max</span>
+                    </div>
+                    <div class="stat-badge" title="Current streak">
+                        <span class="icon">&#128293;</span>
+                        <span class="value" id="streak">0</span>
+                        <span>Day</span>
+                    </div>
+                </div>
+                <div class="header-links">
+                    <a class="back-home" href="index.html">Back to Home</a>
+                    <a class="progress-link" id="progressLink" href="progress.html">View Progress</a>
+                    <a class="auth-link" href="auth.html">Login / Sign Up</a>
+                    <span class="user-chip guest" id="currentUserChip" aria-label="Login status"></span>
+                    <button class="auth-logout" id="logoutBtn" type="button" hidden>Logout</button>
+                    <button class="theme-toggle" id="themeToggleDesktop" type="button" aria-label="Toggle theme" title="Toggle theme">
+                        <span class="theme-icon theme-icon--sun" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M19.4 4.6l-2.1 2.1M6.7 17.3l-2.1 2.1"></path>
+                            </svg>
+                        </span>
+                        <span class="theme-icon theme-icon--moon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                                <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5Z"></path>
+                            </svg>
+                        </span>
+                        <span class="theme-switch" aria-hidden="true">
+                            <span class="theme-knob"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+        <div class="drawer-header">
+            <span>Menu</span>
+            <button class="drawer-close" id="drawerClose" type="button" aria-label="Close menu">✕</button>
+        </div>
+        <div class="drawer-profile">
+            <span class="user-chip guest" id="drawerUserChip" aria-label="Login status"></span>
+            <div>
+                <div class="drawer-name" id="drawerUserName">Guest</div>
+                <div class="drawer-sub" id="drawerUserEmail">Login to continue</div>
+            </div>
+        </div>
+        <div class="drawer-stats">
+            <div><strong id="drawerXP">0</strong><span>XP</span></div>
+            <div><strong id="drawerMaxStreak">0</strong><span>Max</span></div>
+            <div><strong id="drawerStreak">0</strong><span>Current</span></div>
+            <div><strong id="drawerLessons">0</strong><span>Topics</span></div>
+        </div>
+        <nav class="drawer-links">
+            <a href="index.html">Home</a>
+            <a href="progress.html">View Progress</a>
+            <a href="account.html" id="drawerAccountLink">Account</a>
+        </nav>
+        <div class="drawer-theme">
+            <span>Theme</span>
+            <button class="theme-toggle" id="themeToggleDrawer" type="button" aria-label="Toggle theme" title="Toggle theme">
+                <span class="theme-icon theme-icon--sun" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M19.4 4.6l-2.1 2.1M6.7 17.3l-2.1 2.1"></path>
+                    </svg>
+                </span>
+                <span class="theme-icon theme-icon--moon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                        <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5Z"></path>
+                    </svg>
+                </span>
+                <span class="theme-switch" aria-hidden="true">
+                    <span class="theme-knob"></span>
+                </span>
+            </button>
+        </div>
+        <div class="drawer-actions">
+            <button class="auth-logout" id="drawerLogout" type="button">Logout</button>
+        </div>
+    </aside>
+
+    <!-- Browse Content -->
+    <div class="browse-container">
+        <div class="browse-header">
+            <h1>📚 Browse All Lessons</h1>
+            <p>Explore all available lessons across every course on Code Nectous.</p>
+        </div>
+
+        <div class="browse-stats" id="browseStats">
+            <div class="browse-stat">
+                <div class="browse-stat-value" id="statTotalLessons">—</div>
+                <div class="browse-stat-label">Total Lessons</div>
+            </div>
+            <div class="browse-stat">
+                <div class="browse-stat-value" id="statTotalCourses">—</div>
+                <div class="browse-stat-label">Courses</div>
+            </div>
+            <div class="browse-stat">
+                <div class="browse-stat-value" id="statTotalXP">—</div>
+                <div class="browse-stat-label">Total XP Available</div>
+            </div>
+        </div>
+
+        <div class="browse-search">
+            <input
+                type="search"
+                id="browseSearchInput"
+                class="browse-search-input"
+                placeholder="Search lessons by title or description…"
+                aria-label="Search lessons"
+            >
+        </div>
+
+        <div class="browse-lang-tabs" id="browseLangTabs">
+            <button class="browse-lang-tab active" data-lang="all">All</button>
+        </div>
+
+        <div id="browseLessonList"></div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <img src="assets/logo.png" alt="Code Nectous logo">
+                <div>
+                    <h3>Code Nectous Platform</h3>
+                    <p>Build skills daily with guided lessons, hands-on practice, and progress tracking that keeps you motivated.</p>
+                </div>
+            </div>
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <a href="index.html#courses">Courses</a>
+                    <a href="browse.html">All Lessons</a>
+                    <a href="progress.html">Progress</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a href="mailto:codenectous@gmail.com?subject=Code%20Nectous%20Help">Help Center</a>
+                    <a href="faq.html">FAQs</a>
+                    <a href="https://wa.me/919679086043" target="_blank" rel="noopener noreferrer">Contact Us</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Code Nectous. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script defer src="app.js"></script>
+    <script defer src="site.js"></script>
+    <script>
+        // Browse All Lessons page logic
+        // Runs after app.js has set window.CN_CURRICULUM
+        (function () {
+            const LANG_META = {
+                python:     { label: 'Python',     icon: '🐍', file: 'python.html' },
+                javascript: { label: 'JavaScript', icon: '⚡', file: 'javascript.html' },
+                java:       { label: 'Java',       icon: '☕', file: 'java.html' },
+                cpp:        { label: 'C++',        icon: '⚙️', file: 'cpp.html' },
+                c:          { label: 'C',          icon: 'C',  file: 'c.html' },
+                sql:        { label: 'SQL',        icon: 'DB', file: 'sql.html' }
+            };
+
+            function renderBrowse(filterLang, searchText) {
+                const curriculum = window.CN_CURRICULUM;
+                if (!curriculum) return;
+
+                const listEl = document.getElementById('browseLessonList');
+                const query = (searchText || '').trim().toLowerCase();
+                let totalLessons = 0;
+                let totalXP = 0;
+                let matchCount = 0;
+
+                // Count totals
+                Object.values(curriculum).forEach(sections => {
+                    Object.values(sections).forEach(lessons => {
+                        lessons.forEach(l => {
+                            totalLessons++;
+                            totalXP += (l.xp || 0);
+                        });
+                    });
+                });
+
+                const statTotalLessons = document.getElementById('statTotalLessons');
+                const statTotalCourses = document.getElementById('statTotalCourses');
+                const statTotalXP = document.getElementById('statTotalXP');
+                if (statTotalLessons) statTotalLessons.textContent = totalLessons;
+                if (statTotalCourses) statTotalCourses.textContent = Object.keys(curriculum).length;
+                if (statTotalXP) statTotalXP.textContent = totalXP + ' XP';
+
+                listEl.innerHTML = '';
+
+                Object.entries(curriculum).forEach(([lang, sections]) => {
+                    if (filterLang !== 'all' && filterLang !== lang) return;
+
+                    const meta = LANG_META[lang] || { label: lang, icon: '📘', file: lang + '.html' };
+
+                    // Build lesson rows per section filtered by search
+                    const sectionBlocks = [];
+                    let langHasResults = false;
+
+                    Object.entries(sections).forEach(([sectionKey, lessons]) => {
+                        const filtered = query
+                            ? lessons.filter(l =>
+                                l.title.toLowerCase().includes(query) ||
+                                (l.description || '').toLowerCase().includes(query)
+                              )
+                            : lessons;
+
+                        if (filtered.length === 0) return;
+                        langHasResults = true;
+                        matchCount += filtered.length;
+
+                        const sectionHtml = filtered.map(lesson => {
+                            const typeClass = lesson.type === 'practice' ? 'practice' : 'theory';
+                            const typeIcon = lesson.type === 'practice' ? '💻' : '📖';
+                            const url = `${meta.file}?lesson=${encodeURIComponent(lesson.id)}`;
+                            return `<a class="browse-lesson-card" href="${url}" title="${lesson.description || lesson.title}">
+                                <span class="browse-lesson-icon">${typeIcon}</span>
+                                <span class="browse-lesson-info">
+                                    <span class="browse-lesson-title">${lesson.title}</span>
+                                    <span class="browse-lesson-desc">${lesson.description || ''}</span>
+                                </span>
+                                <span class="browse-lesson-meta">
+                                    <span class="browse-lesson-type ${typeClass}">${lesson.type}</span>
+                                    <span class="browse-lesson-xp">+${lesson.xp || 0} XP</span>
+                                </span>
+                            </a>`;
+                        }).join('');
+
+                        sectionBlocks.push(`
+                            <div class="browse-section-block">
+                                <div class="browse-section-title">${sectionKey}</div>
+                                <div class="browse-lessons-list">${sectionHtml}</div>
+                            </div>`);
+                    });
+
+                    if (!langHasResults) return;
+
+                    listEl.insertAdjacentHTML('beforeend', `
+                        <div class="browse-lang-block" data-lang="${lang}">
+                            <div class="browse-lang-title">
+                                <span class="browse-lang-icon">${meta.icon}</span>
+                                ${meta.label}
+                            </div>
+                            ${sectionBlocks.join('')}
+                        </div>`);
+                });
+
+                if (matchCount === 0) {
+                    listEl.innerHTML = `<div class="browse-no-results">No lessons found for your search.</div>`;
+                }
+            }
+
+            function init() {
+                const curriculum = window.CN_CURRICULUM;
+                if (!curriculum) {
+                    // app.js not loaded yet; retry briefly
+                    setTimeout(init, 100);
+                    return;
+                }
+
+                const LANG_META_KEYS = Object.keys(LANG_META);
+                const tabsEl = document.getElementById('browseLangTabs');
+
+                // Build language tabs
+                LANG_META_KEYS.forEach(lang => {
+                    if (!curriculum[lang]) return;
+                    const btn = document.createElement('button');
+                    btn.className = 'browse-lang-tab';
+                    btn.dataset.lang = lang;
+                    btn.textContent = (LANG_META[lang].icon + ' ' + LANG_META[lang].label);
+                    tabsEl.appendChild(btn);
+                });
+
+                let activeLang = 'all';
+                let searchText = '';
+
+                tabsEl.addEventListener('click', e => {
+                    const btn = e.target.closest('.browse-lang-tab');
+                    if (!btn) return;
+                    tabsEl.querySelectorAll('.browse-lang-tab').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    activeLang = btn.dataset.lang;
+                    renderBrowse(activeLang, searchText);
+                });
+
+                const searchInput = document.getElementById('browseSearchInput');
+                if (searchInput) {
+                    searchInput.addEventListener('input', e => {
+                        searchText = e.target.value;
+                        renderBrowse(activeLang, searchText);
+                    });
+                }
+
+                renderBrowse('all', '');
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                // DOMContentLoaded already fired; wait for deferred scripts
+                setTimeout(init, 0);
+            }
+        })();
+    </script>
+</body>
+</html>

@@ -9378,6 +9378,9 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
             }
         };
 
+        // Expose curriculum globally so browse.html can access lesson metadata
+        window.CN_CURRICULUM = curriculum;
+
         // State
         let currentLanguage = null;
         let currentLessonId = null;
@@ -10094,21 +10097,29 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
             renderHomePdfResources();
 
             const course = getCourseFromPage();
+            const langSelEl = document.getElementById('languageSelection');
+            const learnSecEl = document.getElementById('learningSection');
             if (course) {
                 currentLanguage = course;
-                document.getElementById('languageSelection').classList.add('hidden');
-                document.getElementById('learningSection').classList.add('active');
+                if (langSelEl) langSelEl.classList.add('hidden');
+                if (learnSecEl) learnSecEl.classList.add('active');
                 const existingIntro = document.getElementById('courseIntroVideo');
                 if (existingIntro) existingIntro.remove();
                 renderCurriculum();
-                selectFirstLesson();
+                const params = new URLSearchParams(window.location.search);
+                const lessonParam = params.get('lesson');
+                if (lessonParam) {
+                    loadLesson(lessonParam);
+                } else {
+                    selectFirstLesson();
+                }
                 saveNavigationState();
             } else {
                 clearNavigationState();
                 currentLanguage = null;
                 currentLessonId = null;
-                document.getElementById('languageSelection').classList.remove('hidden');
-                document.getElementById('learningSection').classList.remove('active');
+                if (langSelEl) langSelEl.classList.remove('hidden');
+                if (learnSecEl) learnSecEl.classList.remove('active');
             }
         }
 
@@ -10171,8 +10182,10 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
                 return;
             }
             currentLanguage = lang;
-            document.getElementById('languageSelection').classList.add('hidden');
-            document.getElementById('learningSection').classList.add('active');
+            const langSelEl = document.getElementById('languageSelection');
+            const learnSecEl = document.getElementById('learningSection');
+            if (langSelEl) langSelEl.classList.add('hidden');
+            if (learnSecEl) learnSecEl.classList.add('active');
             renderCurriculum();
             selectFirstLesson();
             saveNavigationState();
@@ -10184,8 +10197,10 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
                 window.location.href = 'index.html';
                 return;
             }
-            document.getElementById('languageSelection').classList.remove('hidden');
-            document.getElementById('learningSection').classList.remove('active');
+            const langSelEl = document.getElementById('languageSelection');
+            const learnSecEl = document.getElementById('learningSection');
+            if (langSelEl) langSelEl.classList.remove('hidden');
+            if (learnSecEl) learnSecEl.classList.remove('active');
             currentLanguage = null;
             currentLessonId = null;
             clearNavigationState();
@@ -10194,6 +10209,7 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
         // Render Curriculum
         function renderCurriculum() {
             const content = document.getElementById('curriculumContent');
+            if (!content) return;
             content.innerHTML = '';
             
             const langCurriculum = curriculum[currentLanguage];
