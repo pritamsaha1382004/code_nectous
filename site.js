@@ -648,49 +648,6 @@ document.addEventListener("DOMContentLoaded", () => {
         drawerLinks.prepend(home);
     }
 
-    function ensureHeaderInterviewLink() {
-        const headerLinks = document.querySelector(".header-links");
-        if (!headerLinks || headerLinks.querySelector('[data-nav-link="interview"], a[href="interview-questions.html"]')) return;
-
-        const link = document.createElement("a");
-        link.href = "interview-questions.html";
-        link.textContent = "Interview Questions";
-        link.setAttribute("data-nav-link", "interview");
-
-        const authLink = headerLinks.querySelector(".auth-link");
-        const themeToggle = headerLinks.querySelector(".theme-toggle");
-
-        if (authLink) {
-            headerLinks.insertBefore(link, authLink);
-            return;
-        }
-
-        if (themeToggle) {
-            headerLinks.insertBefore(link, themeToggle);
-            return;
-        }
-
-        headerLinks.appendChild(link);
-    }
-
-    function ensureDrawerInterviewLink() {
-        const drawerLinks = document.querySelector(".drawer-links");
-        if (!drawerLinks || drawerLinks.querySelector('[data-nav-link="interview"], a[href="interview-questions.html"]')) return;
-
-        const link = document.createElement("a");
-        link.href = "interview-questions.html";
-        link.textContent = "Interview Questions";
-        link.setAttribute("data-nav-link", "interview");
-
-        const accountLink = drawerLinks.querySelector("#drawerAccountLink");
-        if (accountLink) {
-            drawerLinks.insertBefore(link, accountLink);
-            return;
-        }
-
-        drawerLinks.appendChild(link);
-    }
-
     function runWelcomeTyping() {
         const el = document.querySelector(".home-welcome");
         if (!el) return;
@@ -727,8 +684,6 @@ document.addEventListener("DOMContentLoaded", () => {
         step();
     }
 
-    ensureHeaderInterviewLink();
-    ensureDrawerInterviewLink();
     ensureNavDropdown();
     ensureDrawerHomeLink();
     bindNavDropdowns();
