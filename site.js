@@ -575,7 +575,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!headerLinks) return;
         if (headerLinks.querySelector(".nav-dropdown")) return;
 
-        const linksToRemove = headerLinks.querySelectorAll('a[href="progress.html"], a[href="interview-questions.html"], a[href="all-courses.html"]');
+        const linksToRemove = headerLinks.querySelectorAll('.back-home, a[href="index.html"], a[href="progress.html"], a[href="interview-questions.html"], a[href="all-courses.html"]');
         linksToRemove.forEach((link) => link.remove());
 
         const dropdown = document.createElement("div");
