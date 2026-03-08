@@ -1,6 +1,33 @@
 # Netlify headers to encourage PDFs to open inline in the browser (not forced download).
 # Note: it's not possible to fully prevent downloading of any file that is delivered to a browser.
 
+# Never cache HTML — browsers always re-fetch the latest page
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Pragma = "no-cache"
+    Expires = "0"
+
+# Also apply no-cache to bare / (index.html)
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Pragma = "no-cache"
+    Expires = "0"
+
+# Cache versioned JS/CSS for 1 year (query string ?v= acts as bust key)
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 [[headers]]
   for = "/pdf/*"
   [headers.values]
