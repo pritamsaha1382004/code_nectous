@@ -84,6 +84,18 @@
             popular: false,
             lessons: 19,
             keywords: ['c++', 'stl', 'oop', 'competitive programming']
+        },
+        {
+            key: 'artificial-intelligence',
+            title: 'Artificial Intelligence',
+            shortTitle: 'AI',
+            description: 'Reasoning, search, intelligent agents, machine learning, and neural networks.',
+            accent: '#a855f7',
+            href: 'ai.html',
+            available: true,
+            popular: true,
+            lessons: 20,
+            keywords: ['artificial intelligence', 'ai', 'machine learning', 'neural networks', 'search']
         }
     ];
 
@@ -394,10 +406,24 @@
         return map[key] || `<span style="font-size:1.4rem;font-weight:800">${key.toUpperCase()}</span>`;
     }
 
+    function getCourseThumbImage(key) {
+        const map = {
+            python: 'assets/python_course.png',
+            javascript: 'assets/javascript_course.png',
+            java: 'assets/java_course.png',
+            cpp: 'assets/c++_course.png',
+            c: 'assets/c_course.png',
+            sql: 'assets/sql_course.png',
+            'artificial-intelligence': 'assets/ai_course.png'
+        };
+        return map[key] || '';
+    }
+
     function createCatalogCardMarkup(course) {
         const langClass = getLanguageClass(course.key);
         const state = course.available ? 'available' : 'locked';
         const svgLogo = getCourseLogoSVG(course.key);
+        const thumbImage = getCourseThumbImage(course.key);
         const lessons = course.lessons || 0;
         const isLocked = !course.available;
         const btnClass = isLocked ? 'enroll-btn enroll-btn-locked' : 'enroll-btn';
@@ -413,6 +439,9 @@
                 <span class="scc-lesson-count${isLocked ? ' scc-prog-hidden' : ''}" data-course-total="${lessons}">0 of ${lessons} lessons</span>
                 <div class="scc-prog-track${isLocked ? ' scc-prog-hidden' : ''}"><div class="scc-prog-fill" style="width:0%"></div></div>`;
         const inlineStyle = langClass ? '' : `style="--lang-color:${course.accent};--lang-glow:${course.accent}55"`;
+        const thumbMedia = thumbImage
+            ? `<img src="${thumbImage}" alt="${course.title} course image" loading="lazy">`
+            : `<div class="scc-thumb-inner">${svgLogo}</div>`;
 
         return `
             <div class="scc-card ${langClass}${isLocked ? ' scc-locked' : ''}"
@@ -423,7 +452,7 @@
                 data-course-href="${course.available ? course.href : ''}"
                 ${inlineStyle}>
                 <div class="scc-thumb">
-                    <div class="scc-thumb-inner">${svgLogo}</div>
+                    ${thumbMedia}
                     ${badge}
                 </div>
                 <div class="scc-body">
@@ -440,9 +469,13 @@
     }
 
     function createInterviewCardMarkup(course) {
+        const thumbImage = getCourseThumbImage(course.key);
+        const iconContent = thumbImage
+            ? `<img src="${thumbImage}" alt="${course.title} course image" loading="lazy">`
+            : course.shortTitle;
         return `
             <button type="button" class="interview-card" data-interview-course="${course.key}" style="--catalog-accent:${course.accent};">
-                <span class="interview-card-icon">${course.shortTitle}</span>
+                <span class="interview-card-icon${thumbImage ? ' has-image' : ''}">${iconContent}</span>
                 <span class="interview-card-title">${course.title}</span>
                 <span class="interview-card-lock">Locked</span>
             </button>

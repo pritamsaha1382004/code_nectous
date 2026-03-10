@@ -53,6 +53,16 @@ const BADGE_IMAGE_BASE_NAMES = {
 
 const BADGE_IMAGE_DIRS = ['assets', 'badges', 'assets/badges'];
 const BADGE_IMAGE_EXTS = ['png', 'webp', 'jpg', 'jpeg', 'svg'];
+const COURSE_CHART_ORDER = ['python', 'javascript', 'cpp', 'c', 'java', 'sql', 'artificial-intelligence'];
+const COURSE_LABELS = {
+  python: 'Python',
+  javascript: 'JavaScript',
+  cpp: 'C++',
+  c: 'C',
+  java: 'Java',
+  sql: 'SQL',
+  'artificial-intelligence': 'AI',
+};
 
 function uniqueList(items) {
   const out = [];
@@ -64,6 +74,43 @@ function uniqueList(items) {
     out.push(key);
   });
   return out;
+}
+
+function getCourseDisplayName(courseKey) {
+  const key = String(courseKey || '');
+  if (COURSE_LABELS[key]) return COURSE_LABELS[key];
+  return key
+    .split('-')
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+}
+
+function getEnrolledCourseKeys(progress) {
+  if (!progress || !Array.isArray(progress.enrolled)) return [];
+  return uniqueList(
+    progress.enrolled
+      .map((key) => String(key || '').trim())
+      .filter((key) => key.length > 0),
+  );
+}
+
+function getVisibleCourseKeys(courseProgress, enrolledCourseKeys) {
+  if (!courseProgress || typeof courseProgress !== 'object') return [];
+  const enrolledSet = new Set(Array.isArray(enrolledCourseKeys) ? enrolledCourseKeys : []);
+  if (enrolledSet.size === 0) return [];
+
+  const ordered = [];
+  const pushKey = (key) => {
+    if (!enrolledSet.has(key)) return;
+    if (!courseProgress[key]) return;
+    if (ordered.includes(key)) return;
+    ordered.push(key);
+  };
+
+  COURSE_CHART_ORDER.forEach(pushKey);
+  Object.keys(courseProgress).forEach(pushKey);
+  return ordered;
 }
 
 function toSlug(name) {
@@ -758,19 +805,21 @@ function renderProgress({ user, docData }) {
   const streak = Number.isFinite(Number(progress.streak)) ? Number(progress.streak) : 0;
   const maxStreak = Number.isFinite(Number(progress.maxStreak)) ? Number(progress.maxStreak) : Math.max(0, streak);
   const lastActive = typeof progress.lastStreak === 'string' ? (progress.lastStreak || '-') : '-';
+  const enrolledCourseKeys = getEnrolledCourseKeys(progress);
 
   const courseProgress =
     progress.courseProgress && typeof progress.courseProgress === 'object' ? progress.courseProgress : null;
-  const hasCourseProgress = !!(courseProgress && Object.keys(courseProgress).length > 0);
-  let totalLessons = 0;
-  if (courseProgress) {
-    totalLessons = Object.values(courseProgress).reduce((sum, item) => sum + (item && item.total ? item.total : 0), 0);
-  } else if (Number.isFinite(Number(progress.totalLessons))) {
-    totalLessons = Number(progress.totalLessons);
-  }
+  const visibleCourseKeys = getVisibleCourseKeys(courseProgress, enrolledCourseKeys);
+  const hasCourseProgress = visibleCourseKeys.length > 0;
+  const totalLessons = hasCourseProgress
+    ? visibleCourseKeys.reduce((sum, key) => sum + Number((courseProgress[key] && courseProgress[key].total) || 0), 0)
+    : 0;
+  const completedCount = hasCourseProgress
+    ? visibleCourseKeys.reduce((sum, key) => sum + Number((courseProgress[key] && courseProgress[key].completed) || 0), 0)
+    : 0;
 
   document.getElementById('totalXP').textContent = xp;
-  document.getElementById('completedLessons').textContent = completed.length;
+  document.getElementById('completedLessons').textContent = completedCount;
   document.getElementById('totalLessons').textContent = totalLessons || 0;
   const maxStreakEl = document.getElementById('maxStreak');
   if (maxStreakEl) maxStreakEl.textContent = maxStreak;
@@ -783,13 +832,13 @@ function renderProgress({ user, docData }) {
   const streakSummary = document.getElementById('streakSummary');
   const maxStreakSummary = document.getElementById('maxStreakSummary');
   if (totalXpSummary) totalXpSummary.textContent = xp;
-  if (completedSummary) completedSummary.textContent = completed.length;
+  if (completedSummary) completedSummary.textContent = completedCount;
   if (totalLessonsSummary) totalLessonsSummary.textContent = totalLessons || 0;
   if (maxStreakSummary) maxStreakSummary.textContent = maxStreak;
   if (streakSummary) streakSummary.textContent = streak;
 
   const overallPercent =
-    totalLessons > 0 ? Math.max(0, Math.min(100, Math.round((completed.length / totalLessons) * 100))) : 0;
+    totalLessons > 0 ? Math.max(0, Math.min(100, Math.round((completedCount / totalLessons) * 100))) : 0;
   const overallValue = document.getElementById('overallProgressValue');
   const overallFill = document.getElementById('overallProgressFill');
   const overallBar = document.getElementById('overallProgressBar');
@@ -912,12 +961,11 @@ function renderProgress({ user, docData }) {
   const chart = document.getElementById('progressChart');
   chart.innerHTML = '';
   if (!hasCourseProgress) {
-    chart.textContent = 'Progress graph will appear after you open a course.';
+    chart.textContent = 'Enroll in a course to see progress here.';
     return;
   }
 
-  const order = ['python', 'javascript', 'cpp', 'c', 'java', 'sql'];
-  order.forEach((lang) => {
+  visibleCourseKeys.forEach((lang) => {
     const data = courseProgress[lang];
     if (!data) return;
     const row = document.createElement('div');
@@ -925,7 +973,7 @@ function renderProgress({ user, docData }) {
 
     const label = document.createElement('div');
     label.className = 'chart-label';
-    label.textContent = lang.toUpperCase();
+    label.textContent = getCourseDisplayName(lang);
 
     const bar = document.createElement('div');
     bar.className = 'chart-bar';

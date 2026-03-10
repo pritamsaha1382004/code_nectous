@@ -8134,197 +8134,2905 @@ if (score >= 60) {
                 ],
 },
             java: {
-                basics: [
-                    {
-                        id: 'java-intro',
-                        type: 'theory',
-                        title: 'Introduction to Java',
-                        description: 'Learn about Java programming',
-                        content: `
-                            <div class="theory-content">
-                                <h4>What is Java?</h4>
-                                <p>Java is a versatile, object-oriented programming language created by Sun Microsystems (now Oracle) in 1995. It's designed to be platform-independent - "Write Once, Run Anywhere."</p>
-                                
-                                <h4>Why Learn Java?</h4>
-                                <ul>
-                                    <li><strong>Popular:</strong> One of the most widely-used programming languages</li>
-                                    <li><strong>Cross-Platform:</strong> Runs on any device with JVM</li>
-                                    <li><strong>Enterprise:</strong> Used by major corporations worldwide</li>
-                                    <li><strong>Android:</strong> Primary language for Android app development</li>
-                                </ul>
+basics: [
+{
+    id: "java-basic-01",
+    type: "theory",
+    title: "Introduction to Java",
+    description: "Learn what Java is and how a simple Java program works",
+    content: `
 
-                                <h4>Java Powers</h4>
-                                <ul>
-                                    <li>Android mobile applications</li>
-                                    <li>Enterprise web applications</li>
-                                    <li>Financial trading systems</li>
-                                    <li>Scientific applications</li>
-                                    <li>Big data technologies (Hadoop, Spark)</li>
-                                </ul>
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
 
-                                <h4>Your First Java Program</h4>
-                                <div class="code-example">
-<pre>public class HelloWorld {
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.editor-body code{
+    color:#dcdcaa;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+
+<div class="theory-content">
+
+<h4>What is Java?</h4>
+<p>
+Java is a high-level, object-oriented programming language created by Sun Microsystems in 1995 and now maintained by Oracle. 
+It is designed to be platform-independent, meaning a program written in Java can run on multiple operating systems without modification.
+</p>
+
+<p>
+Java follows the principle <strong>"Write Once, Run Anywhere"</strong>. Java code is compiled into bytecode which runs on the 
+Java Virtual Machine (JVM), allowing programs to run on Windows, Linux, and macOS.
+</p>
+
+<h4>Where Java is Used</h4>
+<ul>
+<li>Android mobile development</li>
+<li>Enterprise applications</li>
+<li>Web backend systems</li>
+<li>Banking and financial systems</li>
+<li>Large-scale distributed systems</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+
+        System.out.println("Welcome to Java Programming");
+
     }
-}</pre>
-                                </div>
 
-                                <div class="info-box">
-                                    <strong>\u{1F4DD} Understanding the Code</strong>
-                                    <ul>
-                                        <li><code>public class</code> - Defines a class (building block of Java)</li>
-                                        <li><code>main</code> - Entry point of the program</li>
-                                        <li><code>System.out.println</code> - Prints to console</li>
-                                        <li>Semicolons (;) end statements</li>
-                                        <li>Curly braces {} define code blocks</li>
-                                    </ul>
-                                </div>
+}
+</code></pre>
+</div>
 
-                                <div class="info-box tip">
-                                    <strong>\u{1F4A1} Fun Fact</strong>
-                                    <p>Java was originally called "Oak" after an oak tree outside the creator's office. It was renamed Java after the coffee from the Indonesian island!</p>
-                                </div>
-                            </div>
-                        `,
-                        xp: 10
-                    },
-                    {
-                        id: 'java-hello',
-                        type: 'practice',
-                        title: 'Hello World in Java',
-                        description: 'Write your first Java program',
-                        content: `
-                            <div class="practice-section">
-                                <div class="challenge-goal">
-                                    <h4>\u{1F3AF} Challenge Goal</h4>
-                                    <ul>
-                                        <li>Complete the program to print "Hello, Java!"</li>
-                                    </ul>
-                                </div>
+</div>
 
-                                <div class="info-box">
-                                    <strong>\u{1F4DD} Remember</strong>
-                                    <p>Use System.out.println() to print in Java, and don't forget the semicolon!</p>
-                                </div>
-                            </div>
-                        `,
-                        starterCode: `public class Main {\n    public static void main(String[] args) {\n        // Print "Hello, Java!" here\n        \n    }\n}`,
-                        solution: `public class Main {\n    public static void main(String[] args) {\n        System.out.println("Hello, Java!");\n    }\n}`,
-                        test: (output) => output.includes('Hello, Java'),
-                        xp: 20
-                    },
-                    {
-                        id: 'java-variables-theory',
-                        type: 'theory',
-                        title: 'Variables and Data Types',
-                        description: 'Learn Java data types',
-                        content: `
-                            <div class="theory-content">
-                                <h4>Variable Declaration</h4>
-                                <p>Java requires you to declare the type of each variable:</p>
-                                
-                                <div class="code-example">
-<pre>int age = 25;              <span class="code-comment">// Integer</span>
-double price = 19.99;      <span class="code-comment">// Decimal</span>
-char grade = 'A';          <span class="code-comment">// Single character</span>
-String name = "Alice";     <span class="code-comment">// Text</span>
-boolean isStudent = true;  <span class="code-comment">// True/false</span></pre>
-                                </div>
+<h4>Code Explanation</h4>
 
-                                <h4>Primitive Data Types</h4>
-                                <ul>
-                                    <li><strong>byte:</strong> -128 to 127</li>
-                                    <li><strong>short:</strong> -32,768 to 32,767</li>
-                                    <li><strong>int:</strong> -2 billion to 2 billion</li>
-                                    <li><strong>long:</strong> Very large numbers</li>
-                                    <li><strong>float:</strong> Decimal numbers (7 digits)</li>
-                                    <li><strong>double:</strong> Decimal numbers (15 digits)</li>
-                                    <li><strong>char:</strong> Single character</li>
-                                    <li><strong>boolean:</strong> true or false</li>
-                                </ul>
+<ul>
+<li><strong>public class Main</strong> defines a class named Main.</li>
+<li><strong>main()</strong> is the starting point where the Java program begins execution.</li>
+<li><strong>System.out.println()</strong> prints text to the console.</li>
+</ul>
 
-                                <h4>String (Reference Type)</h4>
-                                <div class="code-example">
-<pre>String firstName = "John";
-String lastName = "Doe";
-String fullName = firstName + " " + lastName;
+<h4>Program Output</h4>
 
-System.out.println(fullName);  <span class="code-comment">// John Doe</span></pre>
-                                </div>
+<div class="output-interface">
 
-                                <h4>Constants</h4>
-                                <div class="code-example">
-<pre><span class="code-comment">// Use 'final' keyword</span>
-final double PI = 3.14159;
-final int MAX_USERS = 100;</pre>
-                                </div>
+<div class="console-header">
+Console Output
+</div>
 
-                                <h4>Type Casting</h4>
-                                <div class="code-example">
-<pre><span class="code-comment">// Implicit (automatic)</span>
-int num = 10;
-double decimal = num;  <span class="code-comment">// 10.0</span>
+<div class="console-body">
+<pre>
+Welcome to Java Programming
+</pre>
+</div>
 
-<span class="code-comment">// Explicit (manual)</span>
-double price = 9.99;
-int rounded = (int) price;  <span class="code-comment">// 9</span></pre>
-                                </div>
+</div>
 
-                                <div class="info-box tip">
-                                    <strong>\u{1F4A1} Naming Conventions</strong>
-                                    <p>Variables: camelCase (firstName, studentAge)<br>
-                                    Constants: UPPER_SNAKE_CASE (MAX_VALUE, PI)<br>
-                                    Classes: PascalCase (HelloWorld, StudentRecord)</p>
-                                </div>
-                            </div>
-                        `,
-                        xp: 15
-                    },
-                    {
-                        id: 'java-variables-practice',
-                        type: 'practice',
-                        title: 'Working with Variables',
-                        description: 'Create and use Java variables',
-                        content: `
-                            <div class="practice-section">
-                                <div class="challenge-goal">
-                                    <h4>\u{1F3AF} Challenge Goal</h4>
-                                    <ul>
-                                        <li>Create an int variable "score" with value 95</li>
-                                        <li>Print it using System.out.println()</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        `,
-                        starterCode: `public class Main {\n    public static void main(String[] args) {\n        // Create variable and print it\n        \n    }\n}`,
-                        solution: `public class Main {\n    public static void main(String[] args) {\n        int score = 95;\n        System.out.println(score);\n    }\n}`,
-                        test: (output) => output.includes('95'),
-                        xp: 25
-                    }
-                ],
+</div>
+
+`,
+xp: 10
+},
+{
+    id: "java-basic-02",
+    type: "theory",
+    title: "JDK, JRE, and JVM",
+    description: "Understand the core components that make Java programs run",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.editor-body code{
+    color:#dcdcaa;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+
+<div class="theory-content">
+
+<h4>Understanding JDK, JRE, and JVM</h4>
+
+<p>
+To run Java programs, three main components work together: <strong>JDK, JRE, and JVM</strong>. 
+These components form the core environment required for Java development and execution.
+</p>
+
+<h4>JVM (Java Virtual Machine)</h4>
+<p>
+The JVM is responsible for executing Java bytecode. It acts as a virtual computer that runs Java programs. 
+Because every operating system has its own JVM implementation, Java programs can run on multiple platforms without modification.
+</p>
+
+<h4>JRE (Java Runtime Environment)</h4>
+<p>
+The JRE provides the environment required to run Java programs. It includes the JVM along with standard libraries and runtime files needed for execution.
+</p>
+
+<h4>JDK (Java Development Kit)</h4>
+<p>
+The JDK is a complete development package used by programmers to create Java applications. 
+It includes the JRE, compiler (javac), debugging tools, and other development utilities.
+</p>
+
+<h4>Relationship Between Them</h4>
+
+<ul>
+<li>JDK contains JRE</li>
+<li>JRE contains JVM</li>
+<li>Programmers install JDK to develop Java applications</li>
+</ul>
+
+<h4>Example Java Program Execution</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println("Java Program Running");
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Execution Steps</h4>
+
+<ul>
+<li>Java source code is written in <strong>Main.java</strong>.</li>
+<li>The <strong>javac compiler</strong> (from JDK) converts it into bytecode.</li>
+<li>The <strong>JVM</strong> executes the bytecode.</li>
+<li>The program output appears on the console.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Java Program Running
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+xp: 10
+},
+{
+    id: "java-basic-03",
+    type: "theory",
+    title: "Java Program Structure",
+    description: "Learn the basic structure of a Java program and how its components work together",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.editor-body code{
+    color:#dcdcaa;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+
+<div class="theory-content">
+
+<h4>Basic Structure of a Java Program</h4>
+
+<p>
+Every Java program follows a specific structure. A Java program is built using classes, 
+methods, and statements. The program execution always begins from the 
+<strong>main() method</strong>.
+</p>
+
+<p>
+Understanding the structure helps developers organize code properly and follow Java conventions.
+</p>
+
+<h4>Main Components of a Java Program</h4>
+
+<ul>
+<li><strong>Class Declaration</strong> – Defines the blueprint of the program.</li>
+<li><strong>Main Method</strong> – The starting point of program execution.</li>
+<li><strong>Statements</strong> – Instructions executed by the program.</li>
+<li><strong>Output Statements</strong> – Used to display results.</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println("Java Program Structure Example");
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation of the Code</h4>
+
+<ul>
+<li><strong>public class Main</strong> → Declares a class named Main.</li>
+<li><strong>public static void main(String[] args)</strong> → Entry point of the Java program.</li>
+<li><strong>System.out.println()</strong> → Displays output on the console.</li>
+<li><strong>Curly braces { }</strong> → Define the beginning and end of code blocks.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Java Program Structure Example
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-basic-04",
+    type: "theory",
+    title: "Variables in Java",
+    description: "Learn what variables are and how to store data in Java programs",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.editor-body code{
+    color:#dcdcaa;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+
+<div class="theory-content">
+
+<h4>What is a Variable?</h4>
+
+<p>
+A variable is a container used to store data in a program. Each variable has a 
+<strong>data type</strong>, a <strong>name</strong>, and a <strong>value</strong>. 
+Variables allow programs to store and manipulate information during execution.
+</p>
+
+<p>
+In Java, every variable must be declared with a specific data type before it can be used.
+</p>
+
+<h4>Variable Declaration Syntax</h4>
+
+<p>
+The general syntax for declaring a variable is:
+</p>
+
+<ul>
+<li><strong>dataType variableName = value;</strong></li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
+    public static void main(String[] args) {
+
+        int age = 21;
+
+        System.out.println(age);
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation of the Code</h4>
+
+<ul>
+<li><strong>int age = 21;</strong> → Declares an integer variable named age.</li>
+<li><strong>age</strong> → Variable name.</li>
+<li><strong>21</strong> → Value stored inside the variable.</li>
+<li><strong>System.out.println(age)</strong> → Prints the value of the variable.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+21
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-basic-05",
+    type: "theory",
+    title: "Data Types in Java",
+    description: "Understand different types of data that Java variables can store",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What are Data Types?</h4>
+
+<p>
+Data types define the type of data a variable can store. In Java, every variable must have a data type 
+so that the compiler knows what kind of value it holds and how much memory should be allocated.
+</p>
+
+<p>
+Java data types are mainly divided into two categories:
+</p>
+
+<ul>
+<li><strong>Primitive Data Types</strong> – Basic built-in data types.</li>
+<li><strong>Non-Primitive Data Types</strong> – Objects such as String, Arrays, and Classes.</li>
+</ul>
+
+<h4>Common Primitive Data Types</h4>
+
+<ul>
+<li><strong>int</strong> – Stores integers (whole numbers)</li>
+<li><strong>double</strong> – Stores decimal numbers</li>
+<li><strong>char</strong> – Stores a single character</li>
+<li><strong>boolean</strong> – Stores true or false values</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
+    public static void main(String[] args) {
+
+        int number = 10;
+        double price = 9.99;
+        char grade = 'A';
+        boolean isJavaFun = true;
+
+        System.out.println(number);
+        System.out.println(price);
+        System.out.println(grade);
+        System.out.println(isJavaFun);
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li><strong>int</strong> stores whole numbers.</li>
+<li><strong>double</strong> stores decimal values.</li>
+<li><strong>char</strong> stores a single character.</li>
+<li><strong>boolean</strong> stores logical values (true or false).</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+10
+9.99
+A
+true
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-basic-06",
+    type: "theory",
+    title: "Type Casting in Java",
+    description: "Learn how to convert one data type into another in Java",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is Type Casting?</h4>
+
+<p>
+Type casting is the process of converting one data type into another. 
+In Java, this is often required when working with different numeric data types 
+such as <strong>int, double, float, or long</strong>.
+</p>
+
+<p>
+Java supports two types of casting:
+</p>
+
+<ul>
+<li><strong>Implicit Casting (Widening)</strong> – Automatic conversion from a smaller data type to a larger one.</li>
+<li><strong>Explicit Casting (Narrowing)</strong> – Manual conversion from a larger data type to a smaller one.</li>
+</ul>
+
+<h4>Example of Type Casting</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
+    public static void main(String[] args) {
+
+        int number = 10;
+
+        double result = number;   // Implicit casting
+
+        System.out.println(result);
+
+        double price = 9.75;
+
+        int rounded = (int) price;   // Explicit casting
+
+        System.out.println(rounded);
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li><strong>double result = number</strong> converts an int to double automatically.</li>
+<li><strong>(int) price</strong> manually converts a double value to an integer.</li>
+<li>When narrowing happens, decimal values are removed.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+10.0
+9
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-basic-07",
+    type: "theory",
+    title: "Operators in Java",
+    description: "Learn how operators are used to perform operations on variables and values",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What are Operators?</h4>
+
+<p>
+Operators are special symbols used to perform operations on variables and values. 
+They help perform calculations, comparisons, and logical operations inside a program.
+</p>
+
+<p>
+Java provides several types of operators that are commonly used in programming.
+</p>
+
+<h4>Types of Operators</h4>
+
+<ul>
+<li><strong>Arithmetic Operators</strong> → +, -, *, /, %</li>
+<li><strong>Relational Operators</strong> → ==, !=, >, <, >=, <=</li>
+<li><strong>Logical Operators</strong> → &&, ||, !</li>
+<li><strong>Assignment Operators</strong> → =, +=, -=, *=</li>
+</ul>
+
+<h4>Example Program Using Operators</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
+    public static void main(String[] args) {
+
+        int a = 10;
+        int b = 5;
+
+        int sum = a + b;
+        int product = a * b;
+
+        System.out.println(sum);
+        System.out.println(product);
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li><strong>a + b</strong> performs addition using the arithmetic operator +.</li>
+<li><strong>a * b</strong> performs multiplication using the * operator.</li>
+<li>The results are stored in variables and printed using System.out.println().</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+15
+50
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-basic-08",
+    type: "theory",
+    title: "If Statement in Java",
+    description: "Learn how decision making works using the if statement",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is an If Statement?</h4>
+
+<p>
+The <strong>if statement</strong> is used for decision making in Java programs. 
+It allows the program to execute a block of code only if a specified condition is true.
+</p>
+
+<p>
+This helps programs make logical decisions based on conditions such as user input,
+numbers, or comparisons between variables.
+</p>
+
+<h4>Syntax of If Statement</h4>
+
+<ul>
+<li><strong>if (condition) { statements }</strong></li>
+</ul>
+
+<p>
+If the condition evaluates to <strong>true</strong>, the code inside the block will run.
+If the condition is <strong>false</strong>, the code inside the block will be skipped.
+</p>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
+    public static void main(String[] args) {
+
+        int marks = 80;
+
+        if (marks >= 50) {
+
+            System.out.println("Pass");
+
+        }
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The variable <strong>marks</strong> stores the value 80.</li>
+<li>The condition <strong>marks >= 50</strong> checks if marks are greater than or equal to 50.</li>
+<li>If the condition is true, the program prints <strong>"Pass"</strong>.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Pass
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-basic-09",
+    type: "theory",
+    title: "Switch Statement in Java",
+    description: "Learn how to use switch statements to execute different code blocks based on values",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is a Switch Statement?</h4>
+
+<p>
+The <strong>switch statement</strong> is used when a program needs to choose between multiple options.
+It evaluates a variable and executes the matching case block.
+</p>
+
+<p>
+Switch statements are often used as an alternative to multiple <strong>if-else</strong> conditions,
+especially when comparing the same variable with different values.
+</p>
+
+<h4>Syntax of Switch Statement</h4>
+
+<ul>
+<li><strong>switch(variable) { case value: statements; break; }</strong></li>
+</ul>
+
+<p>
+The <strong>break</strong> statement stops the execution of the switch block after a case is matched.
+</p>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
+    public static void main(String[] args) {
+
+        int day = 2;
+
+        switch(day) {
+
+            case 1:
+                System.out.println("Monday");
+                break;
+
+            case 2:
+                System.out.println("Tuesday");
+                break;
+
+            case 3:
+                System.out.println("Wednesday");
+                break;
+
+            default:
+                System.out.println("Invalid Day");
+
+        }
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The variable <strong>day</strong> stores the value 2.</li>
+<li>The switch statement checks which case matches the value.</li>
+<li>Since day = 2, the program executes the second case.</li>
+<li>The break statement prevents execution of the next cases.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Tuesday
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-basic-10",
+    type: "theory",
+    title: "For Loop in Java",
+    description: "Learn how to repeat a block of code using the for loop",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is a For Loop?</h4>
+
+<p>
+A <strong>for loop</strong> is used to repeat a block of code a specific number of times. 
+It is commonly used when the number of iterations is known in advance.
+</p>
+
+<p>
+The for loop contains three main parts: initialization, condition, and update.
+</p>
+
+<h4>Syntax of For Loop</h4>
+
+<ul>
+<li><strong>for(initialization; condition; update) { statements }</strong></li>
+</ul>
+
+<ul>
+<li><strong>Initialization</strong> → starting value of the loop variable</li>
+<li><strong>Condition</strong> → determines whether the loop should continue</li>
+<li><strong>Update</strong> → modifies the loop variable after each iteration</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
+    public static void main(String[] args) {
+
+        for(int i = 1; i <= 5; i++) {
+
+            System.out.println(i);
+
+        }
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The variable <strong>i</strong> starts from 1.</li>
+<li>The loop runs while <strong>i ≤ 5</strong>.</li>
+<li>After every iteration, <strong>i</strong> increases by 1.</li>
+<li>The program prints numbers from 1 to 5.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+1
+2
+3
+4
+5
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-basic-11",
+    type: "theory",
+    title: "While Loop in Java",
+    description: "Learn how to repeat a block of code using the while loop",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is a While Loop?</h4>
+
+<p>
+The <strong>while loop</strong> is used to repeatedly execute a block of code 
+as long as a specified condition remains true.
+</p>
+
+<p>
+Unlike the <strong>for loop</strong>, a while loop is mainly used when the number 
+of iterations is not known in advance.
+</p>
+
+<h4>Syntax of While Loop</h4>
+
+<ul>
+<li><strong>while(condition) { statements }</strong></li>
+</ul>
+
+<p>
+The condition is checked before each iteration. If the condition becomes false,
+the loop stops executing.
+</p>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
+    public static void main(String[] args) {
+
+        int i = 1;
+
+        while(i <= 5) {
+
+            System.out.println(i);
+
+            i++;
+
+        }
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The variable <strong>i</strong> starts with the value 1.</li>
+<li>The loop continues while <strong>i ≤ 5</strong>.</li>
+<li>After printing the value, <strong>i</strong> increases by 1.</li>
+<li>The loop repeats until the condition becomes false.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+1
+2
+3
+4
+5
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-basic-12",
+    type: "theory",
+    title: "Do-While Loop in Java",
+    description: "Learn how the do-while loop executes a block of code at least once",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is a Do-While Loop?</h4>
+
+<p>
+The <strong>do-while loop</strong> is similar to the while loop but with one key difference. 
+It executes the block of code <strong>at least once</strong> before checking the condition.
+</p>
+
+<p>
+This happens because the condition is evaluated <strong>after</strong> the loop body runs.
+</p>
+
+<h4>Syntax of Do-While Loop</h4>
+
+<ul>
+<li><strong>do { statements } while(condition);</strong></li>
+</ul>
+
+<p>
+Even if the condition is false initially, the code inside the loop will run once.
+</p>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
+    public static void main(String[] args) {
+
+        int i = 1;
+
+        do {
+
+            System.out.println(i);
+
+            i++;
+
+        } while(i <= 5);
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The variable <strong>i</strong> starts with the value 1.</li>
+<li>The code inside the <strong>do block</strong> executes first.</li>
+<li>After execution, the condition <strong>i ≤ 5</strong> is checked.</li>
+<li>The loop repeats until the condition becomes false.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+1
+2
+3
+4
+5
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-basic-13",
+    type: "theory",
+    title: "Arrays in Java",
+    description: "Learn how arrays store multiple values of the same data type",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is an Array?</h4>
+
+<p>
+An <strong>array</strong> is a data structure used to store multiple values of the same data type 
+in a single variable. Instead of creating many variables, arrays allow us to store many values 
+in one structure.
+</p>
+
+<p>
+Each value inside an array is accessed using an <strong>index</strong>. 
+In Java, array indexing starts from <strong>0</strong>.
+</p>
+
+<h4>Syntax of Array Declaration</h4>
+
+<ul>
+<li><strong>dataType[] arrayName = new dataType[size];</strong></li>
+</ul>
+
+<p>
+Values can then be assigned to each index position.
+</p>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
+    public static void main(String[] args) {
+
+        int[] numbers = {10, 20, 30, 40};
+
+        System.out.println(numbers[0]);
+        System.out.println(numbers[1]);
+        System.out.println(numbers[2]);
+        System.out.println(numbers[3]);
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The array <strong>numbers</strong> stores four integer values.</li>
+<li><strong>numbers[0]</strong> accesses the first element.</li>
+<li><strong>numbers[1]</strong> accesses the second element.</li>
+<li>Array indexing always starts from 0.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+10
+20
+30
+40
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-basic-14",
+    type: "theory",
+    title: "Strings in Java",
+    description: "Learn how Java stores and manipulates text using String objects",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is a String?</h4>
+
+<p>
+A <strong>String</strong> in Java is used to store and manipulate text. 
+Unlike primitive data types, String is a <strong>class</strong> in Java.
+</p>
+
+<p>
+Strings are commonly used for storing names, messages, sentences, 
+and any textual data inside a program.
+</p>
+
+<h4>Creating a String</h4>
+
+<ul>
+<li>Strings are created using double quotation marks <strong>" "</strong>.</li>
+<li>They can also be combined using the <strong>+</strong> operator.</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
+    public static void main(String[] args) {
+
+        String firstName = "Pritam";
+        String lastName = "Saha";
+
+        String fullName = firstName + " " + lastName;
+
+        System.out.println(fullName);
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li><strong>String firstName</strong> stores the value "Pritam".</li>
+<li><strong>String lastName</strong> stores the value "Saha".</li>
+<li>The <strong>+</strong> operator joins both strings together.</li>
+<li>The result is stored in the variable <strong>fullName</strong>.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Pritam Saha
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-basic-15",
+    type: "theory",
+    title: "Scanner (User Input) in Java",
+    description: "Learn how to take input from the user using the Scanner class",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is Scanner?</h4>
+
+<p>
+The <strong>Scanner class</strong> is used to take input from the user in Java programs. 
+It belongs to the <strong>java.util</strong> package and allows programs to read 
+different types of input such as integers, strings, and floating-point numbers.
+</p>
+
+<p>
+Before using Scanner, the package must be imported into the program.
+</p>
+
+<h4>Common Scanner Methods</h4>
+
+<ul>
+<li><strong>nextInt()</strong> → reads an integer value</li>
+<li><strong>nextDouble()</strong> → reads a decimal value</li>
+<li><strong>nextLine()</strong> → reads a full line of text</li>
+<li><strong>next()</strong> → reads a single word</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter your name:");
+
+        String name = sc.nextLine();
+
+        System.out.println("Hello " + name);
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li><strong>import java.util.Scanner</strong> allows the program to use the Scanner class.</li>
+<li><strong>Scanner sc = new Scanner(System.in)</strong> creates a Scanner object to read input.</li>
+<li><strong>nextLine()</strong> reads a line of text from the user.</li>
+<li>The program prints a greeting using the entered name.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Enter your name:
+Pritam
+Hello Pritam
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+}
+],
 
                 
 
-                overview: [
-                    {
-                        id: 'java-overview',
-                        type: 'theory',
-                        title: 'Java Course Overview',
-                        description: 'What you will learn and how to practice',
-                        content: `
-                            <div class="theory-content">
-                                <h4>What you will learn</h4>
-                                <p>This course is organized to build from fundamentals to practical problem solving. You will learn core syntax, data handling, decision making, and repetition patterns that appear in real-world code.</p>
-                                <h4>How to use the lessons</h4>
-                                <p>Read the theory, then immediately try the practice tasks. Each task is short and focused on one concept so you build speed and confidence.</p>
-                                <h4>Progress and XP</h4>
-                                <p>Finishing lessons marks them complete, increases XP, and counts toward your streak. The practice challenges in this course award more XP.</p>
-                            </div>
-                        `,
-                        xp: 20
-                    }
+                Core: [
+  {
+    id: "java-core-16",
+    type: "theory",
+    title: "Methods in Java",
+    description: "Learn how methods are used to organize and reuse code in Java programs",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is a Method?</h4>
+
+<p>
+A <strong>method</strong> in Java is a block of code that performs a specific task. 
+Methods help organize programs into smaller and reusable pieces of code.
+</p>
+
+<p>
+Instead of writing the same code multiple times, a method can be created once 
+and called whenever needed.
+</p>
+
+<h4>Why Methods Are Important</h4>
+
+<ul>
+<li>Improve code readability</li>
+<li>Allow code reuse</li>
+<li>Make programs easier to maintain</li>
+<li>Break large programs into smaller parts</li>
+</ul>
+
+<h4>Basic Syntax of a Method</h4>
+
+<ul>
+<li><strong>returnType methodName() { code }</strong></li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
+    static void greet() {
+
+        System.out.println("Welcome to Java Methods");
+
+    }
+
+    public static void main(String[] args) {
+
+        greet();
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li><strong>static void greet()</strong> defines a method named greet.</li>
+<li>The method prints a message.</li>
+<li><strong>greet()</strong> is called inside the main method.</li>
+<li>When the method is called, the code inside it executes.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Welcome to Java Methods
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-core-17",
+    type: "theory",
+    title: "Method Overloading in Java",
+    description: "Learn how multiple methods can have the same name but different parameters",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is Method Overloading?</h4>
+
+<p>
+<strong>Method Overloading</strong> allows multiple methods to have the same name 
+but with different parameters. The compiler determines which method to call 
+based on the number or type of arguments.
+</p>
+
+<p>
+This helps programmers write cleaner and more flexible code by reusing the 
+same method name for similar tasks.
+</p>
+
+<h4>Rules of Method Overloading</h4>
+
+<ul>
+<li>Methods must have the same name.</li>
+<li>Parameters must be different in number or type.</li>
+<li>Return type alone cannot differentiate overloaded methods.</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
+    static int add(int a, int b) {
+        return a + b;
+    }
+
+    static int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println(add(5, 10));
+        System.out.println(add(5, 10, 15));
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The method <strong>add()</strong> is defined twice with different parameters.</li>
+<li>The first method adds two numbers.</li>
+<li>The second method adds three numbers.</li>
+<li>The compiler selects the correct method depending on the arguments.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+15
+30
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-core-18",
+    type: "theory",
+    title: "Recursion in Java",
+    description: "Learn how a method can call itself to solve repetitive problems",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is Recursion?</h4>
+
+<p>
+<strong>Recursion</strong> is a programming technique where a method calls itself 
+to solve a smaller part of the same problem. It is commonly used in problems 
+that can be broken down into smaller subproblems.
+</p>
+
+<p>
+A recursive method must always include a <strong>base case</strong> to stop the recursion. 
+Without a base case, the method would call itself forever and cause a program error.
+</p>
+
+<h4>Where Recursion is Used</h4>
+
+<ul>
+<li>Factorial calculation</li>
+<li>Fibonacci series</li>
+<li>Tree and graph algorithms</li>
+<li>Divide and conquer algorithms</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
+    static int factorial(int n) {
+
+        if(n == 1) {
+            return 1;
+        }
+
+        return n * factorial(n - 1);
+
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println(factorial(5));
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The method <strong>factorial()</strong> calls itself.</li>
+<li>The base case is when <strong>n == 1</strong>.</li>
+<li>Each recursive call multiplies the number by the factorial of the previous number.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+120
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-core-19",
+    type: "theory",
+    title: "Classes in Java",
+    description: "Learn how classes act as blueprints for creating objects in Java",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is a Class?</h4>
+
+<p>
+A <strong>class</strong> in Java is a blueprint used to create objects. 
+It defines properties (variables) and behaviors (methods) that the objects created from it will have.
+</p>
+
+<p>
+Classes are one of the main concepts of <strong>Object-Oriented Programming (OOP)</strong>.
+They help organize code and model real-world entities such as students, cars, or employees.
+</p>
+
+<h4>Components of a Class</h4>
+
+<ul>
+<li><strong>Variables (Attributes)</strong> → store data</li>
+<li><strong>Methods</strong> → define actions or behavior</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+class Student {
+
+    String name = "Pritam";
+
+    void display() {
+        System.out.println(name);
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Student s = new Student();
+
+        s.display();
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The class <strong>Student</strong> contains a variable and a method.</li>
+<li>An object <strong>s</strong> of the Student class is created.</li>
+<li>The method <strong>display()</strong> is called using the object.</li>
+<li>The program prints the value stored in the variable.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Pritam
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-core-20",
+    type: "theory",
+    title: "Objects in Java",
+    description: "Learn how objects are created from classes and used to access properties and methods",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is an Object?</h4>
+
+<p>
+An <strong>object</strong> is an instance of a class. It represents a real-world entity 
+and allows us to access the properties and methods defined inside a class.
+</p>
+
+<p>
+In Java, objects are created using the <strong>new</strong> keyword. 
+Once an object is created, it can be used to call methods and access variables of the class.
+</p>
+
+<h4>Why Objects Are Important</h4>
+
+<ul>
+<li>They allow interaction with class properties.</li>
+<li>They represent real-world entities in programs.</li>
+<li>They support Object-Oriented Programming concepts.</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+class Car {
+
+    String model = "Tesla";
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Car c = new Car();
+
+        System.out.println(c.model);
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The class <strong>Car</strong> contains a variable named <strong>model</strong>.</li>
+<li>An object <strong>c</strong> of the Car class is created using the <strong>new</strong> keyword.</li>
+<li>The object accesses the variable using <strong>c.model</strong>.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Tesla
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
                 ],
 
                 
@@ -8507,100 +11215,7 @@ if (score >= 60) {
                         xp: 60
                     }
                 ],
-                master: [
-                    {
-                        id: 'java-master-01',
-                        type: 'practice',
-                        title: 'Master Challenge 1 (Easy)',
-                        description: 'Print the square of 7',
-                        content: `
-                            <div class="practice-section">
-                                <div class="challenge-goal">
-                                    <h4>Goal</h4>
-                                    <ul>
-                                        <li>Print the square of <code>7</code> (output: <code>49</code>)</li>
-                                    </ul>
-                                </div>
-                                <div class="info-box">
-                                    <strong>Master Badge</strong>
-                                    <p>Complete all 4 Master Challenges to unlock <strong>Master in Java</strong>.</p>
-                                </div>
-                            </div>
-                        `,
-                        starterCode: `// Master Challenge (Easy)\n// Print the square of 7\n`,
-                        solution: `System.out.println(7 * 7);`,
-                        test: (output) => output.trim() === '49',
-                        xp: 100,
-                        forceSubmit: true
-                    },
-                    {
-                        id: 'java-master-02',
-                        type: 'practice',
-                        title: 'Master Challenge 2 (Medium)',
-                        description: 'Use variables and print their sum',
-                        content: `
-                            <div class="practice-section">
-                                <div class="challenge-goal">
-                                    <h4>Goal</h4>
-                                    <ul>
-                                        <li>Create <code>int a = 15</code> and <code>int b = 4</code></li>
-                                        <li>Print <code>a + b</code> (output: <code>19</code>)</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        `,
-                        starterCode: `// Master Challenge (Medium)\n// Write your code below\n`,
-                        solution: `int a = 15;\nint b = 4;\nSystem.out.println(a + b);`,
-                        test: (output) => output.trim() === '19',
-                        xp: 150,
-                        forceSubmit: true
-                    },
-                    {
-                        id: 'java-master-03',
-                        type: 'practice',
-                        title: 'Master Challenge 3 (Medium)',
-                        description: 'Print Pass when score >= 60',
-                        content: `
-                            <div class="practice-section">
-                                <div class="challenge-goal">
-                                    <h4>Goal</h4>
-                                    <ul>
-                                        <li>Create <code>int score = 72</code></li>
-                                        <li>If <code>score &gt;= 60</code>, print <code>Pass</code></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        `,
-                        starterCode: `// Master Challenge (Medium)\n// Use an if statement\n`,
-                        solution: `int score = 72;\nif (score >= 60) {\n  System.out.println(\"Pass\");\n}`,
-                        test: (output) => output.includes('Pass'),
-                        xp: 150,
-                        forceSubmit: true
-                    },
-                    {
-                        id: 'java-master-04',
-                        type: 'practice',
-                        title: 'Master Challenge 4 (Hard)',
-                        description: 'Compute (a+b)*(a-b) and print result',
-                        content: `
-                            <div class="practice-section">
-                                <div class="challenge-goal">
-                                    <h4>Goal</h4>
-                                    <ul>
-                                        <li>Create <code>int a = 9</code> and <code>int b = 4</code></li>
-                                        <li>Compute <code>(a + b) * (a - b)</code></li>
-                                        <li>Print the result (output: <code>65</code>)</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        `,
-                        starterCode: `// Master Challenge (Hard)\n// Compute and print (a+b)*(a-b)\n`,
-                        solution: `int a = 9;\nint b = 4;\nint result = (a + b) * (a - b);\nSystem.out.println(result);`,
-                        test: (output) => output.trim() === '65',
-                        xp: 250,
-                        forceSubmit: true
-                    }
-                ],
+                
 },
             c: {
                 basics: [
@@ -9131,6 +11746,10 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
                 ]
             }
         };
+        // Merge any additional course lessons registered via window.CNAdditionalLessons (e.g. from app2.js)
+        if (window.CNAdditionalLessons && typeof window.CNAdditionalLessons === 'object') {
+            Object.assign(curriculum, window.CNAdditionalLessons);
+        }
 
         // State
         let currentLanguage = null;
@@ -9222,6 +11841,7 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
 
         function updateAuthUI() {
             const user = getCurrentUser();
+            const hasUser = !!(user && user.email);
             const authLink = document.querySelector('.auth-link');
             const chip = document.getElementById('currentUserChip');
             const mobileAvatar = document.getElementById('mobileAvatar');
@@ -9234,10 +11854,15 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
             const drawerXP = document.getElementById('drawerXP');
             const drawerStreak = document.getElementById('drawerStreak');
             const drawerLessons = document.getElementById('drawerLessons');
+            const userStats = document.querySelector('.user-stats');
+            const drawerStats = document.querySelector('.drawer-stats');
+
+            if (userStats) userStats.hidden = !hasUser;
+            if (drawerStats) drawerStats.hidden = !hasUser;
 
             if (!authLink || !chip || !logoutBtn) return;
 
-            if (user && user.email) {
+            if (hasUser) {
                 authLink.textContent = 'Account';
                 authLink.href = 'account.html';
                 const avatar = getProfileAvatar(user.email);
@@ -9310,11 +11935,11 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
                 if (drawerAccountLink) drawerAccountLink.textContent = 'Login / Sign Up';
             }
 
-            if (drawerXP) drawerXP.textContent = user ? totalXP : 0;
+            if (drawerXP) drawerXP.textContent = hasUser ? totalXP : 0;
             const drawerMaxStreak = document.getElementById('drawerMaxStreak');
-            if (drawerMaxStreak) drawerMaxStreak.textContent = user ? maxStreak : 0;
-            if (drawerStreak) drawerStreak.textContent = user ? streak : 0;
-            if (drawerLessons) drawerLessons.textContent = user ? completedLessons.size : 0;
+            if (drawerMaxStreak) drawerMaxStreak.textContent = hasUser ? maxStreak : 0;
+            if (drawerStreak) drawerStreak.textContent = hasUser ? streak : 0;
+            if (drawerLessons) drawerLessons.textContent = hasUser ? completedLessons.size : 0;
         }
 
         function bindLogout() {
@@ -9329,8 +11954,7 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
                 } catch (e) {
                     console.error('Logout failed', e);
                 }
-                updateAuthUI();
-                window.location.reload();
+                window.location.href = 'auth.html';
             });
             if (drawerLogout) {
                 drawerLogout.addEventListener('click', async () => {
@@ -9341,8 +11965,7 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
                     } catch (e) {
                         console.error('Logout failed', e);
                     }
-                    updateAuthUI();
-                    window.location.reload();
+                    window.location.href = 'auth.html';
                 });
             }
         }
@@ -10892,10 +13515,13 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
                     return sum + section.filter(l => completedLessons.has(l.id)).length;
                 }, 0) : 0;
                 const percent = total > 0 ? (completed / total * 100) : 0;
-                
-                document.getElementById(`${lang}Total`).textContent = total;
-                document.getElementById(`${lang}Completed`).textContent = completed;
-                document.getElementById(`${lang}Progress`).style.width = `${percent}%`;
+
+                const totalEl = document.getElementById(`${lang}Total`);
+                const completedEl = document.getElementById(`${lang}Completed`);
+                const progressEl = document.getElementById(`${lang}Progress`);
+                if (totalEl) totalEl.textContent = total;
+                if (completedEl) completedEl.textContent = completed;
+                if (progressEl) progressEl.style.width = `${percent}%`;
                 
                 courseProgress[lang] = { total, completed, percent };
                 totalLessonsOverall += total;

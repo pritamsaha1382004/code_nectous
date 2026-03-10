@@ -588,6 +588,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="nav-dropdown-menu" role="menu">
                 <a href="index.html" role="menuitem">Home</a>
                 <a href="progress.html" role="menuitem">View Progress</a>
+                <a href="enrolled-courses.html" data-requires-login="true" role="menuitem">Enrolled Courses</a>
                 <a href="interview-questions.html" role="menuitem">Interview Questions</a>
                 <a href="all-courses.html" role="menuitem">All Courses</a>
             </div>
@@ -641,11 +642,27 @@ document.addEventListener("DOMContentLoaded", () => {
     function ensureDrawerHomeLink() {
         const drawerLinks = document.querySelector(".drawer-links");
         if (!drawerLinks) return;
-        if (drawerLinks.querySelector('a[href="index.html"]')) return;
-        const home = document.createElement("a");
-        home.href = "index.html";
-        home.textContent = "Home";
-        drawerLinks.prepend(home);
+
+        if (!drawerLinks.querySelector('a[href="index.html"]')) {
+            const home = document.createElement("a");
+            home.href = "index.html";
+            home.textContent = "Home";
+            drawerLinks.prepend(home);
+        }
+
+        if (!drawerLinks.querySelector('a[href="enrolled-courses.html"]')) {
+            const enrolled = document.createElement("a");
+            enrolled.href = "enrolled-courses.html";
+            enrolled.textContent = "Enrolled Courses";
+            enrolled.setAttribute("data-requires-login", "true");
+
+            const progressLink = drawerLinks.querySelector('a[href="progress.html"]');
+            if (progressLink && progressLink.nextSibling) {
+                drawerLinks.insertBefore(enrolled, progressLink.nextSibling);
+            } else {
+                drawerLinks.appendChild(enrolled);
+            }
+        }
     }
 
     function runWelcomeTyping() {

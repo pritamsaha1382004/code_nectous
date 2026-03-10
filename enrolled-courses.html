@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Nectous - Interview Questions</title>
+    <title>Code Nectous - Enrolled Courses</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=20260308b">
     <script type="module" src="firebase-init.js?v=20260308b"></script>
 </head>
-<body data-page="interview-questions">
-    <div class="achievement" id="achievementToast">
+<body data-page="enrolled-courses" data-requires-login="true">
+    <div class="achievement" id="achievementToast" aria-live="polite">
         <div class="achievement-title"><span id="achievementTitle">Code Nectous</span></div>
-        <div class="achievement-desc" id="achievementDesc">Interview topics will appear here.</div>
+        <div class="achievement-desc" id="achievementDesc">Your enrolled courses will appear here.</div>
     </div>
 
     <header>
@@ -20,11 +20,11 @@
                 <img src="assets/logo.png" alt="Code Nectous logo">
                 <div class="logo-text">
                     <span class="logo-title"><span class="logo-elite">Code</span><span class="logo-coders">Nectous</span></span>
-                    <span class="logo-tagline">Interview Questions</span>
+                    <span class="logo-tagline">Enrolled Courses</span>
                 </div>
             </div>
             <div class="mobile-controls">
-                <span class="user-chip guest mobile-avatar" id="mobileAvatar" aria-label="User profile"></span>
+                <span class="user-chip guest mobile-avatar" id="mobileAvatar" aria-label="User profile">G</span>
                 <button class="drawer-toggle" id="drawerToggle" aria-label="Open menu" type="button">&#x2630;</button>
             </div>
             <div class="header-right">
@@ -72,15 +72,6 @@
                         </span>
                     </button>
                 </div>
-                <div class="overall-progress" hidden>
-                    <div class="progress-label">
-                        <span>Overall Progress</span>
-                        <span class="progress-percent" id="overallPercent">0%</span>
-                    </div>
-                    <div class="overall-bar" id="overallProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                        <div class="overall-fill" id="overallProgressFill" style="width: 0%"></div>
-                    </div>
-                </div>
             </div>
         </div>
     </header>
@@ -106,7 +97,7 @@
         </div>
         <nav class="drawer-links">
             <a href="progress.html">View Progress</a>
-            <a href="all-courses.html">All Courses</a>
+            <a href="interview-questions.html">Interview Questions</a>
             <a href="account.html" id="drawerAccountLink">Account</a>
         </nav>
         <div class="drawer-theme">
@@ -134,18 +125,13 @@
     </aside>
 
     <main class="container catalog-page">
-
         <section class="catalog-toolbar">
-            <label class="catalog-search" for="interviewQuestionsSearch">
-                <div class="catalog-search-wrap">
-                    <svg class="catalog-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="17" y1="17" x2="22" y2="22"/></svg>
-                    <input id="interviewQuestionsSearch" type="search" placeholder="Search Python, Java, SQL, C++..." autocomplete="off">
-                </div>
-            </label>
+            <h1 style="margin: 0; font-size: clamp(1.4rem, 3vw, 2rem);">Your Enrolled Courses</h1>
+            <p id="enrolledSummary" style="margin: 0.6rem 0 0; color: var(--text-muted);">Loading your enrolled courses...</p>
         </section>
 
-        <section class="interview-grid" id="interviewQuestionsGrid" aria-live="polite"></section>
-        <p class="catalog-empty" id="interviewQuestionsEmpty" hidden>No interview tracks matched your search.</p>
+        <section class="catalog-grid" id="enrolledCoursesGrid" aria-live="polite"></section>
+        <p class="catalog-empty" id="enrolledCoursesEmpty" hidden>Not enrolled yet.</p>
     </main>
 
     <footer class="site-footer">
@@ -195,10 +181,6 @@
     </footer>
 
     <script defer src="site.js?v=20260308d"></script>
-    <script defer src="app2.js?v=20260308b"></script>
-    <script defer src="app3.js?v=20260308b"></script>
-    <script defer src="app4.js?v=20260308b"></script>
-    <script defer src="app5.js?v=20260308b"></script>
-    <script defer src="course-catalog.js?v=20260308b"></script>
+    <script defer src="enrolled-courses.js?v=20260310a"></script>
 </body>
 </html>
