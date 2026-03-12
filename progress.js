@@ -63,6 +63,9 @@ const COURSE_LABELS = {
   sql: 'SQL',
   'artificial-intelligence': 'AI',
 };
+const COURSE_MIN_TOTALS = {
+  java: 30,
+};
 
 function uniqueList(items) {
   const out = [];
@@ -111,6 +114,29 @@ function getVisibleCourseKeys(courseProgress, enrolledCourseKeys) {
   COURSE_CHART_ORDER.forEach(pushKey);
   Object.keys(courseProgress).forEach(pushKey);
   return ordered;
+}
+
+function normalizeCourseProgress(rawCourseProgress) {
+  const source = rawCourseProgress && typeof rawCourseProgress === 'object' ? rawCourseProgress : {};
+  const normalized = {};
+
+  Object.keys(source).forEach((key) => {
+    const row = source[key] && typeof source[key] === 'object' ? source[key] : {};
+    const completed = Math.max(0, Number(row.completed) || 0);
+    const baseTotal = Math.max(0, Number(row.total) || 0);
+    const minTotal = Math.max(0, Number(COURSE_MIN_TOTALS[key]) || 0);
+    const total = Math.max(baseTotal, minTotal, completed);
+    const percent = total > 0 ? (completed / total) * 100 : 0;
+
+    normalized[key] = {
+      ...row,
+      completed,
+      total,
+      percent,
+    };
+  });
+
+  return normalized;
 }
 
 function toSlug(name) {
@@ -807,8 +833,9 @@ function renderProgress({ user, docData }) {
   const lastActive = typeof progress.lastStreak === 'string' ? (progress.lastStreak || '-') : '-';
   const enrolledCourseKeys = getEnrolledCourseKeys(progress);
 
-  const courseProgress =
-    progress.courseProgress && typeof progress.courseProgress === 'object' ? progress.courseProgress : null;
+  const courseProgress = normalizeCourseProgress(
+    progress.courseProgress && typeof progress.courseProgress === 'object' ? progress.courseProgress : null,
+  );
   const visibleCourseKeys = getVisibleCourseKeys(courseProgress, enrolledCourseKeys);
   const hasCourseProgress = visibleCourseKeys.length > 0;
   const totalLessons = hasCourseProgress

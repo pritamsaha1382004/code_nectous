@@ -11033,187 +11033,3361 @@ Tesla
 `,
     xp: 10
 },
+{
+    id: "java-core-21",
+    type: "theory",
+    title: "Constructors in Java",
+    description: "Learn how constructors initialize objects when they are created",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is a Constructor?</h4>
+
+<p>
+A <strong>constructor</strong> in Java is a special method that is automatically 
+called when an object of a class is created. It is mainly used to initialize 
+variables or set up the object.
+</p>
+
+<p>
+A constructor has the <strong>same name as the class</strong> and does not have 
+any return type.
+</p>
+
+<h4>Types of Constructors</h4>
+
+<ul>
+<li><strong>Default Constructor</strong> → Provided automatically if no constructor is defined.</li>
+<li><strong>Parameterized Constructor</strong> → Accepts parameters to initialize variables.</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+class Student {
+
+    String name;
+
+    Student() {
+        name = "Pritam";
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Student s = new Student();
+
+        System.out.println(s.name);
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The constructor <strong>Student()</strong> runs automatically when the object is created.</li>
+<li>It assigns the value "Pritam" to the variable <strong>name</strong>.</li>
+<li>The object <strong>s</strong> accesses the variable and prints it.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Pritam
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-core-22",
+    type: "theory",
+    title: "this Keyword in Java",
+    description: "Learn how the this keyword refers to the current object in a class",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is the <code>this</code> Keyword?</h4>
+
+<p>
+The <strong>this keyword</strong> in Java refers to the current object of a class. 
+It is mainly used to differentiate between instance variables and method parameters 
+when they have the same name.
+</p>
+
+<p>
+Using <strong>this</strong> helps avoid confusion and ensures that the correct 
+variable belonging to the object is accessed.
+</p>
+
+<h4>Common Uses of this Keyword</h4>
+
+<ul>
+<li>Refer to the current object</li>
+<li>Access instance variables</li>
+<li>Call another constructor in the same class</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+class Student {
+
+    String name;
+
+    Student(String name) {
+
+        this.name = name;
+
+    }
+
+    void display() {
+
+        System.out.println(name);
+
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Student s = new Student("Pritam");
+
+        s.display();
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The constructor receives a parameter named <strong>name</strong>.</li>
+<li><strong>this.name</strong> refers to the instance variable of the class.</li>
+<li>The value passed to the constructor is stored in the object variable.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Pritam
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-core-23",
+    type: "theory",
+    title: "static Keyword in Java",
+    description: "Learn how the static keyword allows variables and methods to belong to the class instead of objects",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is the <code>static</code> Keyword?</h4>
+
+<p>
+The <strong>static keyword</strong> in Java is used to create variables and methods 
+that belong to the class rather than to individual objects.
+</p>
+
+<p>
+This means a static member can be accessed without creating an object of the class.
+It is shared among all objects of that class.
+</p>
+
+<h4>Where static is Used</h4>
+
+<ul>
+<li>Static variables (shared across objects)</li>
+<li>Static methods</li>
+<li>Static blocks</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+class Test {
+
+    static int number = 100;
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println(Test.number);
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The variable <strong>number</strong> is declared as static.</li>
+<li>It belongs to the class <strong>Test</strong>, not to objects.</li>
+<li>It can be accessed directly using <strong>Test.number</strong>.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+100
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-core-24",
+    type: "theory",
+    title: "final Keyword in Java",
+    description: "Learn how the final keyword is used to prevent modification of variables, methods, and classes",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is the <code>final</code> Keyword?</h4>
+
+<p>
+The <strong>final keyword</strong> in Java is used to restrict modifications. 
+It can be applied to variables, methods, and classes to prevent changes.
+</p>
+
+<p>
+When a variable is declared as <strong>final</strong>, its value cannot be changed 
+after it is assigned.
+</p>
+
+<h4>Uses of final Keyword</h4>
+
+<ul>
+<li><strong>final variable</strong> → value cannot be changed</li>
+<li><strong>final method</strong> → cannot be overridden</li>
+<li><strong>final class</strong> → cannot be inherited</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
+    public static void main(String[] args) {
+
+        final int number = 50;
+
+        System.out.println(number);
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The variable <strong>number</strong> is declared using the final keyword.</li>
+<li>Its value is assigned once and cannot be changed later.</li>
+<li>If we try to change the value, the compiler will show an error.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+50
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-core-25",
+    type: "theory",
+    title: "Packages in Java",
+    description: "Learn how packages help organize Java classes and avoid naming conflicts",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is a Package?</h4>
+
+<p>
+A <strong>package</strong> in Java is a namespace that groups related classes and 
+interfaces together. Packages help organize large projects and avoid class name conflicts.
+</p>
+
+<p>
+For example, Java provides many built-in packages such as 
+<strong>java.util</strong>, <strong>java.lang</strong>, and <strong>java.io</strong>.
+</p>
+
+<h4>Why Packages Are Important</h4>
+
+<ul>
+<li>Organize classes into logical groups</li>
+<li>Avoid naming conflicts</li>
+<li>Improve code readability and maintenance</li>
+</ul>
+
+<h4>Creating a Package</h4>
+
+<p>
+A package can be created using the <strong>package</strong> keyword at the top of the file.
+</p>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+package mypackage;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println("This program belongs to a package");
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li><strong>package mypackage</strong> defines the package name.</li>
+<li>The class <strong>Main</strong> belongs to the package <strong>mypackage</strong>.</li>
+<li>Packages help group related classes together.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+This program belongs to a package
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-core-26",
+    type: "theory",
+    title: "Access Modifiers in Java",
+    description: "Learn how access modifiers control visibility of classes, variables, and methods",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What are Access Modifiers?</h4>
+
+<p>
+<strong>Access modifiers</strong> in Java are used to control the visibility and accessibility 
+of classes, variables, methods, and constructors. They determine where these members 
+can be accessed in a program.
+</p>
+
+<p>
+Access modifiers help protect data and implement the concept of 
+<strong>data hiding</strong> in Object-Oriented Programming.
+</p>
+
+<h4>Types of Access Modifiers</h4>
+
+<ul>
+<li><strong>public</strong> → Accessible from anywhere.</li>
+<li><strong>private</strong> → Accessible only within the same class.</li>
+<li><strong>protected</strong> → Accessible within the same package and subclasses.</li>
+<li><strong>default</strong> → Accessible only within the same package.</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+class Student {
+
+    private String name = "Pritam";
+
+    public void display() {
+
+        System.out.println(name);
+
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Student s = new Student();
+
+        s.display();
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The variable <strong>name</strong> is declared as <strong>private</strong>.</li>
+<li>It cannot be accessed directly outside the class.</li>
+<li>The method <strong>display()</strong> is public and prints the value.</li>
+<li>The object calls the method to access the data safely.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Pritam
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-oop-27",
+    type: "theory",
+    title: "Encapsulation in Java",
+    description: "Learn how encapsulation protects data by combining variables and methods inside a class",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is Encapsulation?</h4>
+
+<p>
+<strong>Encapsulation</strong> is one of the core principles of Object-Oriented Programming (OOP). 
+It means wrapping data (variables) and the methods that operate on that data into a single unit called a class.
+</p>
+
+<p>
+Encapsulation helps protect data by restricting direct access to variables and allowing access through methods.
+This is commonly done using <strong>private variables</strong> and <strong>public getter/setter methods</strong>.
+</p>
+
+<h4>Benefits of Encapsulation</h4>
+
+<ul>
+<li>Protects sensitive data</li>
+<li>Improves code security</li>
+<li>Makes programs easier to maintain</li>
+<li>Controls access to class variables</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+class Student {
+
+    private String name;
+
+    public void setName(String n) {
+        name = n;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Student s = new Student();
+
+        s.setName("Pritam");
+
+        System.out.println(s.getName());
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The variable <strong>name</strong> is declared as private.</li>
+<li>The method <strong>setName()</strong> assigns a value to the variable.</li>
+<li>The method <strong>getName()</strong> returns the value.</li>
+<li>This prevents direct access to the variable.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Pritam
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
                 ],
 
                 
                 
-                topicPractice: [
+                OOPS: [
 
-                    {
-                        id: 'java-topic-01',
-                        type: 'practice',
-                        title: 'Variables',
-                        description: 'Print 10',
-                        content: `
-                            <div class="practice-section">
-                                <div class="challenge-goal">
-                                    <h4>Goal</h4>
-                                    <ul>
-                                        <li>Print 10</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        `,
-                        starterCode: `// print output
-`,
-                        solution: `System.out.println(10);`,
-                        test: (output) => output.replace(/\s/g, '') === `10`,
-                        xp: 60
-                    },
+{
+    id: "java-oop-28",
+    type: "theory",
+    title: "Inheritance in Java",
+    description: "Learn how one class can inherit properties and methods from another class",
+    content: `
 
-                    {
-                        id: 'java-topic-02',
-                        type: 'practice',
-                        title: 'Arithmetic',
-                        description: 'Print 12',
-                        content: `
-                            <div class="practice-section">
-                                <div class="challenge-goal">
-                                    <h4>Goal</h4>
-                                    <ul>
-                                        <li>Print 12</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        `,
-                        starterCode: `// print output
-`,
-                        solution: `System.out.println(12);`,
-                        test: (output) => output.replace(/\s/g, '') === `12`,
-                        xp: 60
-                    },
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
 
-                    {
-                        id: 'java-topic-03',
-                        type: 'practice',
-                        title: 'Conditionals',
-                        description: 'Print Pass',
-                        content: `
-                            <div class="practice-section">
-                                <div class="challenge-goal">
-                                    <h4>Goal</h4>
-                                    <ul>
-                                        <li>Print Pass</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        `,
-                        starterCode: `// print output
-`,
-                        solution: `System.out.println("Pass");`,
-                        test: (output) => output.replace(/\s/g, '') === `Pass`,
-                        xp: 60
-                    },
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
 
-                    {
-                        id: 'java-topic-04',
-                        type: 'practice',
-                        title: 'Loops',
-                        description: 'Print 123',
-                        content: `
-                            <div class="practice-section">
-                                <div class="challenge-goal">
-                                    <h4>Goal</h4>
-                                    <ul>
-                                        <li>Print 123</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        `,
-                        starterCode: `// print output
-`,
-                        solution: `System.out.println(123);`,
-                        test: (output) => output.replace(/\s/g, '') === `123`,
-                        xp: 60
-                    },
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
 
-                    {
-                        id: 'java-topic-05',
-                        type: 'practice',
-                        title: 'Functions',
-                        description: 'Print 16',
-                        content: `
-                            <div class="practice-section">
-                                <div class="challenge-goal">
-                                    <h4>Goal</h4>
-                                    <ul>
-                                        <li>Print 16</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        `,
-                        starterCode: `// print output
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is Inheritance?</h4>
+
+<p>
+<strong>Inheritance</strong> is an important concept of Object-Oriented Programming (OOP). 
+It allows one class to inherit properties and methods from another class.
+</p>
+
+<p>
+The class that is inherited from is called the <strong>parent class (superclass)</strong>, 
+and the class that inherits is called the <strong>child class (subclass)</strong>.
+</p>
+
+<h4>Why Inheritance is Useful</h4>
+
+<ul>
+<li>Promotes code reuse</li>
+<li>Reduces code duplication</li>
+<li>Creates a hierarchical relationship between classes</li>
+</ul>
+
+<h4>Inheritance Keyword</h4>
+
+<p>
+Java uses the <strong>extends</strong> keyword to inherit a class.
+</p>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+class Animal {
+
+    void sound() {
+        System.out.println("Animals make sounds");
+    }
+
+}
+
+class Dog extends Animal {
+
+    void bark() {
+        System.out.println("Dog barks");
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+
+        d.sound();
+        d.bark();
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The class <strong>Dog</strong> inherits from the class <strong>Animal</strong>.</li>
+<li>The Dog class automatically gets access to the method <strong>sound()</strong>.</li>
+<li>The Dog object can call both the parent and child methods.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Animals make sounds
+Dog barks
+</pre>
+</div>
+
+</div>
+
+</div>
+
 `,
-                        solution: `System.out.println(16);`,
-                        test: (output) => output.replace(/\s/g, '') === `16`,
-                        xp: 60
-                    }
-                ],
-                advancedPractice: [
-                    {
-                        id: 'java-topic-06',
-                        type: 'practice',
-                        title: 'Variables',
-                        description: 'Print 50 using variable',
-                        content: `<div class="practice-section"><div class="challenge-goal"><h4>Goal</h4><ul><li>Print 50</li></ul></div></div>`,
-                        starterCode: `// print output
+    xp: 10
+},
+{
+    id: "java-oop-29",
+    type: "theory",
+    title: "Polymorphism in Java",
+    description: "Learn how polymorphism allows methods to behave differently based on objects",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is Polymorphism?</h4>
+
+<p>
+<strong>Polymorphism</strong> means "many forms". In Java, it allows the same method name 
+to perform different tasks depending on the object that calls it.
+</p>
+
+<p>
+Polymorphism improves flexibility and allows programs to behave differently 
+based on the object type.
+</p>
+
+<h4>Types of Polymorphism</h4>
+
+<ul>
+<li><strong>Compile-time Polymorphism</strong> → Method Overloading</li>
+<li><strong>Runtime Polymorphism</strong> → Method Overriding</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+class Animal {
+
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+
+}
+
+class Dog extends Animal {
+
+    void sound() {
+        System.out.println("Dog barks");
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Animal a = new Dog();
+
+        a.sound();
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The parent class <strong>Animal</strong> has a method named <strong>sound()</strong>.</li>
+<li>The child class <strong>Dog</strong> overrides this method.</li>
+<li>The object is created using the parent reference but child class object.</li>
+<li>The program calls the Dog version of the method.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Dog barks
+</pre>
+</div>
+
+</div>
+
+</div>
+
 `,
-                        solution: `int x = 50;
-System.out.println(x);`,
-                        test: (output) => output.replace(/\s/g, '') === `50`,
-                        xp: 60
-                    },
-                    {
-                        id: 'java-topic-07',
-                        type: 'practice',
-                        title: 'Arithmetic',
-                        description: 'Print 42',
-                        content: `<div class="practice-section"><div class="challenge-goal"><h4>Goal</h4><ul><li>Print 42</li></ul></div></div>`,
-                        starterCode: `// print output
+    xp: 10
+},
+{
+    id: "java-oop-30",
+    type: "theory",
+    title: "Method Overriding in Java",
+    description: "Learn how a child class can provide its own implementation of a parent class method",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is Method Overriding?</h4>
+
+<p>
+<strong>Method Overriding</strong> occurs when a subclass provides its own 
+implementation of a method that is already defined in its parent class.
+</p>
+
+<p>
+It allows a child class to change the behavior of a method inherited 
+from the parent class.
+</p>
+
+<h4>Rules for Method Overriding</h4>
+
+<ul>
+<li>The method name must be the same as the parent method.</li>
+<li>The parameters must also be the same.</li>
+<li>The method must be inherited from the parent class.</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+class Animal {
+
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+
+}
+
+class Cat extends Animal {
+
+    void sound() {
+        System.out.println("Cat meows");
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Cat c = new Cat();
+
+        c.sound();
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The parent class <strong>Animal</strong> has a method called <strong>sound()</strong>.</li>
+<li>The child class <strong>Cat</strong> overrides this method.</li>
+<li>When the object calls the method, the overridden method executes.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Cat meows
+</pre>
+</div>
+
+</div>
+
+</div>
+
 `,
-                        solution: `System.out.println(40 + 2);`,
-                        test: (output) => output.replace(/\s/g, '') === `42`,
-                        xp: 60
-                    },
-                    {
-                        id: 'java-topic-08',
-                        type: 'practice',
-                        title: 'Condition',
-                        description: 'Print Pass with if',
-                        content: `<div class="practice-section"><div class="challenge-goal"><h4>Goal</h4><ul><li>Print Pass</li></ul></div></div>`,
-                        starterCode: `// print output
+    xp: 10
+},
+{
+    id: "java-oop-31",
+    type: "theory",
+    title: "Abstraction in Java",
+    description: "Learn how abstraction hides implementation details and shows only essential features",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is Abstraction?</h4>
+
+<p>
+<strong>Abstraction</strong> is an Object-Oriented Programming concept that hides 
+implementation details and only shows the essential features of an object.
+</p>
+
+<p>
+It helps reduce complexity and allows programmers to focus only on what an object does 
+instead of how it works internally.
+</p>
+
+<h4>How Abstraction is Achieved in Java</h4>
+
+<ul>
+<li>Using <strong>abstract classes</strong></li>
+<li>Using <strong>interfaces</strong></li>
+</ul>
+
+<h4>Abstract Class</h4>
+
+<p>
+An abstract class is declared using the <strong>abstract</strong> keyword and may contain 
+abstract methods that do not have a body.
+</p>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+abstract class Animal {
+
+    abstract void sound();
+
+}
+
+class Dog extends Animal {
+
+    void sound() {
+        System.out.println("Dog barks");
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+
+        d.sound();
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The class <strong>Animal</strong> is declared as an abstract class.</li>
+<li>It contains an abstract method called <strong>sound()</strong>.</li>
+<li>The child class <strong>Dog</strong> provides the implementation of the method.</li>
+<li>The object of Dog calls the implemented method.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Dog barks
+</pre>
+</div>
+
+</div>
+
+</div>
+
 `,
-                        solution: `int score = 80;
-if (score >= 60) {
-    System.out.println("Pass");
-}`,
-                        test: (output) => output.includes('Pass'),
-                        xp: 60
-                    },
-                    {
-                        id: 'java-topic-09',
-                        type: 'practice',
-                        title: 'String Output',
-                        description: 'Print JavaReady',
-                        content: `<div class="practice-section"><div class="challenge-goal"><h4>Goal</h4><ul><li>Print JavaReady</li></ul></div></div>`,
-                        starterCode: `// print output
+    xp: 10
+},
+{
+    id: "java-oop-32",
+    type: "theory",
+    title: "Interfaces in Java",
+    description: "Learn how interfaces define a contract that classes must implement",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is an Interface?</h4>
+
+<p>
+An <strong>interface</strong> in Java is a blueprint of a class. It contains abstract methods 
+that must be implemented by the class that uses the interface.
+</p>
+
+<p>
+Interfaces help achieve <strong>full abstraction</strong> because they only declare methods 
+without providing their implementation.
+</p>
+
+<h4>Key Features of Interfaces</h4>
+
+<ul>
+<li>Methods are abstract by default.</li>
+<li>Variables are public, static, and final.</li>
+<li>A class implements an interface using the <strong>implements</strong> keyword.</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+interface Animal {
+
+    void sound();
+
+}
+
+class Dog implements Animal {
+
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+
+        d.sound();
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The interface <strong>Animal</strong> declares the method <strong>sound()</strong>.</li>
+<li>The class <strong>Dog</strong> implements the interface.</li>
+<li>The Dog class provides the implementation of the method.</li>
+<li>The object calls the implemented method.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Dog barks
+</pre>
+</div>
+
+</div>
+
+</div>
+
 `,
-                        solution: `System.out.println("JavaReady");`,
-                        test: (output) => output.replace(/\s/g, '') === `JavaReady`,
-                        xp: 60
-                    },
-                    {
-                        id: 'java-topic-10',
-                        type: 'practice',
-                        title: 'Final Output',
-                        description: 'Print Done',
-                        content: `<div class="practice-section"><div class="challenge-goal"><h4>Goal</h4><ul><li>Print Done</li></ul></div></div>`,
-                        starterCode: `// print output
+    xp: 10
+},
+{
+    id: "java-oop-33",
+    type: "theory",
+    title: "Abstract Classes in Java",
+    description: "Learn how abstract classes define incomplete classes that must be extended by other classes",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is an Abstract Class?</h4>
+
+<p>
+An <strong>abstract class</strong> is a class that cannot be instantiated directly. 
+It is designed to be extended by other classes.
+</p>
+
+<p>
+Abstract classes can contain both <strong>abstract methods</strong> (without implementation) 
+and <strong>regular methods</strong> (with implementation).
+</p>
+
+<h4>Why Abstract Classes Are Used</h4>
+
+<ul>
+<li>Provide a common base for related classes</li>
+<li>Define methods that must be implemented by subclasses</li>
+<li>Share common functionality across classes</li>
+</ul>
+
+<h4>Key Rules</h4>
+
+<ul>
+<li>An abstract class is declared using the <strong>abstract</strong> keyword.</li>
+<li>It may contain abstract and non-abstract methods.</li>
+<li>Child classes must implement all abstract methods.</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+abstract class Animal {
+
+    abstract void sound();
+
+    void sleep() {
+        System.out.println("Animal sleeps");
+    }
+
+}
+
+class Dog extends Animal {
+
+    void sound() {
+        System.out.println("Dog barks");
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+
+        d.sound();
+        d.sleep();
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The class <strong>Animal</strong> is declared as abstract.</li>
+<li>It contains an abstract method <strong>sound()</strong>.</li>
+<li>The child class <strong>Dog</strong> implements the abstract method.</li>
+<li>The regular method <strong>sleep()</strong> is inherited directly.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Dog barks
+Animal sleeps
+</pre>
+</div>
+
+</div>
+
+</div>
+
 `,
-                        solution: `System.out.println("Done");`,
-                        test: (output) => output.replace(/\s/g, '') === `Done`,
-                        xp: 60
-                    }
+    xp: 10
+},
+{
+    id: "java-oop-34",
+    type: "theory",
+    title: "Association in Java",
+    description: "Learn how association represents a relationship between two classes",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is Association?</h4>
+
+<p>
+<strong>Association</strong> in Java represents a relationship between two independent classes. 
+It defines how objects of one class are connected or interact with objects of another class.
+</p>
+
+<p>
+In association, both classes can exist independently of each other.
+For example, a <strong>Student</strong> can be associated with a <strong>Teacher</strong>, 
+but both can exist separately.
+</p>
+
+<h4>Types of Association</h4>
+
+<ul>
+<li><strong>One-to-One</strong> → One object related to one object.</li>
+<li><strong>One-to-Many</strong> → One object related to multiple objects.</li>
+<li><strong>Many-to-Many</strong> → Multiple objects related to multiple objects.</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+class Teacher {
+
+    String name = "Mr. Sharma";
+
+}
+
+class Student {
+
+    String name = "Pritam";
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Teacher t = new Teacher();
+        Student s = new Student();
+
+        System.out.println(s.name + " is taught by " + t.name);
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The classes <strong>Teacher</strong> and <strong>Student</strong> are separate classes.</li>
+<li>Objects of both classes are created independently.</li>
+<li>The program shows their relationship using association.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Pritam is taught by Mr. Sharma
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-oop-35",
+    type: "theory",
+    title: "Aggregation in Java",
+    description: "Learn how aggregation represents a 'has-a' relationship between classes",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is Aggregation?</h4>
+
+<p>
+<strong>Aggregation</strong> is a special type of association that represents a 
+<strong>"has-a"</strong> relationship between classes.
+</p>
+
+<p>
+In aggregation, one class contains a reference to another class. However, 
+both classes can exist independently of each other.
+</p>
+
+<p>
+For example, a <strong>Department</strong> has a <strong>Teacher</strong>, but the teacher 
+can exist even if the department is removed.
+</p>
+
+<h4>Key Characteristics</h4>
+
+<ul>
+<li>Represents a weak relationship between objects.</li>
+<li>Both objects can exist independently.</li>
+<li>Uses object references to connect classes.</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+class Teacher {
+
+    String name;
+
+    Teacher(String name) {
+        this.name = name;
+    }
+
+}
+
+class Department {
+
+    String deptName;
+    Teacher teacher;
+
+    Department(String deptName, Teacher teacher) {
+        this.deptName = deptName;
+        this.teacher = teacher;
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Teacher t = new Teacher("Mr. Sharma");
+
+        Department d = new Department("Computer Science", t);
+
+        System.out.println(d.deptName + " Department Teacher: " + t.name);
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The class <strong>Department</strong> contains a reference to the class <strong>Teacher</strong>.</li>
+<li>This shows a "has-a" relationship.</li>
+<li>Even if the Department object is removed, the Teacher object can still exist.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Computer Science Department Teacher: Mr. Sharma
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-oop-36",
+    type: "theory",
+    title: "Composition in Java",
+    description: "Learn how composition represents a strong 'has-a' relationship where objects depend on each other",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is Composition?</h4>
+
+<p>
+<strong>Composition</strong> is a special form of aggregation that represents a 
+<strong>strong "has-a" relationship</strong> between two classes.
+</p>
+
+<p>
+In composition, the contained object cannot exist without the container object. 
+If the parent object is destroyed, the child object is also destroyed.
+</p>
+
+<p>
+For example, a <strong>House</strong> contains <strong>Rooms</strong>. If the house 
+is destroyed, the rooms cannot exist independently.
+</p>
+
+<h4>Key Characteristics</h4>
+
+<ul>
+<li>Represents a strong relationship between objects.</li>
+<li>Child objects depend on the parent object.</li>
+<li>Often created inside the parent class.</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+class Engine {
+
+    void start() {
+        System.out.println("Engine started");
+    }
+
+}
+
+class Car {
+
+    private Engine engine;
+
+    Car() {
+        engine = new Engine();
+    }
+
+    void startCar() {
+        engine.start();
+        System.out.println("Car started");
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Car c = new Car();
+
+        c.startCar();
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The class <strong>Car</strong> contains an object of the class <strong>Engine</strong>.</li>
+<li>The Engine object is created inside the Car class.</li>
+<li>This shows a strong "has-a" relationship.</li>
+<li>If the Car object is removed, the Engine object cannot exist independently.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Engine started
+Car started
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-intermediate-37",
+    type: "theory",
+    title: "Wrapper Classes in Java",
+    description: "Learn how wrapper classes convert primitive data types into objects",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What are Wrapper Classes?</h4>
+
+<p>
+<strong>Wrapper classes</strong> in Java are used to convert primitive data types into objects. 
+This is useful when working with collections, frameworks, or methods that require objects instead of primitive values.
+</p>
+
+<p>
+Each primitive data type in Java has a corresponding wrapper class.
+</p>
+
+<h4>Primitive Types and Their Wrapper Classes</h4>
+
+<ul>
+<li>int → Integer</li>
+<li>double → Double</li>
+<li>char → Character</li>
+<li>boolean → Boolean</li>
+<li>float → Float</li>
+<li>long → Long</li>
+<li>short → Short</li>
+<li>byte → Byte</li>
+</ul>
+
+<h4>Autoboxing and Unboxing</h4>
+
+<ul>
+<li><strong>Autoboxing</strong> → Automatic conversion of primitive type to wrapper object.</li>
+<li><strong>Unboxing</strong> → Conversion of wrapper object back to primitive type.</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
+    public static void main(String[] args) {
+
+        int num = 10;
+
+        Integer obj = num;   // Autoboxing
+
+        System.out.println(obj);
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The primitive variable <strong>num</strong> stores the value 10.</li>
+<li>The wrapper class <strong>Integer</strong> converts it into an object.</li>
+<li>This process is called <strong>autoboxing</strong>.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+10
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-intermediate-38",
+    type: "theory",
+    title: "StringBuilder and StringBuffer in Java",
+    description: "Learn how StringBuilder and StringBuffer allow efficient modification of strings",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What are StringBuilder and StringBuffer?</h4>
+
+<p>
+In Java, the <strong>String</strong> class is immutable, meaning once a string is created 
+its value cannot be changed. If modifications are needed, a new object must be created.
+</p>
+
+<p>
+To solve this limitation, Java provides <strong>StringBuilder</strong> and 
+<strong>StringBuffer</strong> classes which allow strings to be modified without creating new objects.
+</p>
+
+<h4>Difference Between StringBuilder and StringBuffer</h4>
+
+<ul>
+<li><strong>StringBuffer</strong> → Thread-safe but slower.</li>
+<li><strong>StringBuilder</strong> → Faster but not thread-safe.</li>
+</ul>
+
+<h4>Common Methods</h4>
+
+<ul>
+<li><strong>append()</strong> → adds text to the string</li>
+<li><strong>insert()</strong> → inserts text at a specific position</li>
+<li><strong>replace()</strong> → replaces part of a string</li>
+<li><strong>delete()</strong> → removes characters</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
+    public static void main(String[] args) {
+
+        StringBuilder sb = new StringBuilder("Hello");
+
+        sb.append(" Java");
+
+        System.out.println(sb);
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>A <strong>StringBuilder</strong> object is created with the text "Hello".</li>
+<li>The method <strong>append()</strong> adds " Java" to the string.</li>
+<li>The updated string is printed.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Hello Java
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-intermediate-39",
+    type: "theory",
+    title: "Exception Handling in Java",
+    description: "Learn how Java handles runtime errors using try, catch, and finally blocks",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is Exception Handling?</h4>
+
+<p>
+<strong>Exception Handling</strong> in Java is a mechanism used to handle runtime errors 
+so that the normal flow of the program is not interrupted.
+</p>
+
+<p>
+An exception is an unexpected event that occurs during program execution, 
+such as dividing a number by zero or accessing an invalid array index.
+</p>
+
+<h4>Common Exception Keywords</h4>
+
+<ul>
+<li><strong>try</strong> → code that may cause an exception</li>
+<li><strong>catch</strong> → handles the exception</li>
+<li><strong>finally</strong> → always executes</li>
+<li><strong>throw</strong> → manually throws an exception</li>
+<li><strong>throws</strong> → declares exceptions</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+public class Main {
+
+    public static void main(String[] args) {
+
+        try {
+
+            int result = 10 / 0;
+
+            System.out.println(result);
+
+        }
+
+        catch (ArithmeticException e) {
+
+            System.out.println("Cannot divide by zero");
+
+        }
+
+        finally {
+
+            System.out.println("Program finished");
+
+        }
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The code inside the <strong>try</strong> block may cause an exception.</li>
+<li>The division by zero generates an <strong>ArithmeticException</strong>.</li>
+<li>The <strong>catch</strong> block handles the error.</li>
+<li>The <strong>finally</strong> block executes regardless of the exception.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Cannot divide by zero
+Program finished
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-intermediate-40",
+    type: "theory",
+    title: "Custom Exceptions in Java",
+    description: "Learn how to create and use your own exceptions in Java programs",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is a Custom Exception?</h4>
+
+<p>
+A <strong>custom exception</strong> is a user-defined exception created by programmers 
+to handle specific situations in a program.
+</p>
+
+<p>
+Java already provides many built-in exceptions, but sometimes developers need 
+special exceptions for application-specific errors.
+</p>
+
+<h4>How to Create a Custom Exception</h4>
+
+<ul>
+<li>Create a class that extends the <strong>Exception</strong> class.</li>
+<li>Define a constructor with an error message.</li>
+<li>Use <strong>throw</strong> to trigger the exception.</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+class AgeException extends Exception {
+
+    AgeException(String message) {
+        super(message);
+    }
+
+}
+
+public class Main {
+
+    static void checkAge(int age) throws AgeException {
+
+        if(age < 18) {
+            throw new AgeException("Age must be 18 or above");
+        }
+
+        System.out.println("Access granted");
+
+    }
+
+    public static void main(String[] args) {
+
+        try {
+
+            checkAge(16);
+
+        }
+
+        catch(AgeException e) {
+
+            System.out.println(e.getMessage());
+
+        }
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The class <strong>AgeException</strong> extends the Exception class.</li>
+<li>The method <strong>checkAge()</strong> throws an exception if age is less than 18.</li>
+<li>The exception is handled using a <strong>try-catch</strong> block.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Age must be 18 or above
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-intermediate-41",
+    type: "theory",
+    title: "Java I/O Streams",
+    description: "Learn how Java reads and writes data using Input and Output streams",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What are I/O Streams?</h4>
+
+<p>
+<strong>I/O Streams</strong> in Java are used to handle input and output operations. 
+They allow programs to read data from a source and write data to a destination.
+</p>
+
+<p>
+The term <strong>stream</strong> refers to a flow of data. Java uses streams to 
+transfer data between a program and external sources like files, keyboard input, 
+or network connections.
+</p>
+
+<h4>Types of Streams</h4>
+
+<ul>
+<li><strong>InputStream</strong> → used to read data.</li>
+<li><strong>OutputStream</strong> → used to write data.</li>
+</ul>
+
+<h4>Common Classes in Java I/O</h4>
+
+<ul>
+<li>FileInputStream</li>
+<li>FileOutputStream</li>
+<li>BufferedReader</li>
+<li>BufferedWriter</li>
+<li>PrintWriter</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+import java.io.*;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+
+        FileOutputStream file = new FileOutputStream("test.txt");
+
+        file.write(65);
+
+        file.close();
+
+        System.out.println("Data written to file");
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li><strong>FileOutputStream</strong> is used to write data to a file.</li>
+<li>The method <strong>write()</strong> writes data to the file.</li>
+<li>The value 65 represents the character 'A' in ASCII.</li>
+<li>The file is closed after writing data.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+Data written to file
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+},
+{
+    id: "java-intermediate-42",
+    type: "theory",
+    title: "File Handling in Java",
+    description: "Learn how Java programs create, read, and manage files",
+    content: `
+
+<style>
+.code-interface{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+    margin-top:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+
+.editor-header{
+    background:#2d2d2d;
+    color:#ccc;
+    padding:10px 15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.editor-body{
+    padding:18px;
+    color:#e6e6e6;
+    font-family:monospace;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.output-interface{
+    margin-top:15px;
+    background:#0d1117;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.console-header{
+    background:#161b22;
+    color:#8b949e;
+    padding:8px 15px;
+    font-size:13px;
+    font-family:monospace;
+}
+
+.console-body{
+    padding:15px;
+    font-family:monospace;
+    color:#79c0ff;
+    font-size:14px;
+}
+</style>
+
+<div class="theory-content">
+
+<h4>What is File Handling?</h4>
+
+<p>
+<strong>File handling</strong> in Java allows programs to create, read, write, and delete files.
+It is commonly used when applications need to store data permanently instead of keeping it only in memory.
+</p>
+
+<p>
+Java provides the <strong>java.io.File</strong> class to perform file-related operations.
+</p>
+
+<h4>Common File Operations</h4>
+
+<ul>
+<li>Create a file</li>
+<li>Read data from a file</li>
+<li>Write data to a file</li>
+<li>Delete a file</li>
+</ul>
+
+<h4>Important Classes for File Handling</h4>
+
+<ul>
+<li><strong>File</strong> → represents a file or directory</li>
+<li><strong>FileReader</strong> → reads characters from a file</li>
+<li><strong>FileWriter</strong> → writes characters to a file</li>
+<li><strong>BufferedReader</strong> → reads text efficiently</li>
+</ul>
+
+<h4>Example Java Program</h4>
+
+<div class="code-interface">
+
+<div class="editor-header">
+<span>Main.java</span>
+<span>Java</span>
+</div>
+
+<div class="editor-body">
+<pre><code>
+import java.io.File;
+import java.io.IOException;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        try {
+
+            File file = new File("example.txt");
+
+            if(file.createNewFile()) {
+                System.out.println("File created: " + file.getName());
+            } else {
+                System.out.println("File already exists");
+            }
+
+        }
+
+        catch(IOException e) {
+
+            System.out.println("An error occurred");
+
+        }
+
+    }
+
+}
+</code></pre>
+</div>
+
+</div>
+
+<h4>Explanation</h4>
+
+<ul>
+<li>The <strong>File</strong> class represents a file object.</li>
+<li>The method <strong>createNewFile()</strong> creates a new file.</li>
+<li>If the file already exists, the program prints a message.</li>
+<li>The <strong>try-catch</strong> block handles possible errors.</li>
+</ul>
+
+<h4>Program Output</h4>
+
+<div class="output-interface">
+
+<div class="console-header">
+Console Output
+</div>
+
+<div class="console-body">
+<pre>
+File created: example.txt
+</pre>
+</div>
+
+</div>
+
+</div>
+
+`,
+    xp: 10
+}
                 ],
                 
 },
@@ -14006,9 +17180,25 @@ LEFT JOIN courses c ON s.course_id = c.id;</pre></div>
             // Ensure derived fields exist so Progress page can render graphs.
             try {
                 const { courseProgress, totalLessonsOverall } = computeCourseProgressSnapshot();
-                const needsCourseProgress = !docData || !docData.progress || !docData.progress.courseProgress;
-                const needsTotalLessons = !docData || !docData.progress || typeof docData.progress.totalLessons !== 'number';
-                if ((needsCourseProgress || needsTotalLessons) && window.CN && typeof window.CN.saveProgress === 'function') {
+                const storedProgress = docData && docData.progress && typeof docData.progress === 'object' ? docData.progress : {};
+                const storedCourseProgress =
+                    storedProgress.courseProgress && typeof storedProgress.courseProgress === 'object'
+                        ? storedProgress.courseProgress
+                        : null;
+                const needsCourseProgress = !storedCourseProgress;
+                const needsTotalLessons = typeof storedProgress.totalLessons !== 'number';
+
+                const hasCourseProgressMismatch = !needsCourseProgress && Object.keys(courseProgress).some((lang) => {
+                    const fresh = courseProgress[lang] || {};
+                    const stale = storedCourseProgress[lang] || {};
+                    return Number(fresh.total || 0) !== Number(stale.total || 0)
+                        || Number(fresh.completed || 0) !== Number(stale.completed || 0);
+                });
+
+                const hasTotalLessonsMismatch = Number(storedProgress.totalLessons || 0) !== Number(totalLessonsOverall || 0);
+
+                if ((needsCourseProgress || needsTotalLessons || hasCourseProgressMismatch || hasTotalLessonsMismatch)
+                    && window.CN && typeof window.CN.saveProgress === 'function') {
                     await window.CN.saveProgress({ courseProgress: courseProgress, totalLessons: totalLessonsOverall });
                 }
             } catch (e) {

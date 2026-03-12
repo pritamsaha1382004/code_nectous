@@ -573,6 +573,16 @@ document.addEventListener("DOMContentLoaded", () => {
     function ensureNavDropdown() {
         const headerLinks = document.querySelector(".header-links");
         if (!headerLinks) return;
+
+        const isMobileView = typeof window.matchMedia === "function"
+            ? window.matchMedia("(max-width: 640px)").matches
+            : window.innerWidth <= 640;
+        if (isMobileView) {
+            const existingDropdown = headerLinks.querySelector(".nav-dropdown");
+            if (existingDropdown) existingDropdown.remove();
+            return;
+        }
+
         if (headerLinks.querySelector(".nav-dropdown")) return;
 
         const linksToRemove = headerLinks.querySelectorAll('.back-home, a[href="index.html"], a[href="progress.html"], a[href="interview-questions.html"], a[href="all-courses.html"]');
@@ -674,19 +684,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        if (!drawerLinks.querySelector('a[href="enrolled-courses.html"]')) {
-            const enrolled = document.createElement("a");
-            enrolled.href = "enrolled-courses.html";
-            enrolled.textContent = "Enrolled Courses";
-            enrolled.setAttribute("data-requires-login", "true");
-
-            const progressLink = drawerLinks.querySelector('a[href="progress.html"]');
-            if (progressLink && progressLink.nextSibling) {
-                drawerLinks.insertBefore(enrolled, progressLink.nextSibling);
-            } else {
-                drawerLinks.appendChild(enrolled);
-            }
-        }
     }
 
     function runWelcomeTyping() {
@@ -727,6 +724,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     ensureNavDropdown();
     ensureDrawerHomeLink();
+    window.addEventListener("load", ensureDrawerHomeLink);
     bindNavDropdowns();
     runWelcomeTyping();
 
@@ -751,6 +749,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const drawerCloseBtn = document.getElementById("drawerClose");
     if (drawerMenuToggle && drawer && drawerOverlay && drawerCloseBtn) {
         const openDrawer = () => {
+            ensureDrawerHomeLink();
             drawer.classList.add("open");
             drawerOverlay.classList.add("show");
             drawer.setAttribute("aria-hidden", "false");
