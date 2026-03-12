@@ -643,11 +643,21 @@ document.addEventListener("DOMContentLoaded", () => {
         const drawerLinks = document.querySelector(".drawer-links");
         if (!drawerLinks) return;
 
-        if (!drawerLinks.querySelector('a[href="index.html"]')) {
+        const homeLinks = Array.from(drawerLinks.querySelectorAll("a")).filter((link) => {
+            const rawHref = (link.getAttribute("href") || "").trim().toLowerCase();
+            if (rawHref === "index.html" || rawHref === "/" || rawHref === "/index.html") return true;
+
+            const resolvedHref = (link.href || "").toLowerCase();
+            return resolvedHref.endsWith("/index.html") || resolvedHref.endsWith("/");
+        });
+
+        if (!homeLinks.length) {
             const home = document.createElement("a");
             home.href = "index.html";
             home.textContent = "Home";
             drawerLinks.prepend(home);
+        } else if (homeLinks.length > 1) {
+            homeLinks.slice(1).forEach((link) => link.remove());
         }
 
         if (!drawerLinks.querySelector('a[href="enrolled-courses.html"]')) {
