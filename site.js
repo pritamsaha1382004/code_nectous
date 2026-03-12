@@ -645,10 +645,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const homeLinks = Array.from(drawerLinks.querySelectorAll("a")).filter((link) => {
             const rawHref = (link.getAttribute("href") || "").trim().toLowerCase();
+            const rawText = (link.textContent || "").trim().toLowerCase();
+            if (rawText === "home") return true;
             if (rawHref === "index.html" || rawHref === "/" || rawHref === "/index.html") return true;
 
+            if (rawHref.startsWith("index.html?") || rawHref.startsWith("index.html#")) return true;
+            if (rawHref.startsWith("/index.html?") || rawHref.startsWith("/index.html#")) return true;
+
             const resolvedHref = (link.href || "").toLowerCase();
-            return resolvedHref.endsWith("/index.html") || resolvedHref.endsWith("/");
+            return (
+                resolvedHref.endsWith("/index.html") ||
+                resolvedHref.endsWith("/") ||
+                resolvedHref.includes("/index.html?") ||
+                resolvedHref.includes("/index.html#")
+            );
         });
 
         if (!homeLinks.length) {
@@ -656,8 +666,12 @@ document.addEventListener("DOMContentLoaded", () => {
             home.href = "index.html";
             home.textContent = "Home";
             drawerLinks.prepend(home);
-        } else if (homeLinks.length > 1) {
-            homeLinks.slice(1).forEach((link) => link.remove());
+        } else {
+            homeLinks[0].href = "index.html";
+            homeLinks[0].textContent = "Home";
+            if (homeLinks.length > 1) {
+                homeLinks.slice(1).forEach((link) => link.remove());
+            }
         }
 
         if (!drawerLinks.querySelector('a[href="enrolled-courses.html"]')) {
